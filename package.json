@@ -1,0 +1,18 @@
+{
+  "name": "sabz-learn-project",
+  "version": "1.0.0",
+  "description": "sabzlearn",
+  "main": "index.js",
+  "scripts": {
+    "tail-watch": "npx tailwindcss -i ./public/assests/css/main-page/input.css -o ./public/assests/css/main-page/app.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "alirezangh123123"
+  },
+  "author": "alirezangh",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0"
+  }
+}
