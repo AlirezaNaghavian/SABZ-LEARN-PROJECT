@@ -33,6 +33,11 @@ module.exports = {
         "MorabbaMedium" : "Morabba Medium",
         "Morabba_bold" : "Morabba Bold",
       },
+      colors:{
+        grayTheme:"#1c1c28",
+        baseColor :"#2ED573",
+        
+      }
     },
   },
   plugins: [

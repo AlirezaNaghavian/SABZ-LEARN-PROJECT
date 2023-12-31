@@ -1,12 +1,146 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html class="dark" lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>سبزلرن|صفحه اصلی</title>
     <link rel="stylesheet" href="assests/css/main-page/app.css">
 </head>
-<body class="font-Dana bg-gray-100 dark:bg-zinc-800">
+<body class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    <!-- svgs -->
+    <svg class="hidden">
+          <symbol id="outline-chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </symbol>
+          
+    </svg>
+    <!-- header-&-nav-bar-section -->
+    <header>
+        <section class="header-sec flex items-center justify-between px-9 md:px-16 lg:px-12 h-[88px] md:h-32 dark:border-b dark:border-b-gray-700 mx-auto max-w-[1920px]">
+            <div class="nav-side right-side flex items-center">
+                <div class="logo-desktop-wrapper  lg:ml-5 lg:pl-5 border-l border-l-gray-100 dark:border-l-gray-700">
+                    <img src="assests/imges/logos/main-logo.png" class="w-[104px] h-[68.28px]" alt="">
+                </div>
+                <nav class="hidden lg:flex   items-center h-14 ">
+                    <ul class="child:text-base xl:child:text-lg flex gap-x-5 items-center">
+                        <li class="relative group">
+                     
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                                فرانت اند
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                            <!-- sub-menu items -->
+                            <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                    <a href="#" class="submenu__link">آموزش HTML</a>
+                                    <a href="#" class="submenu__link">آموزش CSS</a>
+                                    <a href="#" class="submenu__link">آموزش FlexBox</a>
+                                    <a href="#" class="submenu__link">آموزش CSS Grid</a>
+                                    <a href="#" class="submenu__link">مینی پروژه های تخصصی با Css</a>
+                                    <a href="#" class="submenu__link">آموزش Tailwind CSS</a>
+                                    <a href="#" class="submenu__link">آموزش اصولی طراحی قالب</a>
+                                    <a href="#" class="submenu__link">آموزش بوت استرپ</a>
+                                    <a href="#" class="submenu__link">آموزش جاوااسکریپت</a>
+                                    <a href="#" class="submenu__link">آموزش جامع ری اکت ReactJS</a>
+                                    <a href="#" class="submenu__link">آموزش ویو جی اس</a>
+                                    <a href="#" class="submenu__link">آموزش وی اس کد - Vscode</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                                امنیت
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                              <!-- sub-menu items -->
+                              <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                    <a href="#" class="submenu__link">نقشه راه ورود به دنیای هک و امنیت</a>
+                                    <a href="#" class="submenu__link">شبکه با گرایش امنیت</a>
+                                    <a href="#" class="submenu__link">لینوکس با گرایش امنیت</a>
+                                    <a href="#" class="submenu__link">آموزش هکر قانونمند - CEH V11</a>
+                                    <a href="#" class="submenu__link">آموزش کالی لینوکس</a>
+                                    <a href="#" class="submenu__link">آموزش پایتون سیاه</a>
+                                    <a href="#" class="submenu__link">آموزش Burp Suite</a>
+                                    <a href="#" class="submenu__link">آموزش جاوااسکریپت سیاه</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                                پایتون
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                                <!-- sub-menu items -->
+                                <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                        <a href="#" class="submenu__link">دوره آموزش پایتون</a>
+                                        <a href="#" class="submenu__link">پروژه های کاربردی با پایتون</a>
+                                        <a href="#" class="submenu__link">ترفند های کاربردی با پایتون</a>
+                                        <a href="#" class="submenu__link">متخصص جنگو</a>
+                                        <a href="#" class="submenu__link">مصور سازی داده با پایتون</a>
+                                    </div>
+                                </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                            پی اچ پی
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                             <!-- sub-menu items -->
+                             <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                    <a href="#" class="submenu__link">ربات تلگرام با PHP</a>
+                                    <a href="#" class="submenu__link">پروژه های کاربردی با PHP</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="relative group">
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                                ارتقای مهارت ها
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                               <!-- sub-menu items -->
+                               <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                    <a href="#" class="submenu__link">الگوریتم و ساختمان داده</a>
+                                    <a href="#" class="submenu__link">گیت و گیتهاب</a>
+                                    <a href="#" class="submenu__link">Clean Code برای JS</a>
+                                    <a href="#" class="submenu__link">دیپلوی پروژه های JS</a>
+                                    <a href="#" class="submenu__link">دوره Mern Stack</a>
+                                    <a href="#" class="submenu__link">آموزش رجکس (regex)</a>
+                                    <a href="#" class="submenu__link">NPM برای جاوااسکریپت کارها</a>
+                                    <a href="#" class="submenu__link">آموزش کاربردی Vscode</a>
+                                </div>
+                            </div>
+                        </li>
+
+                        <li class="relative group">
+                            <a class="flex items-center gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
+                                مقالات
+                                <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+                            </a>
+                                  <!-- sub-menu items -->
+                                  <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                                        <a href="#" class="submenu__link">اچ تی ام ال</a>
+                                        <a href="#" class="submenu__link">بوت استرپ</a>
+                                        <a href="#" class="submenu__link">پروژه های برنامه نویسی</a>
+                                        <a href="#" class="submenu__link">تست نفوذ و امنیت وب</a>
+                                        <a href="#" class="submenu__link">جی کوئری</a>
+                                        <a href="#" class="submenu__link">ری اکت جی اس</a>
+                                        <a href="#" class="submenu__link">سی اس اس</a>
+                                        <a href="#" class="submenu__link">شروع برنامه نویسی</a>
+                                    </div>
+                                </div>
+                        </li>
+
+                    </ul>
+                </nav>
+
+            </div>
+        </section>
+    </header>
     <script src="assests/js/app.js"></script>
 </body>
 </html>
