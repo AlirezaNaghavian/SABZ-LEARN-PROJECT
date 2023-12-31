@@ -55,3 +55,12 @@ overflow: hidden;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     transition-duration: 150ms;
 }
+/* search-box-lg-section */
+.hide{
+  visibility: hidden;
+  opacity: 0;
+}
+.show{
+  visibility: visible;
+  opacity: 100;
+}
