@@ -64,3 +64,7 @@ overflow: hidden;
   visibility: visible;
   opacity: 100;
 }
+/* user dashboard style */
+.dashBoard-link{
+  @apply flex items-center justify-between text-zinc-700 dark:text-white px-2.5 h-[46px] rounded-xl hover:bg-gray-100 dark:hover:bg-slate-50 transition-colors
+}
