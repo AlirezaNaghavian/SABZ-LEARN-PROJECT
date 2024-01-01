@@ -38,6 +38,7 @@ module.exports = {
         baseColor: "#2ED573",
         secondaryLight: "#4e81fb66",
         secondary:"#4e81fb",
+        navColor : "#32334D",
       },
       spacing:{
         "25": "6.25rem"
