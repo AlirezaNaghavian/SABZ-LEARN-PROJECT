@@ -73,7 +73,7 @@ overflow: hidden;
   @apply dark:text-slate-400 text-slate-500
 }
 /* green after space of li sub menu list */
-.moblie-sub-menu li::after{
+.mobile-sub-menu li::after{
   content: "";
   position: absolute;
   right: 0;
@@ -90,16 +90,25 @@ overflow: hidden;
   transition-duration: 150ms;
 
 }
-.moblie-sub-menu li{
+.mobile-sub-menu{
+  display: none;
+  overflow-y: hidden;
+}
+.mobile-sub-menu.active{
+  display: flex;
+  overflow-y: visible;
+
+}
+
+.mobile-sub-menu li{
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
 }
-.moblie-sub-menu li:hover::after {
+.mobile-sub-menu li:hover::after {
   width: 12px !important;
 }
-.moblie-sub-menu li:hover{
+.mobile-sub-menu li:hover{
   padding-right: 18px;
   color: rgb(46 213 115 );
-
 }
