@@ -1522,6 +1522,11 @@ video {
   outline-offset: 2px;
 }
 
+.active\:text-baseColor:active {
+  --tw-text-opacity: 1;
+  color: rgb(46 213 115 / var(--tw-text-opacity));
+}
+
 .group:hover .group-hover\:visible {
   visibility: visible;
 }
@@ -1567,6 +1572,11 @@ video {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-duration: 150ms;
+}
+
+.child-hover\:text-baseColor>*:hover {
+  --tw-text-opacity: 1;
+  color: rgb(46 213 115 / var(--tw-text-opacity));
 }
 
 @media (min-width: 640px) {
