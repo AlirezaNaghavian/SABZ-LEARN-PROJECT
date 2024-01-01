@@ -68,3 +68,38 @@ overflow: hidden;
 .dashBoard-link{
   @apply flex items-center justify-between text-zinc-700 dark:text-white px-2.5 h-[46px] rounded-xl hover:bg-gray-100 dark:hover:bg-slate-50 transition-colors
 }
+/* moblie-menu-items */
+.mobile-menu-link-item{
+  @apply dark:text-slate-400 text-slate-500
+}
+/* green after space of li sub menu list */
+.moblie-sub-menu li::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width:0px;
+  margin: auto 0;
+  height: 4px;
+  border-radius: 2px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 213 115 );
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+
+}
+.moblie-sub-menu li{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+.moblie-sub-menu li:hover::after {
+  width: 12px !important;
+}
+.moblie-sub-menu li:hover{
+  padding-right: 18px;
+  color: rgb(46 213 115 );
+
+}

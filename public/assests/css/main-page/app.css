@@ -889,6 +889,10 @@ video {
   row-gap: 0.25rem;
 }
 
+.gap-y-2 {
+  row-gap: 0.5rem;
+}
+
 .gap-y-5 {
   row-gap: 1.25rem;
 }
@@ -1222,6 +1226,52 @@ video {
   background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
+/* moblie-menu-items */
+
+.mobile-menu-link-item {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .mobile-menu-link-item) {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
+}
+
+/* green after space of li sub menu list */
+
+.moblie-sub-menu li::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width:0px;
+  margin: auto 0;
+  height: 4px;
+  border-radius: 2px;
+  --tw-bg-opacity: 1;
+  background-color: rgb(46 213 115 );
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.moblie-sub-menu li{
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.moblie-sub-menu li:hover::after {
+  width: 12px !important;
+}
+
+.moblie-sub-menu li:hover{
+  padding-right: 18px;
+  color: rgb(46 213 115 );
+}
+
 .placeholder\:text-lg::-moz-placeholder {
   font-size: 1.125rem;
   line-height: 1.75rem;
@@ -1294,14 +1344,43 @@ video {
   opacity: 1;
 }
 
+.child\:relative>* {
+  position: relative;
+}
+
+.child\:cursor-pointer>* {
+  cursor: pointer;
+}
+
+.child\:px-7>* {
+  padding-left: 1.75rem;
+  padding-right: 1.75rem;
+}
+
 .child\:text-base>* {
   font-size: 1rem;
   line-height: 1.5rem;
 }
 
+.child\:text-sm>* {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.child\:text-slate-500>* {
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+}
+
 .child\:text-zinc-700>* {
   --tw-text-opacity: 1;
   color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+
+.child\:transition-all>* {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }
 
 @media (min-width: 768px) {
@@ -1581,4 +1660,9 @@ video {
 :is(:where(.dark) .child\:dark\:text-white)>* {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .dark\:child\:text-slate-400>*) {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
