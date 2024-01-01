@@ -692,6 +692,10 @@ video {
   margin-top: 1.75rem;
 }
 
+.mt-3 {
+  margin-top: 0.75rem;
+}
+
 .block {
   display: block;
 }
@@ -702,6 +706,10 @@ video {
 
 .flex {
   display: flex;
+}
+
+.inline-flex {
+  display: inline-flex;
 }
 
 .hidden {
@@ -758,6 +766,10 @@ video {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[38px\] {
+  height: 38px;
 }
 
 .w-12 {
@@ -820,6 +832,14 @@ video {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[38px\] {
+  width: 38px;
+}
+
 .max-w-\[1920px\] {
   max-width: 1920px;
 }
@@ -839,6 +859,12 @@ video {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.select-none {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 
 .flex-col {
@@ -900,6 +926,11 @@ video {
 
 .gap-y-5 {
   row-gap: 1.25rem;
+}
+
+.gap-x-2\.5 {
+  -moz-column-gap: 0.625rem;
+       column-gap: 0.625rem;
 }
 
 .overflow-hidden {
@@ -1531,6 +1562,10 @@ video {
   display: inline-block;
 }
 
+:is(:where(.dark) .dark\:inline-flex) {
+  display: inline-flex;
+}
+
 :is(:where(.dark) .dark\:hidden) {
   display: none;
 }
@@ -1546,6 +1581,11 @@ video {
 :is(:where(.dark) .dark\:border-gray-700) {
   --tw-border-opacity: 1;
   border-color: rgb(55 65 81 / var(--tw-border-opacity));
+}
+
+:is(:where(.dark) .dark\:border-slate-600) {
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
 }
 
 :is(:where(.dark) .dark\:border-b-gray-700) {
@@ -1566,6 +1606,11 @@ video {
 :is(:where(.dark) .dark\:border-t-slate-600) {
   --tw-border-opacity: 1;
   border-top-color: rgb(71 85 105 / var(--tw-border-opacity));
+}
+
+:is(:where(.dark) .dark\:border-t-slate-500) {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(100 116 139 / var(--tw-border-opacity));
 }
 
 :is(:where(.dark) .dark\:bg-gray-700) {
@@ -1618,6 +1663,11 @@ video {
 :is(:where(.dark) .dark\:text-white) {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .dark\:text-slate-400) {
+  --tw-text-opacity: 1;
+  color: rgb(148 163 184 / var(--tw-text-opacity));
 }
 
 :is(:where(.dark) .dark\:placeholder-gray-500)::-moz-placeholder {

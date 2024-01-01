@@ -1,7 +1,7 @@
 const getLgSearchBtn = document.getElementById("active-search-box");
 const getSearchBox = document.getElementById("search-box");
 const getOvralay = document.getElementsByClassName("app-overlay")[0];
-const getSwichTheme = document.getElementsByClassName("switch-theme")[0];
+const getSwichTheme = document.querySelectorAll(".switch-theme");
 const getUserProfileIcon = document.getElementById("user-profile-dropdown");
 const userProfileWrapper = document.getElementById("userProfile");
 const getMenuItemTitle = document.querySelectorAll(".mobile-menu-link-item");
@@ -68,6 +68,8 @@ let onClickOverlay = () => {
 };
 userProfileWrapper.addEventListener("click", showUserProfile);
 window.addEventListener("load", checkTheme);
-getSwichTheme.addEventListener("click", changeTheme);
+getSwichTheme.forEach((themeBtn)=>{
+themeBtn.addEventListener("click",changeTheme)
+})
 getOvralay.addEventListener("click", onClickOverlay);
 getSearchBox.addEventListener("click", showOverlaySearchBox);
