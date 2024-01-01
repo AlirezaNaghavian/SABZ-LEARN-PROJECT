@@ -39,6 +39,9 @@ module.exports = {
         secondaryLight: "#4e81fb66",
         secondary:"#4e81fb",
       },
+      spacing:{
+        "25": "6.25rem"
+      }
     },
   },
   plugins: [

@@ -92,6 +92,12 @@
       <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
       </symbol>
+      <symbol id="play" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
+      </symbol>
+      
+        
+    
     </svg>
     <!-- header-&-nav-bar-section -->
     <header>
@@ -658,6 +664,41 @@
             </div>
         </section>
     </header>
+    <main class="overflow-hidden max-w-[1920px] mx-auto">
+        <!-- hero header section -->
+        <section class="pt-10 lg:pt-25 relative">
+            <div class="container">
+                <div class="flex items-center gap-y-10 flex-wrap lg:flex-nowrap justify-center lg:justify-between text-center lg:text-right">
+                    <div class="w-full sm:w-auto order-2 lg:order-1">
+                        <h2 class="font-Morabba_bold text-4xl lg:text-5xl text-zinc-700 dark:text-white leading-[80px] lg:leading-[96px]">
+                            ما به هر قیمتی 
+                            <br class="hidden sm:inline">
+                            دوره تولید نمی کنیم
+                        </h2>
+                        <p class="text-zinc-700 dark:text-white text-xl lg:tex2xl mt-5 sm:mt-6 lg:mt-7 max-w-[500px]">
+                           باآکادمی خصوصی سبزلرن، علم برنامه نویسی رو با خیال راحت یاد بگیر و پیشرفت کن
+
+                        </p>
+                        <div class="flex items-center justify-center flex-wrap lg:justify-start gap-5 sm:gap-7 mt-6 sm:mt-10 lg:mt-12">
+                            <a href="#" class=" bg-secondary text-white text-xl font-normal px-7 py-4  rounded-full">از اینجا شروع کن</a>
+                            <a href="#" class="flex items-center gap-x-2.5 text-slate-500 dark:text-slate-400 group sm:text-xl">
+                                <span class=" ml-1 pl-[14px] py-[12px] pr-2.5 bg-baseColor rounded-full">
+                                    <svg class="w-6 h-6 sm:w-8 sm:h-8 text-white fill-white "><use xlink:href="#play"></use></svg>
+                                </span>
+                                ما کی هستیم؟
+                            </a>
+                        </div>
+                    </div>
+                    <div class="order-1 lg:order-2">
+                      <img src="assests/imges/header/boy-light.svg.svg" class="dark:hidden w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="">
+                        <img src="assests/imges/header/boy-dark.svg.svg" class="hidden dark:block w-full sm:w-[400px] lg:w-[460px] xl:w-[550px]" alt="">
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+
+    </main>
     <div class="overlay invisible opacity-0 fixed w-full h-full top-0 left-0 right-0 bg-black/40 z-40 transition-all"></div>
     <div class="app-overlay fixed hide md:backdrop-blur w-full h-full top-0 left-0 right-0 bg-black/40 z-40 transition-all"></div>
     <script src="assests/js/app.js"></script>
