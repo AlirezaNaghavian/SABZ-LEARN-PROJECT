@@ -40,6 +40,9 @@ module.exports = {
         secondary:"#4e81fb",
         navColor : "#32334D",
       },
+      boxShadow:{
+        "light" :"0 1px 60px rgba(0,0,0,5%)"
+      },
       spacing:{
         "25": "6.25rem"
       }
