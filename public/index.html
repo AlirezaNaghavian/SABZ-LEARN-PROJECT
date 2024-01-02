@@ -95,6 +95,9 @@
       <symbol id="play" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.347a1.125 1.125 0 0 1 0 1.972l-11.54 6.347a1.125 1.125 0 0 1-1.667-.986V5.653Z" />
       </symbol>
+      <symbol id="arrow-mini-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+        <path fill-rule="evenodd" d="M17 10a.75.75 0 0 1-.75.75H5.612l4.158 3.96a.75.75 0 1 1-1.04 1.08l-5.5-5.25a.75.75 0 0 1 0-1.08l5.5-5.25a.75.75 0 1 1 1.04 1.08L5.612 9.25H16.25A.75.75 0 0 1 17 10Z" clip-rule="evenodd" />
+      </symbol>
       
         
     
@@ -697,7 +700,30 @@
                 
             </div>
         </section>
+   <!-- course section -->
+   <section class="relative mt-[88px] sm:mt-40">
+    <!-- course title header -->
+    <div class="container">
+        <div class="flex items-center justify-between flex-wrap flex-col mb-10 sm:flex-row gap-4">
+            <div class="space-y-2.5 self-start">
+               <div class="flex items-center gap-x-2.5 sm:gap-x-3.5">
+                <span class="inline-block w-3.5 h-3.5 bg-amber-400 dark:bg-yellow-400 rounded-sm"></span>
+                <h3 class="text-zinc-700 dark:text-white font-DanaBold tex2xl sm:text-3xl">
+                    آخرین دوره ها
+                </h3>
 
+            </div> 
+            <P class="text-slate-500 dark:text-slate-400 sm:text-xl">سکوی پرتاپ شما به سمت موفقیت</P>
+            </div>
+            <a href="#" class="flex items-center self-end sm:self-auto gap-x-0.5 rounded-xl 
+            px-2.5 py-2 text-sky-500 hover:bg-sky-500/10 dark:text-secondary dark:hover:bg-secondary/10 transition-colors ">
+            <span class="font-DanaMedium">مشاهده همه دوره ها</span>
+            <svg class="w-5 h-5" ><use xlink:href="#arrow-mini-left"></use></svg>
+        </a>
+        </div>
+    </div>
+ 
+</section>
     </main>
     <div class="overlay invisible opacity-0 fixed w-full h-full top-0 left-0 right-0 bg-black/40 z-40 transition-all"></div>
     <div class="app-overlay fixed hide md:backdrop-blur w-full h-full top-0 left-0 right-0 bg-black/40 z-40 transition-all"></div>
