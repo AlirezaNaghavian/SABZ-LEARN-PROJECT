@@ -22,7 +22,7 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: "1rem",
-          sm: "0.625rem",
+          sm:"1.725rem",
         },
       },
       fontFamily: {
@@ -39,6 +39,9 @@ module.exports = {
         secondaryLight: "#4e81fb66",
         secondary:"#4e81fb",
         navColor : "#32334D",
+      },
+      boxShadow:{
+        "light" :"0 1px 60px rgba(0,0,0,5%)"
       },
       spacing:{
         "25": "6.25rem"
