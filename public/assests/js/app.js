@@ -94,5 +94,41 @@ window.addEventListener("load", checkTheme);
 getSwichTheme.forEach((themeBtn)=>{
 themeBtn.addEventListener("click",changeTheme)
 })
+// course-slider
+const swiper = new Swiper(".course_swiper", {
+  slidesPerView: 1,
+  spaceBetween: 10,
+  loop: true,
+  autoplay: {
+    delay: 1700,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".right-navigation-btn",
+    prevEl: ".left-navigation-btn",
+  },
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+      spaceBetween: 30,
+    },
+    640: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    1024: {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    },
+    1280: {
+      slidesPerView: 4,
+      spaceBetween: 20,
+    },
+  },
+});
 getOvralay.addEventListener("click", onClickOverlay);
 getSearchBox.addEventListener("click", showOverlaySearchBox);

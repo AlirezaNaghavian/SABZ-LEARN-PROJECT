@@ -140,3 +140,19 @@ overflow: hidden;
     background-image: conic-gradient(from 90deg, var(--tw-gradient-stops));
   }
 }
+.price-number::after{
+content: "";
+position: absolute;
+right: -3px;
+left: 0;
+top: 0;
+bottom: 0;
+margin: auto;
+width: 100%;
+height: 1px;
+z-index: 9999;
+background-color: rgb(195, 195, 195);
+}
+.swiper-slide .course{
+  @apply h-[410px]
+}
