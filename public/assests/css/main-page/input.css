@@ -132,4 +132,11 @@ overflow: hidden;
   .box-center{
     @apply flex justify-center items-center
   }
+  .bg-secondary-dark{
+    --tw-gradient-to: #3F6CD8 var(--tw-gradient-to-position);
+    --tw-gradient-to-position: ;
+  }
+  .bg-conic-gradient{
+    background-image: conic-gradient(from 90deg, var(--tw-gradient-stops));
+  }
 }
