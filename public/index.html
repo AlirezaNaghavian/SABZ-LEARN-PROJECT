@@ -125,6 +125,12 @@
     <symbol id="outline-chevron-right" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
       </symbol>
+      <symbol id="calender-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+      </symbol>
+      <symbol id="arrow-left-circle" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25Zm-4.28 9.22a.75.75 0 0 0 0 1.06l3 3a.75.75 0 1 0 1.06-1.06l-1.72-1.72h5.69a.75.75 0 0 0 0-1.5h-5.69l1.72-1.72a.75.75 0 0 0-1.06-1.06l-3 3Z" clip-rule="evenodd" />
+      </symbol>
       
     </svg>
     <!-- header-&-nav-bar-section -->
@@ -1417,7 +1423,7 @@
             </div>
         </section>
         <!-- lastest courses slider -->
-        <section class="course-slider relative mt-25 mb-25">
+        <section class="course-slider relative mt-25">
             <div class="container relative">
                 <!-- course title section -->
                 <div class="flex items-center justify-between flex-wrap flex-col mb-10 sm:flex-row gap-4">
@@ -1806,6 +1812,214 @@
                     </div>
                   </div>
                 </div>
+        </section>
+        <!-- blog section -->
+        <section class="relative mt-25">
+            <div class="container">
+                <!-- blog title section -->
+                <div class="flex items-center justify-between flex-wrap flex-col mb-10 sm:flex-row gap-4">
+                    <div class="space-y-2.5 self-start">
+                        <div class="flex items-center gap-x-2.5 sm:gap-x-3.5">
+                            <span class="object-before-main-title bg-pink-500 dark:bg-rose-500"></span>
+                            <h3 class="main-title-section">آخرین مقالات</h3> 
+                        </div>
+                        <p class="sub-main-title">مقالات بروز برنامه نویسی</p>
+                    </div>
+                    <a href="#" class="title-link">
+                       <span class="font-DanaMedium ">
+                        مشاهده همه مقالات
+                       </span>
+                        <svg class="h-5 w-5"><use xlink:href="#arrow-mini-left"></use></svg>
+                    </a>
+                </div>
+                <!-- blog grid content -->
+                <div class="grid grid-rows-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+                    <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">
+                        <!-- blog banner -->
+                        <div class="blog__banner relative h-[217px] overflow-hidden">
+                            <img src="assests/imges/blog/making-a-calculator-with-javascript-5-768x512.webp" alt="آموزش ساخت ماشین حساب با  جی اس" loading="lazy"
+                            class="block w-full h-full object-cover">
+                        </div>
+                        <!-- blog wrapper  -->
+                        <div class="flex flex-col gap-y-8 flex-grow px-5">
+                            <!-- blog card body -->
+                            <div class="relative pt-1.5 ">
+                                <!-- title -->
+                                <h4 class="font-DanaMedium max-h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                    <a href="#" >
+                                        آموزش ساخت ماشین حساب با جاوا اسکریپت
+                                    </a>
+                                </h4>
+                                <!-- blog description -->
+                                <p class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
+                                    در حوزه توسعه وب، جاوا اسکریپت به عنوان نوعی ابزار قدرتمند برای ایجاد تجربیات تعاملی و پویا برای کاربر عمل می‌کند. قابلیت ساخت ماشین حساب جاوا اسکریپت تطبیق‌پذیری این زبان…
+                                </p>
+                            </div>
+                            <!-- blog footer -->
+                            <div class="mt-auto space-y-4">
+                                <!-- date and author -->
+                                <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs ">
+                                    <div class="flex items-center gap-x-1 hover:text-baseColor transition-colors cursor-pointer">
+                                      <svg class="h-4 w-4"><use xlink:href="#card-user-icon"></use></svg> 
+                                      <a href="#" >کامل بهرامی</a>
+                                    </div>
+                                    <div class="flex items-center gap-x-1 ">
+                                        <svg class="h-4 w-4"><use xlink:href="#calender-icon"></use></svg>
+                                        <span class="data-numbers">1402/10/13</span>
+                                    </div>
+                                </div>
+                                <!-- link-address -->
+                                <div class="flex justify-center py-3.5 border-t border-t-gray-100 dark:border-gray-700">
+                                    <a href="#" class="text-zinc-700 flex justify-center items-end    dark:text-white hover:text-baseColor dark:hover:text-baseColor space-x-2.5 font-DanaMedium transition-colors">
+                                        <span class="">
+                                            مطالعه مقاله
+                                        </span>
+                                        <svg class="w-6 h-6"><use xlink:href="#arrow-left-circle"></use></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">
+                        <!-- blog banner -->
+                        <div class="blog__banner relative h-[217px] overflow-hidden">
+                            <img src="assests/imges/blog/what-is-django-11-768x512.webp" alt="جنگو چیست؟" loading="lazy"
+                            class="block w-full h-full object-cover">
+                        </div>
+                        <!-- blog wrapper  -->
+                        <div class="flex flex-col gap-y-8 flex-grow px-5 ">
+                            <!-- blog card body -->
+                            <div class="relative pt-1.5 ">
+                                <!-- title -->
+                                <h4 class="font-DanaMedium max-h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                    <a href="#" >
+                                        جنگو چیست؟
+                                    </a>
+                                </h4>
+                                <!-- blog description -->
+                                <p class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
+                                    طبق نظرسنجی سالیانه StackOverFlow، پایتون به عنوان دومین زبان برنامه‌نویسی محبوب در جهان شناخته می‌شود. استفاده از این زبان به دلیل همه منظوره بودن آن، در هرجایی امکان پذیر است.…
+                                </p>
+                            </div>
+                            <!-- blog footer -->
+                            <div class="mt-auto space-y-4">
+                                <!-- date and author -->
+                                <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs ">
+                                    <div class="flex items-center gap-x-1 hover:text-baseColor transition-colors cursor-pointer">
+                                      <svg class="h-4 w-4"><use xlink:href="#card-user-icon"></use></svg> 
+                                      <a href="#" >محمد رحمانیان</a>
+                                    </div>
+                                    <div class="flex items-center gap-x-1 ">
+                                        <svg class="h-4 w-4"><use xlink:href="#calender-icon"></use></svg>
+                                        <span class="data-numbers">1402/10/11</span>
+                                    </div>
+                                </div>
+                                <!-- link-address -->
+                                <div class="flex justify-center py-3.5 border-t border-t-gray-100 dark:border-gray-700">
+                                    <a href="#" class="text-zinc-700 flex justify-center items-end    dark:text-white hover:text-baseColor dark:hover:text-baseColor space-x-2.5 font-DanaMedium transition-colors">
+                                        <span class="">
+                                            مطالعه مقاله
+                                        </span>
+                                        <svg class="w-6 h-6"><use xlink:href="#arrow-left-circle"></use></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">
+                        <!-- blog banner -->
+                        <div class="blog__banner relative h-[217px] overflow-hidden">
+                            <img src="assests/imges/blog/Variables-in-Python-featuring-image-768x512.webp" alt="متغیرها در پایتون" loading="lazy"
+                            class="block w-full h-full object-cover">
+                        </div>
+                        <!-- blog wrapper  -->
+                        <div class="flex flex-col gap-y-8 flex-grow px-5 ">
+                            <!-- blog card body -->
+                            <div class="relative pt-1.5 ">
+                                <!-- title -->
+                                <h4 class="font-DanaMedium max-h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                    <a href="#" >
+                                        متغیرها در پایتون
+                                    </a>
+                                </h4>
+                                <!-- blog description -->
+                                <p class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
+                                    پایتون یک زبان برنامه‌نویسی واقعاً قدرتمنده. باهاش می‌تونی همه آرزوها و ایده‌های خلاقانه‌ات رو به حقیقت تبدیل کنی. واسه همین، الان می‌خوایم با یه قسمت جذاب تو پایتون آشنا بشیم،…
+                                </p>
+                            </div>
+                            <!-- blog footer -->
+                            <div class="mt-auto space-y-4">
+                                <!-- date and author -->
+                                <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs ">
+                                    <div class="flex items-center gap-x-1 hover:text-baseColor transition-colors cursor-pointer">
+                                      <svg class="h-4 w-4"><use xlink:href="#card-user-icon"></use></svg> 
+                                      <a href="#" >شقایق ستیه نیا</a>
+                                    </div>
+                                    <div class="flex items-center gap-x-1 ">
+                                        <svg class="h-4 w-4"><use xlink:href="#calender-icon"></use></svg>
+                                        <span class="data-numbers">1402/10/09</span>
+                                    </div>
+                                </div>
+                                <!-- link-address -->
+                                <div class="flex justify-center py-3.5 border-t border-t-gray-100 dark:border-gray-700">
+                                    <a href="#" class="text-zinc-700 flex justify-center items-end    dark:text-white hover:text-baseColor dark:hover:text-baseColor space-x-2.5 font-DanaMedium transition-colors">
+                                        <span class="">
+                                            مطالعه مقاله
+                                        </span>
+                                        <svg class="w-6 h-6"><use xlink:href="#arrow-left-circle"></use></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">
+                        <!-- blog banner -->
+                        <div class="blog__banner relative h-[217px] overflow-hidden">
+                            <img src="assests/imges/blog/The-best-foreign-freelance-sitesOrg-768x512.webp" alt="بهترین سایت های فریلنسری خارجی" loading="lazy"
+                            class="block w-full h-full object-cover">
+                        </div>
+                        <!-- blog wrapper  -->
+                        <div class="flex flex-col gap-y-8 flex-grow px-5 ">
+                            <!-- blog card body -->
+                            <div class="relative pt-1.5 ">
+                                <!-- title -->
+                                <h4 class="font-DanaMedium max-h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                    <a href="#" >
+                                        بهترین سایت های فریلنسری خارجی
+                                    </a>
+                                </h4>
+                                <!-- blog description -->
+                                <p class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
+                                    بررسی بهترین سایت های فریلنسری خارجی 2023 برای ایرانیان همیشه جذاب بوده ! افرادی که در ایران هستند همیشه به دنبال درامد دلاری بودند و این موضوع باعث شده که…
+                                    </p>
+                            </div>
+                            <!-- blog footer -->
+                            <div class="mt-auto space-y-4">
+                                <!-- date and author -->
+                                <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs ">
+                                    <div class="flex items-center gap-x-1 hover:text-baseColor transition-colors cursor-pointer">
+                                      <svg class="h-4 w-4"><use xlink:href="#card-user-icon"></use></svg> 
+                                      <a href="#" >محمد حسین نصرتی</a>
+                                    </div>
+                                    <div class="flex items-center gap-x-1 ">
+                                        <svg class="h-4 w-4"><use xlink:href="#calender-icon"></use></svg>
+                                        <span class="data-numbers">محمد حسین نصرتی</span>
+                                    </div>
+                                </div>
+                                <!-- link-address -->
+                                <div class="flex justify-center py-3.5 border-t border-t-gray-100 dark:border-gray-700">
+                                    <a href="#" class="text-zinc-700 flex justify-center items-end    dark:text-white hover:text-baseColor dark:hover:text-baseColor space-x-2.5 font-DanaMedium transition-colors">
+                                        <span class="">
+                                            مطالعه مقاله
+                                        </span>
+                                        <svg class="w-6 h-6"><use xlink:href="#arrow-left-circle"></use></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
     <div class="overlay invisible opacity-0 fixed w-full h-full top-0 left-0 right-0 bg-black/40 z-40 transition-all"></div>
