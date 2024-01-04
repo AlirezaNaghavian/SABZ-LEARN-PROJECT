@@ -859,10 +859,6 @@ video {
   margin-bottom: 0.625rem;
 }
 
-.mb-25 {
-  margin-bottom: 6.25rem;
-}
-
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -1418,6 +1414,11 @@ video {
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+}
+
+.bg-pink-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-r {
@@ -2018,8 +2019,14 @@ video {
   background-color: rgb(195, 195, 195);
 }
 
+/* set constant height for any type of card */
+
 .swiper-slide .course {
   height: 410px;
+}
+
+.\*\:justify-between > * {
+  justify-content: space-between;
 }
 
 .placeholder\:text-lg::-moz-placeholder {
@@ -2547,6 +2554,11 @@ video {
 
 :is(:where(.dark) .dark\:bg-yellow-400\/10) {
   background-color: rgb(250 204 21 / 0.1);
+}
+
+:is(:where(.dark) .dark\:bg-rose-500) {
+  --tw-bg-opacity: 1;
+  background-color: rgb(244 63 94 / var(--tw-bg-opacity));
 }
 
 :is(:where(.dark) .dark\:from-rose-500\/30) {

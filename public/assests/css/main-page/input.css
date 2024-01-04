@@ -153,6 +153,7 @@ height: 1px;
 z-index: 9999;
 background-color: rgb(195, 195, 195);
 }
+/* set constant height for any type of card */
 .swiper-slide .course{
   @apply h-[410px]
 }
