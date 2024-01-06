@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./public/**/*.{html,js}"],
+  content: [
+    "./public/**/*.{html,js}",
+  ],
+
   darkMode: "class",
   theme: {
     screens: {
@@ -22,7 +25,7 @@ module.exports = {
         center: true,
         padding: {
           DEFAULT: "1rem",
-          sm:"1.725rem",
+          sm: "1.725rem",
         },
       },
       fontFamily: {
@@ -37,17 +40,16 @@ module.exports = {
         grayTheme: "#1c1c28",
         baseColor: "#2ED573",
         secondaryLight: "#4e81fb66",
-        secondaryDark:"#3F6CD8",
-        secondary:"#4e81fb",
-        navColor : "#32334D",
-
+        secondaryDark: "#3F6CD8",
+        secondary: "#4e81fb",
+        navColor: "#32334D",
       },
-      boxShadow:{
-        "light" :"0 1px 60px rgba(0,0,0,5%)"
+      boxShadow: {
+        light: "0 1px 60px rgba(0,0,0,5%)",
       },
-      spacing:{
-        "25": "6.25rem"
-      }
+      spacing: {
+        25: "6.25rem",
+      },
     },
   },
   plugins: [
