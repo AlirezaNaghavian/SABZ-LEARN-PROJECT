@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* footer */
+.text-hover{
+    @apply transition-colors hover:text-baseColor
+  }

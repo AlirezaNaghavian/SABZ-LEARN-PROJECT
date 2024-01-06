@@ -123,6 +123,25 @@
   color: rgb(46 213 115);
 }
 
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* footer */
+
+.text-hover{
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.text-hover:hover{
+  --tw-text-opacity: 1;
+  color: rgb(46 213 115 / var(--tw-text-opacity));
+}
+
 /* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 
 /*
@@ -930,10 +949,6 @@ video {
 
 .top-full{
   top: 100%;
-}
-
-.-right-0{
-  right: -0px;
 }
 
 .z-10{
@@ -2273,19 +2288,6 @@ video {
 
 .bg-section-pattern {
   background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to right, #502ED6, #CD2F6A, #FFE354);
-}
-
-/* footer */
-
-.text-hover{
-  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
-}
-
-.text-hover:hover{
-  --tw-text-opacity: 1;
-  color: rgb(46 213 115 / var(--tw-text-opacity));
 }
 
 .placeholder\:text-lg::-moz-placeholder{
