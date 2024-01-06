@@ -188,3 +188,7 @@
 .bg-section-pattern {
   background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to right, #502ED6, #CD2F6A, #FFE354);
 }
+/* footer */
+.text-hover{
+  @apply transition-colors hover:text-baseColor
+}
