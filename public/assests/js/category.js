@@ -7,6 +7,9 @@ const bottomSheetItem = document.querySelectorAll(".bottom-sheet__item");
 const getCloseSortBtn =document.querySelector(".bottom-sheet__close-btn");
 const appOverlay  = document.querySelector(".app-overlay");
 const sortMobileBtn = document.getElementById("sort-btn");
+const getFitlerSheet= document.querySelector(".filter-sec");
+const filterBtn  = document.getElementById("filter-btn");
+const filterCloseBtn = document.querySelector(".filter__close-btn");
 const getSortBtn  = document.querySelectorAll(".sort-btn");
 const sortActivate = (event)=>{
     event.preventDefault(); 
@@ -44,12 +47,22 @@ const hideSortWindow = ()=>{
     appOverlay.classList.add("hide");
     appOverlay.classList.remove("show");
 }
+// show filter section
+const showFilterSheet = ()=>{
+    getFitlerSheet.classList.add("filter--open")
+}
+// hide filter section
+const hideFilterSheet = ()=>{
+    getFitlerSheet.classList.remove("filter--open") 
+}
 // clickable overlay
 const OnClickOverlay = ()=>{
     getbottomSheet.classList.remove("bottom-sheet--open")
     appOverlay.classList.add("hide");
     appOverlay.classList.remove("show");
 }
+filterCloseBtn.addEventListener("click",hideFilterSheet)
+filterBtn.addEventListener("click",showFilterSheet)
 appOverlay.addEventListener("click",OnClickOverlay)
 getCloseSortBtn.addEventListener("click",hideSortWindow)
 sortMobileBtn.addEventListener("click",showSortSheet)
