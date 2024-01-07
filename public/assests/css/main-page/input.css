@@ -1,5 +1,6 @@
 @import "../../components/nav_bar/_nav-bar.css";
 @import "../../components/footer/footer.css";
+@import "../category/category.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -43,7 +44,7 @@
 }
 @media screen and (min-width: 475px) and (max-width: 640px) {
   .container {
-    min-width: 475px;
+    min-width: 475px ;
   }
 }
 
