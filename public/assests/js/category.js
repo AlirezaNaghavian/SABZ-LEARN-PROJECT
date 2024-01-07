@@ -1,5 +1,7 @@
 import {NavBar} from "../components/nav_bar/_nav-bar.js"
+import {Footer} from "../components/footer/footer.js"
 window.customElements.define("navbar-tag",NavBar)
+window.customElements.define("footer-tg",Footer)
 const getbottomSheet = document.querySelector(".bottom-sheet");
 const bottomSheetItem = document.querySelectorAll(".bottom-sheet__item");
 const getCloseSortBtn =document.querySelector(".bottom-sheet__close-btn");
