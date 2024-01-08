@@ -583,7 +583,13 @@
   color: rgb(255 255 255);
 }
 
-/* progress */
+/* course content */
+
+.course_content p a{
+  text-decoration: underline;
+  --tw-text-opacity: 1;
+  color: rgb(56 189 248 / var(--tw-text-opacity))
+}
 
 /* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 
@@ -1460,6 +1466,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.mb-3\.5{
+  margin-bottom: 0.875rem;
+}
+
 .mb-4{
   margin-bottom: 1rem;
 }
@@ -1540,6 +1550,10 @@ video {
   margin-top: 0.875rem;
 }
 
+.mt-4{
+  margin-top: 1rem;
+}
+
 .mt-5{
   margin-top: 1.25rem;
 }
@@ -1570,14 +1584,6 @@ video {
 
 .mt-auto{
   margin-top: auto;
-}
-
-.mt-4{
-  margin-top: 1rem;
-}
-
-.mb-3\.5{
-  margin-bottom: 0.875rem;
 }
 
 .line-clamp-2{
@@ -1616,6 +1622,10 @@ video {
 
 .hidden{
   display: none;
+}
+
+.h-10{
+  height: 2.5rem;
 }
 
 .h-12{
@@ -1666,12 +1676,24 @@ video {
   height: 2.25rem;
 }
 
+.h-\[\.625rem\]{
+  height: .625rem;
+}
+
 .h-\[168px\]{
   height: 168px;
 }
 
+.h-\[190px\]{
+  height: 190px;
+}
+
 .h-\[217px\]{
   height: 217px;
+}
+
+.h-\[3\.5rem\]{
+  height: 3.5rem;
 }
 
 .h-\[30px\]{
@@ -1684,6 +1706,10 @@ video {
 
 .h-\[38px\]{
   height: 38px;
+}
+
+.h-\[60px\]{
+  height: 60px;
 }
 
 .h-\[68px\]{
@@ -1706,20 +1732,12 @@ video {
   height: 100vh;
 }
 
-.h-\[\.625rem\]{
-  height: .625rem;
-}
-
-.h-\[\]{
-  height: ;
-}
-
-.h-\[60px\]{
-  height: 60px;
-}
-
 .max-h-12{
   max-height: 3rem;
+}
+
+.max-h-\[800px\]{
+  max-height: 800px;
 }
 
 .w-1\/2{
@@ -1732,6 +1750,14 @@ video {
 
 .w-14{
   width: 3.5rem;
+}
+
+.w-2{
+  width: 0.5rem;
+}
+
+.w-2\.5{
+  width: 0.625rem;
 }
 
 .w-20{
@@ -1790,12 +1816,21 @@ video {
   width: 38px;
 }
 
+.w-\[60px\]{
+  width: 60px;
+}
+
 .w-\[62px\]{
   width: 62px;
 }
 
 .w-\[81px\]{
   width: 81px;
+}
+
+.w-fit{
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
 .w-full{
@@ -1805,10 +1840,6 @@ video {
 .w-min{
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-\[60px\]{
-  width: 60px;
 }
 
 .max-w-\[1920px\]{
@@ -1997,6 +2028,11 @@ video {
 .gap-x-3{
   -moz-column-gap: 0.75rem;
        column-gap: 0.75rem;
+}
+
+.gap-x-3\.5{
+  -moz-column-gap: 0.875rem;
+       column-gap: 0.875rem;
 }
 
 .gap-x-4{
@@ -2212,6 +2248,10 @@ video {
   background-color: rgb(46 213 115 / var(--tw-bg-opacity));
 }
 
+.bg-baseColor\/75{
+  background-color: rgb(46 213 115 / 0.75);
+}
+
 .bg-black\/40{
   background-color: rgb(0 0 0 / 0.4);
 }
@@ -2280,6 +2320,11 @@ video {
   background-color: rgb(14 165 233 / 0.1);
 }
 
+.bg-sky-600{
+  --tw-bg-opacity: 1;
+  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
+}
+
 .bg-transparent{
   background-color: transparent;
 }
@@ -2293,32 +2338,16 @@ video {
   background-color: rgb(255 255 255 / 0.3);
 }
 
-.bg-red-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
-}
-
-.bg-sky-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(2 132 199 / var(--tw-bg-opacity));
-}
-
-.bg-sky-800{
-  --tw-bg-opacity: 1;
-  background-color: rgb(7 89 133 / var(--tw-bg-opacity));
-}
-
-.bg-sky-700{
-  --tw-bg-opacity: 1;
-  background-color: rgb(3 105 161 / var(--tw-bg-opacity));
-}
-
 .bg-gradient-to-b{
   background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-r{
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
+}
+
+.bg-gradient-to-t{
+  background-image: linear-gradient(to top, var(--tw-gradient-stops));
 }
 
 .bg-gradient-to-tr{
@@ -2382,6 +2411,12 @@ video {
 .from-sky-500\/30{
   --tw-gradient-from: rgb(14 165 233 / 0.3) var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(14 165 233 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
+}
+
+.from-white{
+  --tw-gradient-from: #fff var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(255 255 255 / 0) var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
@@ -2471,10 +2506,6 @@ video {
   padding: 1px;
 }
 
-.p-10{
-  padding: 2.5rem;
-}
-
 .px-1{
   padding-left: 0.25rem;
   padding-right: 0.25rem;
@@ -2493,6 +2524,16 @@ video {
 .px-2\.5{
   padding-left: 0.625rem;
   padding-right: 0.625rem;
+}
+
+.px-3{
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.px-3\.5{
+  padding-left: 0.875rem;
+  padding-right: 0.875rem;
 }
 
 .px-4{
@@ -2558,16 +2599,6 @@ video {
 .py-\[12px\]{
   padding-top: 12px;
   padding-bottom: 12px;
-}
-
-.px-3{
-  padding-left: 0.75rem;
-  padding-right: 0.75rem;
-}
-
-.px-3\.5{
-  padding-left: 0.875rem;
-  padding-right: 0.875rem;
 }
 
 .pb-2{
@@ -2676,10 +2707,6 @@ video {
 
 .text-right{
   text-align: right;
-}
-
-.text-start{
-  text-align: start;
 }
 
 .font-Dana{
@@ -3114,11 +3141,6 @@ video {
   position: relative;
 }
 
-.child\:mx-auto>*{
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .child\:cursor-pointer>*{
   cursor: pointer;
 }
@@ -3126,10 +3148,6 @@ video {
 .child\:px-7>*{
   padding-left: 1.75rem;
   padding-right: 1.75rem;
-}
-
-.child\:text-center>*{
-  text-align: center;
 }
 
 .child\:text-base>*{
@@ -3234,6 +3252,10 @@ video {
 
   .sm\:mt-40{
     margin-top: 10rem;
+  }
+
+  .sm\:mt-5{
+    margin-top: 1.25rem;
   }
 
   .sm\:mt-6{
@@ -3447,6 +3469,19 @@ video {
     padding-right: 4rem;
   }
 
+  .md\:px-5{
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .md\:pb-6{
+    padding-bottom: 1.5rem;
+  }
+
+  .md\:pt-7{
+    padding-top: 1.75rem;
+  }
+
   .md\:text-right{
     text-align: right;
   }
@@ -3598,6 +3633,11 @@ video {
     text-align: right;
   }
 
+  .lg\:text-3xl{
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
   .lg\:text-5xl{
     font-size: 3rem;
     line-height: 1;
@@ -3616,6 +3656,10 @@ video {
   .lg\:text-xl\/8{
     font-size: 1.25rem;
     line-height: 2rem;
+  }
+
+  .lg\:leading-9{
+    line-height: 2.25rem;
   }
 
   .lg\:leading-\[96px\]{
@@ -3833,6 +3877,12 @@ video {
 
 :is(:where(.dark) .dark\:bg-yellow-400\/10){
   background-color: rgb(250 204 21 / 0.1);
+}
+
+:is(:where(.dark) .dark\:from-gray-800){
+  --tw-gradient-from: #1f2937 var(--tw-gradient-from-position);
+  --tw-gradient-to: rgb(31 41 55 / 0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 :is(:where(.dark) .dark\:from-rose-500\/30){
