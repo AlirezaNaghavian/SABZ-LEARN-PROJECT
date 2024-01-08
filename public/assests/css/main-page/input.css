@@ -1,6 +1,7 @@
 @import "../../components/nav_bar/_nav-bar.css";
 @import "../../components/footer/footer.css";
 @import "../category/category.css";
+@import "../course/course.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
