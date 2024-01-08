@@ -7,7 +7,7 @@
   height: 50px;
   width: 100%;
   align-items: center;
-  overflow-x: scroll;
+  overflow-x: auto;
   overflow-y: hidden;
   border-radius: 1rem;
   --tw-bg-opacity: 1;
@@ -68,4 +68,21 @@
 :is(.dark .breadcrumb__item)::before {
   --tw-bg-opacity: 1;
   background-color: rgb(28 28 40);
+}
+/* course info */
+.button-xl {
+    @apply font-DanaBold;
+    height: 62px;
+    -moz-column-gap: 0.625rem;
+    column-gap: 0.625rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+.button-primary {
+    --tw-bg-opacity: 1;
+    background-color: rgb(36, 182, 97);
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255);
 }
