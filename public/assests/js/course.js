@@ -5,6 +5,11 @@ const courseContentShadow = document.getElementsByClassName("course-content-shad
 const getexpandTitle =  document.getElementsByClassName("expand-title")[0] 
 const getchevronIcon =  document.getElementsByClassName("chevron-icon")[0]
 const expandBtn = document.getElementById("expand-btn");
+const topicName = document.getElementsByClassName("topic-name")[0];
+const topicIcon = document.querySelector(".topic-name svg")
+const topicBody = document.getElementsByClassName("topic-body")[0];
+
+// expan more details
 let descOpen = false
 const expandDescription = ()=>{
     if (descOpen) {
@@ -22,8 +27,24 @@ const expandDescription = ()=>{
         descOpen = true
     }
 }
+let topicOpen = false
+const openCourseSeessions = ()=>{
+    if (topicOpen) {
+        topicName.classList.add("topic__name--active")
+        topicIcon.classList.add("rotate-180");
+        topicBody.style.cssText = "max-height : fit-content"
+        topicOpen = false
+    } else {
+        topicName.classList.remove("topic__name--active")
+        topicIcon.classList.remove("rotate-180");
+        topicBody.style.cssText = "max-height : 0px"
+        topicOpen = true
+    }
 
 
+}
 
+
+topicName.addEventListener("click",openCourseSeessions)
 expandBtn.addEventListener("click",expandDescription)
 window.customElements.define("navbar-tag",NavBar)

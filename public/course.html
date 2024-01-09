@@ -38,6 +38,10 @@
             <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
             </symbol>
+            <symbol id="play-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.91 11.672a.375.375 0 010 .656l-5.603 3.113a.375.375 0 01-.557-.328V8.887c0-.286.307-.466.557-.327l5.603 3.112z"></path>
+            </symbol>
     </svg>
 
      <header class="dark:border-b dark:border-b-gray-700 bg-white  dark:bg-grayTheme">
@@ -245,6 +249,55 @@
                             <svg class="shrink-0 w-5 h-5 chevron-icon"><use xlink:href="#chevron-down"></use></svg>
                         </button>
                     </div>
+                    <!-- course topics -->
+                    <div id="lessons" class="bg-white dark:bg-gray-800 ps-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-light dark:shadow-none rounded-2xl mt-4 sm:mt-5">
+                        <!-- topic title -->
+                        <div class="flex items-center justify-between px-5 flex-wrap mb-5">
+                            <div class="flex items-center gap-x-3.5">
+                                <!-- solid object -->
+                                <span class="block w-2.5 h-10 bg-sky-500 dark:bg-secondary rounded-sm"></span>
+                                <h3 class=" text-zinc-700 dark:text-white font-Morabba_bold text-2xl md:text-3xl">سرفصل های دوره</h3>
+                            </div>
+                            <!-- course whole time -->
+                            <div class="text-zinc-700 dark:text-white">17:00</div>
+                        </div>
+                        <!-- drop-down-coures lists -->
+                        <div class="course-topics space-y-2.5 px-5 ">
+                           <div class="topic   overflow-hidden">
+                            <div class="topic-name  bg-[#f3f4f6] dark:bg-grayTheme dark:hover:bg-[#2e2f52] md:h-[75px] px-5  rounded-xl ">
+                                <h3 class="font-MorabbaMedium text-base md:text-xl text-zinc-700 dark:text-white">
+                                    <span>معرفی</span>
+
+                                </h3>
+                                <svg class="w-5 h-5 sm:w-6 sm:h-6 text-zinc-700 dark:text-white transition-transform">
+                                    <use xlink:href="#chevron-down"></use>
+                                </svg>
+                            </div>
+                            <div class="topic-body">
+                                <div class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group ">
+                                    <!-- course-session-title -->
+                                    <a href="#" class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+                                        <span class="flex items-center justify-center shrink-0 w-5 h-5
+                                          md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
+                                           dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
+                                        1
+                                        </span>
+                                        <h4 class="text-zinc-700 dark:text-white group-hover:text-baseColor text-sm md:text-lg transition-colors">معرفی دوره + بررسی اجمالی پروژه ها</h4>
+                                    </a>
+                                    <div class="flex items-center  w-full justify-between">
+                                        <span class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 dark:bg-slate-600 text-zinc-700
+                                         dark:text-white group-hover:bg-baseColor/10 group-hover:text-baseColor text-xs rounded transition-colors">جلسه رایگان</span>
+                                         <div class="flex items-center gap-x-1.5 md:gap-x-2">
+                                            <span class="text-slate-500 dark:text-gray-500 text-sm md:text-lg">17:00:00</span>
+                                            <svg class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 dark:text-white group-hover:text-baseColor transition-colors"><use xlink:href="#play-circle"></use></svg>
+                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                           </div> 
+                        </div>
+                    </div>
+                    
                 </div>
             </section>
         </div>
