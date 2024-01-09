@@ -45,6 +45,9 @@
             <symbol id="reply" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="20" viewBox="0 0 24 20">
                 <path d="M10,7V2.75a.75.75,0,0,0-1.272-.538l-8.5,8.25a.749.749,0,0,0,0,1.076l8.5,8.25A.75.75,0,0,0,10,19.25V15h1.418a12.753,12.753,0,0,1,11.153,6.572l.021.038a.751.751,0,0,0,.658.39.74.74,0,0,0,.186-.023A.75.75,0,0,0,24,21.25,14.267,14.267,0,0,0,10,7Z" transform="translate(0 -2)"></path>
             </symbol>
+            <symbol id="clipboard-document" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z"></path>
+            </symbol>
     </svg>
 
      <header class="dark:border-b dark:border-b-gray-700 bg-white  dark:bg-grayTheme">
@@ -391,6 +394,62 @@
                          </button>
                     </div>
                 </div>
+                <!-- aside course info -->
+                <aside class="w-80 xl:w-96 shrink-0 sticky top-5 space-y-5">
+                    <!-- student & rating & progress -->
+                    <div class="hidden lg:block bg-white dark:bg-gray-800  p-5 shadow-light dark:shadow-none  rounded-2xl">
+                        <div class="flex gap-5">
+                            <div class="flex items-center justify-between flex-grow  bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+                                <svg class="w-8 h-8 text-baseColor"><use xlink:href="#users-fill"></use></svg>
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">316</span>
+                                    <p class="text-slate-500 dark:text-gray-500 text-sm">دانشجو</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-between flex-grow  bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+                                <svg class="w-8 h-8 text-amber-400 dark:text-yellow-400"><use xlink:href="#star-fill"></use></svg>
+                                <div class="flex flex-col items-center justify-center">
+                                    <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">5.0</span>
+                                    <p class="text-slate-500 dark:text-gray-500 text-sm">رضایت</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- progress bar -->
+                        <div class="mt-5">
+                            <div class="flex items-center justify-between mb-4 text-zinc-700 dark:text-white text-xl">
+                                <span>درصد تکمیل دوره</span>
+                                <span>100%</span>
+
+                            </div>
+                            <progress class="w-full h-[.625rem] py-[5px] bg-secondary rounded-4xl" value="100" max="100"></progress>
+                        </div>
+                    </div>
+                    <!-- course teacher -->
+                    <div class="hidden lg:block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl text-center">
+                        <img src="assests/imges/teacher-profile/5872841a47b10069777793cbce83eacf.png" class="block mx-auto mb-2 w-[90px] h-[90px] rounded-full" alt="">
+                        <h4 class="text-zinc-700 dark:text-white text-2xl mb-1">حمید رضا عبادی</h4>
+                        <a href="#" class="flex items-center justify-center gap-x-2.5 text-slate-500 dark:text-gray-500 text-sm">
+                            <span>مدرس دوره</span>
+                            <svg class="w-5 h-5"><use xlink:href="#arrow-right-on-rectangle"></use></svg>
+                        </a>
+                        <p class="text-zinc-700 dark:text-white font-Dana mt-2.5">توسعه دهنده فرانت سبزلرن</p>
+                    </div>
+                    <!-- course short link -->
+                    <div class="hidden lg:block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl">
+                        <span class="flex items-center gap-x-2.5 text-zinc-700 mb-5 -mr-5 dark:text-white font-DanaBold text-2xl">
+                            <!-- solid objec -->
+                            <span class="block w-7 h-2 bg-sky-500 dark:bg-secondary rounded-l-sm"></span>
+                            <span>لینک کوتاه</span>
+
+                        </span>
+                        <div class="flex gap-x-2.5 items-center justify-between px-4 h-[65px] text-slate-500 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 border border-dashed border-gray-600/30 rounded-xl">
+                          <button >
+                            <svg class="w-6 h-6"><use xlink:href="#clipboard-document"></use></svg>
+                          </button>  
+                          <span class="text-xl truncate " dir="ltr">https://sabzlearn.ir/?p=2860</span>
+                        </div>
+                    </div>
+                </aside>
             </section>
         </div>
     </main>
