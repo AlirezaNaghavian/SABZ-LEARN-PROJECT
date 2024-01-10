@@ -2,6 +2,7 @@
 @import "../../components/footer/footer.css";
 @import "../category/category.css";
 @import "../course/course.css";
+@import "../sign-up_&_login/login.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
