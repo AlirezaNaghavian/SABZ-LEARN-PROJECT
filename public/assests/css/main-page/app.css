@@ -1861,6 +1861,10 @@ video {
   height: 38px;
 }
 
+.h-\[50px\]{
+  height: 50px;
+}
+
 .h-\[60px\]{
   height: 60px;
 }
@@ -1895,10 +1899,6 @@ video {
 
 .h-screen{
   height: 100vh;
-}
-
-.h-\[50px\]{
-  height: 50px;
 }
 
 .max-h-12{
@@ -2005,6 +2005,10 @@ video {
   width: 38px;
 }
 
+.w-\[50px\]{
+  width: 50px;
+}
+
 .w-\[60px\]{
   width: 60px;
 }
@@ -2037,14 +2041,6 @@ video {
 .w-min{
   width: -moz-min-content;
   width: min-content;
-}
-
-.w-\[\]{
-  width: ;
-}
-
-.w-\[50px\]{
-  width: 50px;
 }
 
 .max-w-\[1920px\]{
@@ -2880,11 +2876,6 @@ video {
   padding-bottom: 5px;
 }
 
-.px-10{
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
-}
-
 .pb-2{
   padding-bottom: 0.5rem;
 }
@@ -3005,10 +2996,6 @@ video {
   text-align: right;
 }
 
-.text-start{
-  text-align: start;
-}
-
 .font-Dana{
   font-family: Dana;
 }
@@ -3090,6 +3077,10 @@ video {
   line-height: 1.75rem;
 }
 
+.leading-8{
+  line-height: 2rem;
+}
+
 .leading-\[1px\]{
   line-height: 1px;
 }
@@ -3120,10 +3111,6 @@ video {
 
 .leading-tight{
   line-height: 1.25;
-}
-
-.leading-8{
-  line-height: 2rem;
 }
 
 .tracking-tight{
@@ -3400,6 +3387,10 @@ video {
   background-color: rgb(46 213 115 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-baseColor\/90:hover{
+  background-color: rgb(46 213 115 / 0.9);
+}
+
 .hover\:bg-gray-100:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
@@ -3422,22 +3413,6 @@ video {
 
 .hover\:bg-transparent:hover{
   background-color: transparent;
-}
-
-.hover\:bg-baseColor\/60:hover{
-  background-color: rgb(46 213 115 / 0.6);
-}
-
-.hover\:bg-baseColor\/30:hover{
-  background-color: rgb(46 213 115 / 0.3);
-}
-
-.hover\:bg-baseColor\/80:hover{
-  background-color: rgb(46 213 115 / 0.8);
-}
-
-.hover\:bg-baseColor\/90:hover{
-  background-color: rgb(46 213 115 / 0.9);
 }
 
 .hover\:text-baseColor:hover{
@@ -3575,10 +3550,6 @@ video {
     justify-content: space-between;
   }
 
-  .xs\:gap-y-2{
-    row-gap: 0.5rem;
-  }
-
   .xs\:gap-y-4{
     row-gap: 1rem;
   }
@@ -3610,10 +3581,6 @@ video {
 
   .sm\:mb-0{
     margin-bottom: 0px;
-  }
-
-  .sm\:mb-10{
-    margin-bottom: 2.5rem;
   }
 
   .sm\:mb-3{
@@ -3656,6 +3623,10 @@ video {
     margin-top: 0.875rem;
   }
 
+  .sm\:mt-4{
+    margin-top: 1rem;
+  }
+
   .sm\:mt-40{
     margin-top: 10rem;
   }
@@ -3666,14 +3637,6 @@ video {
 
   .sm\:mt-6{
     margin-top: 1.5rem;
-  }
-
-  .sm\:mt-4{
-    margin-top: 1rem;
-  }
-
-  .sm\:mt-9{
-    margin-top: 2.25rem;
   }
 
   .sm\:inline{
@@ -3854,13 +3817,13 @@ video {
     line-height: 1;
   }
 
-  .sm\:text-xl{
-    font-size: 1.25rem;
+  .sm\:text-lg{
+    font-size: 1.125rem;
     line-height: 1.75rem;
   }
 
-  .sm\:text-lg{
-    font-size: 1.125rem;
+  .sm\:text-xl{
+    font-size: 1.25rem;
     line-height: 1.75rem;
   }
 

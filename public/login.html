@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="fa" dir="rtl" class="h-full ">
+<html lang="fa" dir="ltr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ثبت نام - سبزلرن</title>
+    <title>ورود - سبزلرن</title>
     <link rel="stylesheet" href="assests/css/main-page/app.css">
     <link rel="stylesheet" href="assests/css/sign-up_&_login/login.css">
 </head>
@@ -47,95 +47,92 @@
             <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"></path>
         </symbol>
     </svg>
-    <div class="container flex items-center justify-center min-h-screen">
-        <div class="w-full   xs:w-[25rem] px-5 xs:p-0">
-            <!-- sabzlearn logo -->
-            <div class="flex items-center  justify-center gap-x-2.5 mb-7 ">
-                <img src="assests/imges/logos/logo-login.webp" class=" h-[67px] w-[104px]" alt="سبزلرن">
-                <svg class="w-[143px] h-[67px] "><use xlink:href="#logo-type"></use></svg>
-            </div>
-            <!-- page body -->
-            <div class="relative p-7 sm:px-8 sm:py-9 bg-white dark:bg-gray-800/60 shadow-light dark:shadow-none rounded-2xl">
-                <!-- user data inputs -->
-                <div class="user-data">
-                    <div class="text-center mb-7 sm:mb-9">
-                        <h2 class="font-MorabbaMedium text-zinc-700 dark:text-white text-3xl mb-2 sm:mb-3">عضویت</h2>
-                        <span class="help-alert font-Dana text-lg text-slate-500 dark:text-gray-500">
-                            <span>
-                                قبلا ثبت نام کرده‌اید؟
-                                </span>
-                                <a href="login.html" class="text-baseColor hover:text-green-500 transition-colors">وارد شوید</a>
-                        </span>
-                    </div>
-                    <!-- userdata form -->
-                    <form class="user-data__form xs:gap-y-4 md:gap-y-0 flex flex-col">
-                        <input type="hidden" id="after_url" value="https://sabzlearn.ir/">
-                        <!-- inputs -->
-                        <div class="space-y-2.5 sm:space-y-3.5">
-                            <div class="relative ">
-                                <input type="text" class="user-data__username en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="نام کاربری" autofocus>
-                                <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#user"></use></svg>
-                            </div>
-                            <div class="relative ">
-                                <input type="text" class="user-data__phoneNumber en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="شماره موبایل" inputmode="tel">
-                                <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#phone"></use></svg>
-                            </div>
-                            <div class="relative ">
-                                <input type="email" class="user-data__email en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="آدرس ایمیل" formnovalidate inputmode="email">
-                                <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#envelope"></use></svg>
-                            </div>
-                            <div class="relative ">
-                                <input type="password" class="user-data__password en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="رمز عبور">
-                                <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#lock"></use></svg>
-                            </div>
-                        </div>
-                        <button class="user-data__submit h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold" type="submit">ادامه</button>
-                    </form>
-                    <!-- opt section -->
-                    <div class="otp hidden">
-                        <div class="text-center mb-7 sm:mb-9">
-                            <h2 class="font-Morabba_bold text-zinc-700 dark:text-white text-3xl sm:mb-3">کد تایید</h2>
-
-                        </div>
-                        <form class="otp__form">
-                            <div class="flex justify-center gap-x-2.5" dir="ltr">
-                                <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
-                                <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
-                                <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
-                                <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
-                                <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
-                            </div>
-                            <p class="text-slate-500 dark:text-gray-500 text-lg font-Dana mb-1 mt-5 sm:mt-6 ">
-                                <span>کد تایید برای</span>
-                                <span class="font-Dana otp-phone__text"></span>
-                                <span>ارسال شد.</span>
-                            </p>
-                            <button type="submit" class="otp-submit  h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold">تایید</button>
-                        </form>
-                        <div class="flex justify-between mt-4 text-sm text-slate-500 dark:text-slate-400 tracking-tight" style="margin-bottom: -10px;">
-                        <a href="#" >حریم خصوصی</a>
-                        <button class="user-otp__resend outline-none cursor-pointer" type="button">
-                            <span>ارسال دوباره</span>
-                            <span class="timer hidden">
-                                 (
-                                <span class="minutes">00</span>
-                                :
-                                <span class="seconds">00</span>
-                                )
+<div class="container flex items-center justify-center min-h-screen">
+    <div class="w-full   xs:w-[25rem] px-5 xs:p-0">
+          <!-- sabzlearn logo -->
+          <div class="flex items-center  justify-center gap-x-2.5 mb-7 ">
+            <img src="assests/imges/logos/logo-login.webp" class=" h-[67px] w-[104px]" alt="سبزلرن">
+            <svg class="w-[143px] h-[67px] "><use xlink:href="#logo-type"></use></svg>
+        </div>
+        <!-- page body -->
+        <div class="relative p-7 sm:px-8 sm:py-9 bg-white dark:bg-gray-800/60 shadow-light dark:shadow-none rounded-2xl">
+            <!-- user data inputs -->
+            <div class="user-data">
+                <div class="text-center mb-7 sm:mb-9">
+                    <h2 class="font-MorabbaMedium text-zinc-700 dark:text-white text-3xl mb-2 sm:mb-3">عضویت</h2>
+                    <span class="help-alert font-Dana text-lg text-slate-500 dark:text-gray-500">
+                        <span>
+                            حساب کاربری ندارید؟
                             </span>
-                        </button>
+                            <a href="sign-up.html" class="text-baseColor hover:text-green-500 transition-colors">ثبت نام</a>
+                    </span>
+                </div>
+                <!-- userdata form -->
+                <form class="user-data__form xs:gap-y-4 md:gap-y-0 flex flex-col">
+                    <input type="hidden" id="after_url" value="https://sabzlearn.ir/">
+                    <!-- inputs -->
+                    <div class="space-y-2.5 sm:space-y-3.5">
+                       
+                        <div class="relative ">
+                            <input type="text" class="user-data__phoneNumber en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="شماره موبایل" inputmode="tel">
+                            <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#phone"></use></svg>
+                        </div>
+                        <div class="relative hidden">
+                            <input type="email" class="user-data__email en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="آدرس ایمیل" formnovalidate inputmode="email">
+                            <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#envelope"></use></svg>
+                        </div>
+                        <div class="relative hidden">
+                            <input type="password" class="user-data__password en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="رمز عبور">
+                            <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#lock"></use></svg>
                         </div>
                     </div>
-                    <!-- term and condition -->
-                    <p class="mt-4 sm:mt-6 font-Dana sm:text-lg text-center text-slate-500 dark:text-gray-500 ">
-                        <span>با عضویت در سایت، تمامی</span>
-                        <a href="#" class="text-baseColor hover:text-green-500 transition-colors">قوانین و شرایط</a>
-                        <span>استفاده از خدمت سبزلرن را پذیرفته اید.</span>
-                    </p>
+                    <button class="user-data__submit h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold" type="submit">تایید</button>
+                </form>
+                <!-- opt section -->
+                <div class="otp hidden">
+                    <div class="text-center mb-7 sm:mb-9">
+                        <h2 class="font-Morabba_bold text-zinc-700 dark:text-white text-3xl sm:mb-3">کد تایید</h2>
+
+                    </div>
+                    <form class="otp__form">
+                        <div class="flex justify-center gap-x-2.5" dir="ltr">
+                            <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
+                            <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
+                            <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
+                            <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
+                            <input class="w-[50px] h-[50px] rounded-md leading-8 text-2xl text-center" type="text" inputmode="numeric" min="0" max="9" maxlength="1">
+                        </div>
+                        <p class="text-slate-500 dark:text-gray-500 text-lg font-Dana mb-1 mt-5 sm:mt-6 ">
+                            <span>کد تایید برای</span>
+                            <span class="font-Dana otp-phone__text"></span>
+                            <span>ارسال شد.</span>
+                        </p>
+                        <button type="submit" class="otp-submit  h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold">تایید</button>
+                    </form>
+                    <div class="flex justify-between mt-4 text-sm text-slate-500 dark:text-slate-400 tracking-tight" style="margin-bottom: -10px;">
+                    <a href="#" >حریم خصوصی</a>
+                    <button class="user-otp__resend outline-none cursor-pointer" type="button">
+                        <span>ارسال دوباره</span>
+                        <span class="timer hidden">
+                             (
+                            <span class="minutes">00</span>
+                            :
+                            <span class="seconds">00</span>
+                            )
+                        </span>
+                    </button>
+                    </div>
                 </div>
+                <div class="flex justify-between mt-4 text-sm text-slate-500 dark:text-slate-400 tracking-tight" style="margin-bottom: -10px;">
+                    <a href="#" >حریم خصوصی</a>
+                    <button class="user-otp__resend outline-none cursor-pointer" type="button">
+                      <a href="#" class="">ورود با ایمیل</a>
+                    </button>
+                    </div>
             </div>
         </div>
     </div>
+</div>
 
     <script src="assests/js/sign-up&login.js"></script>
 </body>
