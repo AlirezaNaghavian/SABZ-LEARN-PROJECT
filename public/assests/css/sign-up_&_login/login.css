@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.en-value{
+    text-align:  right;
+    direction: rtl;
+
+}
+:is(.dark input) {
+    --tw-bg-opacity: 1;
+    background-color: rgb(50 51 77 / var(--tw-bg-opacity));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+input {
+    height: 3rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    border-width: 1px;
+    border-color: transparent;
+    --tw-bg-opacity: 1;
+    background-color: rgb(243 244 246);
+    /* padding-left: 0.75rem;
+    padding-right: 0.75rem; */
+    @apply font-Dana;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: -0.025em;
+    --tw-text-opacity: 1;
+    color: rgb(63 63 70 / var(--tw-text-opacity));
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+    outline: none;
+}
