@@ -1,5 +1,5 @@
 import {NavBar} from "../components/nav_bar/_nav-bar.js"
-
+import {Footer} from "../components/footer/footer.js"
 const getCourseContentDesc = document.getElementsByClassName("course_content")[0];
 const courseContentShadow = document.getElementsByClassName("course-content-shadow")[0];
 const getchevronIcon =  document.getElementsByClassName("chevron-icon")[0]
@@ -56,5 +56,6 @@ replyBtn.addEventListener("click",replyUserComment)
 cancelCommentBtn.addEventListener("click",cancelSendComment)
 addCommentBtn.addEventListener("click",addComment)
 expandBtn.addEventListener("click",expandDescription)
+window.customElements.define("footer-tg",Footer)
 window.customElements.define("navbar-tag", NavBar)
 
