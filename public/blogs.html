@@ -48,6 +48,9 @@
             <symbol id="clipboard-document" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.057 1.123-.08M15.75 18H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08M15.75 18.75v-1.875a3.375 3.375 0 00-3.375-3.375h-1.5a1.125 1.125 0 01-1.125-1.125v-1.5A3.375 3.375 0 006.375 7.5H5.25m11.9-3.664A2.251 2.251 0 0015 2.25h-1.5a2.251 2.251 0 00-2.15 1.586m5.8 0c.065.21.1.433.1.664v.75h-6V4.5c0-.231.035-.454.1-.664M6.75 7.5H4.875c-.621 0-1.125.504-1.125 1.125v12c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V16.5a9 9 0 00-9-9z"></path>
             </symbol>
+            <symbol id="triangle" fill="currentColor" xmlns="http://www.w3.org/2000/svg" width="11.111" height="12" viewBox="0 0 11.111 12">
+                <path d="M4.24,3.259a2,2,0,0,1,3.52,0l2.647,4.9a2,2,0,0,1-1.76,2.95H3.353a2,2,0,0,1-1.76-2.95Z" transform="translate(0 12) rotate(-90)"></path>
+            </symbol>
     </svg>
 <header class="dark:border-b dark:border-b-gray-700 bg-white  dark:bg-grayTheme">
     <navbar-tag></navbar-tag>
@@ -242,10 +245,79 @@
                 </div>
             </section>
             <!-- left side -->
+            <aside class="hidden lg:block col-span-1 w-[300px] xl:w-96  space-y-5">
+                <!-- short link blog -->
+                <div class="hidden lg:block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl">
+                    <span class="flex items-center gap-x-2.5 text-zinc-700 mb-5 -mr-5 dark:text-white font-DanaBold text-2xl">
+                        <span class="block w-7 h-2 bg-amber-400 dark:bg-yellow-400 rounded-l-sm"></span>
+                        لینک کوتاه:
+                    </span>
+                        <div class="flex gap-x-2.5 items-center justify-between px-4 h-[65px] text-slate-500 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 border border-dashed border-gray-600/30 rounded-xl">
+                            <button>
+                                <svg class="w-6 h-6">
+                                    <use xlink:href="#clipboard-document"></use>
+                                </svg>
+                            </button>
+                            <span class="text-xl truncate text-ltr">https://sabzlearn.ir/?p=3463</span>
+                        </div>
+                    </div>
+                    <!-- news -->
+                    <div class="hidden lg:block dark:border border-gray-700 shadow-light dark:shadow-none bg-white dark:bg-gray-800 rounded-2xl py-6 px-6 xl:px-10">
+                        <span class="flex items-center gap-x-2.5 mb-5 -mr-6 xl:-mr-10 text-zinc-700 dark:text-white font-DanaBold text-2xl">
+                            <span class="block w-7 h-2 bg-pink-500 dark:bg-rose-500 rounded-l-sm -mr-px"></span>
+                            جدیدترین نوشته ها
+                        </span>
+                        <div class="flex flex-col font-DanaMedium text-xl text-zinc-700 dark:text-white last:child:pb-0 last:child:border-b-0 child:py-3 child:border-b child:border-dashed child:border-b-slate-500 dark:child:border-b-gray-500">
+                        <a href="#">آموزش Json در جاوا اسکریپت</a>
+                        <a href="#">جاوا اسکریپت ES6 چیست؟</a>
+                        <a href="#">متغیرها در جاوا اسکریپت</a>
+                        <a href="#">آموزش ساخت ماشین حساب با جاوا اسکریپت</a>
+                        <a href="#">جنگو چیست؟</a>
+                        </div>
+                    </div>
+                    <!-- categories -->
+                    <div class=" dark:border border-gray-700 shadow-light dark:shadow-none bg-white dark:bg-gray-800 rounded-2xl py-6 px-6 xl:px-10">
+                        <span class="flex items-center gap-x-2.5 mb-5 -mr-6 xl:-mr-10 text-zinc-700 dark:text-white font-DanaBold text-2xl">
+                            <span class="block w-7 h-2 bg-baseColor rounded-l-sm -mr-px"></span>
+                            دسته بندی ها
+                        </span>
+                        <ul class="flex flex-col gap-y-6 font-Dana text-xl text-zinc-700 dark:text-white child:flex child:items-center child:gap-x-2 child:justify-start">
+                              <li>
+                                    <svg class="w-3 h-3 text-baseColor">
+                                        <use xlink:href="#triangle"></use>
+                                    </svg>
+                                    <a href="#">جاوا اسکریپت</a>
+                                </li>
+                              <li>
+                                    <svg class="w-3 h-3 text-baseColor">
+                                        <use xlink:href="#triangle"></use>
+                                    </svg>
+                                    <a href="#">طراحی سایت</a>
+                                </li>
+                                  <li>
+                                    <svg class="w-3 h-3 text-baseColor">
+                                        <use xlink:href="#triangle"></use>
+                                    </svg>
+                                    <a href="#">کسب درامد از برنامه نویسی</a>
+                                </li>
+                                <li>
+                                    <svg class="w-3 h-3 text-baseColor">
+                                        <use xlink:href="#triangle"></use>
+                                    </svg>
+                                    <a href="#">پایتون</a>
+                                </li>
+                                <li>
+                                    <svg class="w-3 h-3 text-baseColor">
+                                        <use xlink:href="#triangle"></use>
+                                    </svg>
+                                    <a href="#">شروع برنامه نویسی</a>
+                                </li>
+                         </ul>
+                    </div>
+            </aside>
         </section>
     </div>
 </main>
-
     <script type="module" src="assests/js/blogs.js"></script>
 </body>
 </html>
