@@ -3,6 +3,7 @@
 @import "../category/category.css";
 @import "../course/course.css";
 @import "../sign-up_&_login/login.css";
+@import "../blogs/blogs.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
