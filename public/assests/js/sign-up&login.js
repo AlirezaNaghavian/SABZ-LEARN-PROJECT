@@ -37,23 +37,23 @@ const autorizeUser = async () => {
     body: JSON.stringify(newUserInfos),
   });
   if (fetchData.status === 201) {
-  await  Swal.fire({
+    await Swal.fire({
       position: "top-mid",
       icon: "success",
       title: "ثبت نام با موفقیت انجام شد",
       showConfirmButton: false,
-      timer: 2000
+      timer: 2000,
     });
-    let getAutorizeRespsonse =await fetchData.json();
-     location.href = "index.html"
-     saveIntoLStorage(`user`,{token:getAutorizeRespsonse.accessToken})
-  } else if(fetchData.status === 409) {
-  await  Swal.fire({
+    let getAutorizeRespsonse = await fetchData.json();
+    location.href = "index.html";
+    saveIntoLStorage(`user`, { token: getAutorizeRespsonse.accessToken });
+  } else if (fetchData.status === 409) {
+    await Swal.fire({
       position: "top-mid",
       icon: "error",
       title: "نام کاربری یا ایمیل قبلا وارد شده است",
       showConfirmButton: false,
-      timer: 2000
+      timer: 2000,
     });
   }
 };
