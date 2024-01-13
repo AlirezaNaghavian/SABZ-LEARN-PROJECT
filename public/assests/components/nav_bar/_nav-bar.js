@@ -1,3 +1,4 @@
+import { getToken } from "../utilities/utilities.js";
 const nav_template = document.createElement("template");
 nav_template.innerHTML = `
 
@@ -627,9 +628,9 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
         <svg id="dark-mode" class="w-7 h-7 dark:hidden"><use xlink:href="#moon"></use></svg>
         </div>
         <!-- login-reg-section -->
-        <div class="relative text-base xl:text-lg text-white md:h-full md:w-[155px] xl:w-[180px]">
-            <a href="#" class=" absolute right-0 w-[100px] lg:w-28 hidden md:flex items-center justify-start h-full bg-sky-300 hover:bg-sky-600 dark:bg-secondary/60 rounded-full pr-5 transition-colors">ورود</a>
-            <a href="#" class="absolute left-0 w-[100px] xl:w-28 hidden md:flex items-center justify-center
+        <div id="regLogBtns" class="relative text-base xl:text-lg text-white md:h-full md:w-[155px] xl:w-[180px]">
+            <a href="login.html" class=" absolute right-0 w-[100px] lg:w-28 hidden md:flex items-center justify-start h-full bg-sky-300 hover:bg-sky-600 dark:bg-secondary/60 rounded-full pr-5 transition-colors">ورود</a>
+            <a href="sign-up.html" class="absolute left-0 w-[100px] xl:w-28 hidden md:flex items-center justify-center
              h-full bg-sky-500 hover:bg-sky-600 dark:bg-secondary dark:hover:bg-[#3f6CD8] rounded-full z-10 transition-colors">عضویت</a>
              <!-- small devices login section -->
              <a href="#" class="md:hidden flex items-center justify-center w-12 h-12 rounded-full bg-gray-100 text-slate-500 dark:bg-gray-800 dark:text-gray-500">
@@ -650,11 +651,11 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
             <!-- user-info -->
             <div class="flex items-center border-b border-b-gray-200 dark:border-b-slate-600 pb-5 mb-2">
                 <a href="#" class="shrink-0">
-            <img src="assests/imges/logos/7b23b6906e8ac542eda8771562fffc66.png" class="object-cover h-14 w-14 rounded-full inline-block" loading="lazy" alt="">
+            <img id="user-photo" src="assests/imges/logos/7b23b6906e8ac542eda8771562fffc66.png" class="object-cover h-14 w-14 rounded-full inline-block" loading="lazy" alt="">
                 </a>
                 <div class="mr-2.5 flex flex-col gap-y-1 overflow-hidden">
-                    <span class="text-lg text-zinc-700 dark:text-white inline-block truncate">علیرضا نقویان</span>
-                    <span class="text-sm text-sky-500 dark:text-secondary inline-block font-DanaMedium">موجودی :۰ تومان</span>
+                    <span id="userDataName" class="text-lg text-zinc-700 dark:text-white inline-block truncate">علیرضا نقویان</span>
+                    <span id="userDataVallet" class="text-sm text-sky-500 dark:text-secondary inline-block font-DanaMedium">موجودی :۰ تومان</span>
                 </div>
             </div>
             <!-- Dashboard links -->
@@ -683,7 +684,7 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
                 </span>
             </a>
             <!-- log-out-link -->
-            <div class="mt-2 pt-2 border-t border-t-gray-200 dark:border-t-slate-600">
+            <div class="mt-2 pt-2 border-t border-t-gray-200 dark:border-t-slate-600" id="userLogOut">
                <a href="#" class="flex items-center justify-between  dark:bg-transparent dark:text-white px-2.5 
                py-2.5 rounded-xl hover:bg-gray-100 dark:hover:bg-slate dark:hover:text-zinc-800 transition-colors">
             <span class="flex items-center gap-x-3">
@@ -714,6 +715,7 @@ class NavBar extends HTMLElement {
     this.getProfileIcon = this.shadowRoot.getElementById("user-profile-dropdown");
     this.wrapper = this.shadowRoot.querySelector(".header-sec");
     this.userProfileWrapper= this.shadowRoot.getElementById("userProfile");
+    this.regLogBtns = this.shadowRoot.getElementById("regLogBtns");
     this.subMenuTitle = this.shadowRoot.querySelectorAll(".mobile-menu-link-item");
     // show mobile menu
     this.barsBtn.addEventListener("click", () => {
@@ -784,6 +786,7 @@ class NavBar extends HTMLElement {
         this.overlayShadow.classList.toggle("hide")
         this.overlayShadow.classList.toggle("show")
     }
+      // clickable overlay
     const onClickOverlay= ()=>{
         this.getLgSearchBtn.classList.add("hide");
         this.getLgSearchBtn.classList.remove("show");
@@ -797,10 +800,40 @@ class NavBar extends HTMLElement {
         this.getMobileNavigation.classList.remove("right-0");
         this.getMobileNavigation.classList.remove("z-50");
     }
-    // clickable overlay
+    // logout user 
+     const logOut = ()=>{
+        localStorage.removeItem("user")
+        location.reload()
+     }
+    //get user token
+    const token = async()=>{
+        this.userName= this.shadowRoot.getElementById("userDataName");
+        this.userWallet = this.shadowRoot.getElementById("userDataVallet")
+        this.logOutBtn = this.shadowRoot.getElementById("userLogOut");
+        const token = getToken();
+      if(!token){
+        return false    
+      }
+      let fetchGetMe = await fetch(`http://localhost:4000/v1/auth/me`,{
+        headers:{
+            "Authorization": `Bearer ${token}`
+        }
+      })
+      let getMeResponse = await fetchGetMe.json();
+      console.log(getMeResponse);
+      this.userProfileWrapper.classList.remove("hidden")
+      this.regLogBtns.classList.add("hidden")
+      this.userName.textContent = getMeResponse.name;
+      this.userWallet.textContent = `موجودی : ${getMeResponse.__v} تومان`
+      this.logOutBtn.addEventListener("click",logOut)
+    }
+    
     this.overlayShadow.addEventListener("click",onClickOverlay)
       this.userProfileWrapper.addEventListener("click",showUserProfile)
-      window.addEventListener("load",checkTheme)
+      window.addEventListener("load",()=>{
+        checkTheme();
+        token();
+      })
   }
 }
 export { NavBar };

@@ -1,6 +1,7 @@
 {
   "name": "sabz-learn-project",
   "version": "1.0.0",
+  "type": "module",
   "description": "sabzlearn",
   "main": "index.js",
   "scripts": {
@@ -16,6 +17,7 @@
     "tailwindcss": "^3.4.0"
   },
   "dependencies": {
+    "sweetalert2": "^11.10.3",
     "swiper": "^11.0.5"
   }
 }

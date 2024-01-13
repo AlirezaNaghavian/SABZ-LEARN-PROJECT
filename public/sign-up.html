@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ثبت نام - سبزلرن</title>
     <link rel="stylesheet" href="assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assests/css/sweetalert2/sweetAlert.css">
     <link rel="stylesheet" href="assests/css/sign-up_&_login/login.css">
 </head>
 <body class="font-Dana bg-gray-100 dark:text-gray-100 dark:bg-grayTheme">
@@ -68,28 +69,28 @@
                         </span>
                     </div>
                     <!-- userdata form -->
-                    <form class="user-data__form xs:gap-y-4 md:gap-y-0 flex flex-col">
+                    <form id="reg-form" class="user-data__form xs:gap-y-4 md:gap-y-0 flex flex-col">
                         <input type="hidden" id="after_url" value="https://sabzlearn.ir/">
                         <!-- inputs -->
                         <div class="space-y-2.5 sm:space-y-3.5">
                             <div class="relative ">
-                                <input type="text" class="user-data__username en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="نام کاربری" autofocus>
+                                <input required type="text" id="name" class="user-data__username en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="نام کاربری" autofocus>
                                 <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#user"></use></svg>
                             </div>
                             <div class="relative ">
-                                <input type="text" class="user-data__phoneNumber en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="شماره موبایل" inputmode="tel">
+                                <input required type="text" id="phone-inp" class="user-data__phoneNumber en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="شماره موبایل" inputmode="tel">
                                 <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#phone"></use></svg>
                             </div>
                             <div class="relative ">
-                                <input type="email" class="user-data__email en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="آدرس ایمیل" formnovalidate inputmode="email">
+                                <input type="email" id="email" class="user-data__email en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="آدرس ایمیل" formnovalidate inputmode="email">
                                 <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#envelope"></use></svg>
                             </div>
                             <div class="relative ">
-                                <input type="password" class="user-data__password en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="رمز عبور">
+                                <input required type="password" id="password" class="user-data__password en-value pl-9 sm:pl-12 text-lg 0 py-4 px-3" placeholder="رمز عبور">
                                 <svg class=" top-0 bottom-0 left-3 sm:left-4 absolute w-5 h-5 my-auto text-gray-500 "><use xlink:href="#lock"></use></svg>
                             </div>
                         </div>
-                        <button class="user-data__submit h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold" type="submit">ادامه</button>
+                        <button id="reg-sub-btn" class="user-data__submit h-12 bg-baseColor text-white w-full sm:mt-4 rounded-xl transition-colors hover:bg-baseColor/90 font-DanaBold" type="submit">ادامه</button>
                     </form>
                     <!-- opt section -->
                     <div class="otp hidden">
@@ -136,7 +137,7 @@
             </div>
         </div>
     </div>
-
-    <script src="assests/js/sign-up&login.js"></script>
+    <script src="assests/js/sweetalert2.all.js"></script>
+    <script type="module" src="assests/js/sign-up&login.js"></script>
 </body>
 </html>
