@@ -1,3 +1,4 @@
+import { saveIntoLStorage } from "../components/utilities/utilities.js";
 const getThemeStatus = localStorage.getItem("theme");
 
 // /////////////////
@@ -45,6 +46,7 @@ const autorizeUser = async () => {
     });
     let getAutorizeRespsonse =await fetchData.json();
      location.href = "index.html"
+     saveIntoLStorage(`user`,{token:getAutorizeRespsonse.accessToken})
   } else if(fetchData.status === 409) {
   await  Swal.fire({
       position: "top-mid",
