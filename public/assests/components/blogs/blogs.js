@@ -5,7 +5,6 @@ const getBlogWrapper = document.getElementById("blog-list-wrapper");
 const blogDatas = async ()=>{
     const fetchBlogData = await fetch(`http://localhost:4000/v1/articles`);
     const blogDataRes = await fetchBlogData.json();
-    console.log(blogDataRes);
     blogDataRes.slice(0,4).forEach(blog => {
         getBlogWrapper.insertAdjacentHTML("beforeend",`
         <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">

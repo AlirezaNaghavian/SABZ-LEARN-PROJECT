@@ -173,276 +173,9 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
             </form>
             <!-- mobile-menu items -->
             <div class="mt-5">
-                <ul class="flex flex-col gap-y-5 child:px-7 child:cursor-pointer child:transition-all">
-                    <li class="mobile-menu-list-item ">
-                        <span class="mobile-menu-link-item transition-all  flex  items-center justify-between">
-                            فرانت اند
-                        <svg  class=" w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش HTML
-                                    
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش CSS
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش FlexBox  
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش CSS Grid
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    مینی پروژه های تخصصی با Css
-                            </a>
-                            </li >
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش Tailwind CSS
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش اصولی طراحی قالب
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش بوت استرپ
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش جاوااسکریپت
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش جامع ری اکت ReactJS
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش ویو جی اس
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش وی اس کد - Vscode
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="mobile-menu-list-item">
-                        <span class="mobile-menu-link-item transition-all flex items-center justify-between">
-                            امنیت
-                            <svg class="w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    نقشه راه ورود به دنیای هک و امنیت 
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    شبکه با گرایش امنیت
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    لینوکس با گرایش امنیت
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش هکر قانونمند - CEH V11
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش کالی لینوکس
-                            </a>
-                            </li >
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش پایتون سیاه
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش Burp Suite
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش جاوااسکریپت سیاه
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="mobile-menu-list-item">
-                        <span class="mobile-menu-link-item transition-all flex items-center justify-between">
-                            پایتون
-                            <svg class="w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    دوره آموزش پایتون
-                                    
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    پروژه های کاربردی با پایتون
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    ترفند های کاربردی با پایتون
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    متخصص جنگو
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    مصور سازی داده با پایتون
-                            </a>
-                            </li >
-                        </ul>
-                    </li>
-                    <li class="mobile-menu-list-item">
-                        <span class="mobile-menu-link-item transition-all flex items-center justify-between">
-                            پی اچ پی
-                            <svg class="w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    ربات تلگرام با PHP     
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    پروژه های کاربردی با PHP
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="mobile-menu-list-item">
-                        <span class="mobile-menu-link-item transition-all flex items-center justify-between">
-                            ارتقای مهارت ها
-                            <svg class="w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    الگوریتم و ساختمان داده  
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    گیت و گیتهاب
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    Clean Code برای JS
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    دیپلوی پروژه های JS
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    دوره Mern Stack
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش رجکس (regex)
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    NPM برای جاوااسکریپت کارها
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    آموزش کاربردی Vscode
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="mobile-menu-list-item">
-                        <span class="mobile-menu-link-item transition-all flex items-center justify-between">
-                            مقالات
-                            <svg class="w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
-
-                        </span>
-                        <ul class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    اچ تی ام ال
-                                    
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    بوت استرپ
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    پروژه های برنامه نویسی  
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    تست نفوذ و امنیت وب
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    جی کوئری
-                            </a>
-                            </li >
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    ری اکت جی اس
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    سی اس اس
-                            </a>
-                            </li>
-                            <li class="child:text-sm">
-                                <a href="#">
-                                    شروع برنامه نویسی
-                            </a>
-                            </li>
-                        </ul>
-                    </li>
+                <ul id="mobile-sub-menu-wrapper" class="flex flex-col gap-y-5 child:px-7 child:cursor-pointer child:transition-all">
+                <!-- renden in backend -->
+                <!-- renden in backend -->
                 </ul>
             </div>
             <!-- mobile change-theme-btn -->
@@ -462,119 +195,8 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
             </div>
         </div>
         <!-- desktop menu -->
-        <ul class="hidden lg:flex child:text-base xl:child:text-lg  lg:gap-x-3 xl:gap-x-3 2xl:gap-x-5 items-center">
-            <li class="relative group child-hover:text-baseColor">
-         
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                    فرانت اند
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                <!-- sub-menu items -->
-                <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                        <a href="#" class="submenu__link">آموزش HTML</a>
-                        <a href="#" class="submenu__link">آموزش CSS</a>
-                        <a href="#" class="submenu__link">آموزش FlexBox</a>
-                        <a href="#" class="submenu__link">آموزش CSS Grid</a>
-                        <a href="#" class="submenu__link">مینی پروژه های تخصصی با Css</a>
-                        <a href="#" class="submenu__link">آموزش Tailwind CSS</a>
-                        <a href="#" class="submenu__link">آموزش اصولی طراحی قالب</a>
-                        <a href="#" class="submenu__link">آموزش بوت استرپ</a>
-                        <a href="#" class="submenu__link">آموزش جاوااسکریپت</a>
-                        <a href="#" class="submenu__link">آموزش جامع ری اکت ReactJS</a>
-                        <a href="#" class="submenu__link">آموزش ویو جی اس</a>
-                        <a href="#" class="submenu__link">آموزش وی اس کد - Vscode</a>
-                    </div>
-                </div>
-            </li>
-            <li class="relative group child-hover:text-baseColor">
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                    امنیت
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                  <!-- sub-menu items -->
-                  <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                        <a href="#" class="submenu__link">نقشه راه ورود به دنیای هک و امنیت</a>
-                        <a href="#" class="submenu__link">شبکه با گرایش امنیت</a>
-                        <a href="#" class="submenu__link">لینوکس با گرایش امنیت</a>
-                        <a href="#" class="submenu__link">آموزش هکر قانونمند - CEH V11</a>
-                        <a href="#" class="submenu__link">آموزش کالی لینوکس</a>
-                        <a href="#" class="submenu__link">آموزش پایتون سیاه</a>
-                        <a href="#" class="submenu__link">آموزش Burp Suite</a>
-                        <a href="#" class="submenu__link">آموزش جاوااسکریپت سیاه</a>
-                    </div>
-                </div>
-            </li>
-            <li class="relative group child-hover:text-baseColor">
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                    پایتون
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                    <!-- sub-menu items -->
-                    <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                        <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                            <a href="#" class="submenu__link">دوره آموزش پایتون</a>
-                            <a href="#" class="submenu__link">پروژه های کاربردی با پایتون</a>
-                            <a href="#" class="submenu__link">ترفند های کاربردی با پایتون</a>
-                            <a href="#" class="submenu__link">متخصص جنگو</a>
-                            <a href="#" class="submenu__link">مصور سازی داده با پایتون</a>
-                        </div>
-                    </div>
-            </li>
-            <li class="relative group child-hover:text-baseColor">
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                پی اچ پی
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                 <!-- sub-menu items -->
-                 <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                        <a href="#" class="submenu__link">ربات تلگرام با PHP</a>
-                        <a href="#" class="submenu__link">پروژه های کاربردی با PHP</a>
-                    </div>
-                </div>
-            </li>
-            <li class="relative group child-hover:text-baseColor">
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                    ارتقای مهارت ها
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                   <!-- sub-menu items -->
-                   <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                    <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                        <a href="#" class="submenu__link">الگوریتم و ساختمان داده</a>
-                        <a href="#" class="submenu__link">گیت و گیتهاب</a>
-                        <a href="#" class="submenu__link">Clean Code برای JS</a>
-                        <a href="#" class="submenu__link">دیپلوی پروژه های JS</a>
-                        <a href="#" class="submenu__link">دوره Mern Stack</a>
-                        <a href="#" class="submenu__link">آموزش رجکس (regex)</a>
-                        <a href="#" class="submenu__link">NPM برای جاوااسکریپت کارها</a>
-                        <a href="#" class="submenu__link">آموزش کاربردی Vscode</a>
-                    </div>
-                </div>
-            </li>
-
-            <li class="relative group child-hover:text-baseColor">
-                <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="#">
-                    مقالات
-                    <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
-                </a>
-                      <!-- sub-menu items -->
-                      <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
-                        <div class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
-                            <a href="#" class="submenu__link">اچ تی ام ال</a>
-                            <a href="#" class="submenu__link">بوت استرپ</a>
-                            <a href="#" class="submenu__link">پروژه های برنامه نویسی</a>
-                            <a href="#" class="submenu__link">تست نفوذ و امنیت وب</a>
-                            <a href="#" class="submenu__link">جی کوئری</a>
-                            <a href="#" class="submenu__link">ری اکت جی اس</a>
-                            <a href="#" class="submenu__link">سی اس اس</a>
-                            <a href="#" class="submenu__link">شروع برنامه نویسی</a>
-                        </div>
-                    </div>
-            </li>
-
+        <ul id="menu-wrappper-item" class="hidden lg:flex child:text-base xl:child:text-lg  lg:gap-x-3 xl:gap-x-3 2xl:gap-x-5 items-center">
+        <!--render with backend data --> 
         </ul>
     </nav>
 
@@ -716,7 +338,6 @@ class NavBar extends HTMLElement {
     this.wrapper = this.shadowRoot.querySelector(".header-sec");
     this.userProfileWrapper= this.shadowRoot.getElementById("userProfile");
     this.regLogBtns = this.shadowRoot.getElementById("regLogBtns");
-    this.subMenuTitle = this.shadowRoot.querySelectorAll(".mobile-menu-link-item");
     // show mobile menu
     this.barsBtn.addEventListener("click", () => {
       this.getMobileNavigation.classList.add("right-0");
@@ -731,23 +352,6 @@ class NavBar extends HTMLElement {
       this.overlayShadow.classList.remove("show");
       this.overlayShadow.classList.add("hide");
       this.getMobileNavigation.classList.add("-right-[100rem]");
-    });
-    // show sub menu
-    this.subMenuTitle.forEach((items) => {
-      items.addEventListener("click", (event) => {
-        const subMenu = event.target.nextElementSibling;
-        this.subMenuTitle.forEach((newItem) => {
-          if (newItem !== items) {
-            newItem.nextElementSibling.classList.remove("active");
-            newItem.classList.remove("dark:text-white");
-            newItem.firstElementChild.classList.remove("rotate-180");
-          }
-        });
-        subMenu.classList.toggle("active");
-        items.classList.toggle("dark:text-white");
-        event.target.firstElementChild.classList.toggle("rotate-180");
-        
-      });
     });
     // darkmode active
     this.switchTheme.forEach((btnEvent)=>{
@@ -820,19 +424,87 @@ class NavBar extends HTMLElement {
         }
       })
       let getMeResponse = await fetchGetMe.json();
-      console.log(getMeResponse);
       this.userProfileWrapper.classList.remove("hidden")
       this.regLogBtns.classList.add("hidden")
       this.userName.textContent = getMeResponse.name;
       this.userWallet.textContent = `موجودی : ${getMeResponse.__v} تومان`
       this.logOutBtn.addEventListener("click",logOut)
     }
-    
+    // dynamic desktop menu & submenu
+    const dynamicDesktopMenus = async()=>{
+        this.menuItemWrapper = this.shadowRoot.querySelector("#menu-wrappper-item");
+        // ////////////
+        // get menu data
+        // ////////////
+        const fetchMenudatas = await fetch("http://localhost:4000/v1/menus");
+        const menuResponse = await fetchMenudatas.json();
+        // desktop menu
+        menuResponse.forEach(menuItem =>{
+            this.menuItemWrapper.insertAdjacentHTML("beforeend",`
+            <li  class="relative group child-hover:text-baseColor">
+            <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="${menuItem.href}">
+           ${menuItem.title}
+            <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
+        </a>
+                <!-- sub-menu items -->
+                <div class="invisible opacity-0 group-hover:visible group-hover:opacity-100 absolute ring-0 top-full pt-1 xl:pt-4 transition-all z-10">
+                    <div id="sub_menu_item" class="flex flex-col  gap-y-5 child:dark:text-white  child:text-zinc-700 bg-white dark:bg-gray-700 shadow-md dark:shadow-none py-5 px-6 rounded-2xl text-base ">
+                    ${menuItem.submenus.map(submenuItems =>{
+                        return ` <a href="${submenuItems.href}" class="submenu__link">${submenuItems.title}</a>`
+                    }).join("")}
+                    </div>
+                </div>
+            </li>
+            `)
+        })
+    }
+    // dynamic mobile menu & submenu
+    const dynamicMobileMenus = async ()=>{
+        this.mobileMenuWrapper = this.shadowRoot.querySelector("#mobile-sub-menu-wrapper");
+        const fetchMenudatas = await fetch("http://localhost:4000/v1/menus");
+        const menuResponse = await fetchMenudatas.json();
+        menuResponse.forEach(mobileItem =>{
+            this.mobileMenuWrapper.insertAdjacentHTML("beforeend",`
+            <li class="mobile-menu-list-item ">
+                        <span class="mobile-menu-link-item transition-all  flex  items-center justify-between">
+                          ${mobileItem.title}
+                        <svg  class=" w-4 h-4 transition-all"><use xlink:href="#chevron-down"></use></svg>
+                        </span>
+                        <ul  class=" mobile-sub-menu transition-all duration-300  flex flex-col gap-y-2 mt-2 mr-2 child:text-slate-500 dark:child:text-slate-400  child:relative">
+                           
+                           ${mobileItem.submenus.map(mItem =>{
+                            return ` <li class="child:text-sm"><a href="${mItem.href}">${mItem.title}</a></li>`
+                           }).join("")}
+                        </ul>
+                    </li>
+            `)
+        })
+        this.subMenuTitle = this.shadowRoot.querySelectorAll(".mobile-menu-link-item");
+         // show sub menu
+    this.subMenuTitle.forEach((items) => {
+        items.addEventListener("click", (event) => {
+          const subMenu = event.target.nextElementSibling;
+          this.subMenuTitle.forEach((newItem) => {
+            if (newItem !== items) {
+              newItem.nextElementSibling.classList.remove("active");
+              newItem.classList.remove("dark:text-white");
+              newItem.firstElementChild.classList.remove("rotate-180");
+            }
+          });
+          subMenu.classList.toggle("active");
+          items.classList.toggle("dark:text-white");
+          event.target.firstElementChild.classList.toggle("rotate-180");
+          
+        });
+      });
+    }
     this.overlayShadow.addEventListener("click",onClickOverlay)
       this.userProfileWrapper.addEventListener("click",showUserProfile)
-      window.addEventListener("load",()=>{
+      window.addEventListener("load",async()=>{
         checkTheme();
         token();
+        dynamicDesktopMenus();
+        dynamicMobileMenus();
       })
   }
 }
