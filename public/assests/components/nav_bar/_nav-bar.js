@@ -143,7 +143,7 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
 <!-- right side  -->
 <div class="nav-side right-side flex items-center ">
     <div class="logo-desktop-wrapper  lg:ml-5 lg:pl-5 lg:border-l border-l-gray-100 dark:border-l-gray-700">
-        <img src="assests/imges/logos/main-logo.png" class="w-20 md:w-[104px]" alt="">
+      <a href="index.html">  <img src="assests/imges/logos/main-logo.png" class="w-20 md:w-[104px]" alt=""></a>
     </div>
     <nav class="  flex items-center h-14 ">
         <!-- mobile menu -->
@@ -442,7 +442,7 @@ class NavBar extends HTMLElement {
         menuResponse.forEach(menuItem =>{
             this.menuItemWrapper.insertAdjacentHTML("beforeend",`
             <li  class="relative group child-hover:text-baseColor">
-            <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="${menuItem.href}">
+            <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="category.html?cat=${menuItem.href}">
            ${menuItem.title}
             <svg class="w-4 h-4"><use xlink:href="#outline-chevron-down"></use></svg>
         </a>
