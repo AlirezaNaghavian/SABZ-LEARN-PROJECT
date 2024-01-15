@@ -90,7 +90,7 @@
                                         فقط دوره های رایگان
                                     </span>
                                     <label class="toggle">
-                                        <input class="toggle_input" type="checkbox" name="only_free" value="yes">
+                                        <input data-id="free"  class="toggle_input" type="checkbox" name="only_free" value="yes">
                                         <span class="toggle_marker dark:bg-[#1c1c28] bg-[#e5e7eb]">
                                            
                                         </span>
@@ -103,7 +103,7 @@
                                     در حال پیش فروش
                                     </span>
                                     <label class="toggle">
-                                        <input class="toggle_input" type="checkbox" name="presell" value="yes">
+                                        <input data-id="presell"  class="toggle_input" type="checkbox" name="presell" value="yes">
                                         <span class="toggle_marker dark:bg-[#1c1c28] bg-[#e5e7eb]">
 
                                         </span>
@@ -135,11 +135,11 @@
                                 </svg>
                                 <span class="flex items-center">مرتب سازی :</span>
                             </span>
-                            <div class="flex items-center flex-wrap">
-                                <a href="#" class="sort-btn sort-btn--active" data-id="default" role="button">همه دوره ها</a>
-                                <a href="#" class="sort-btn" data-id="cheapest" role="button">ارزان ترین</a>
-                                <a href="#" class="sort-btn" data-id="expensive" role="button">گران ترین</a>
-                                <a href="#" class="sort-btn" data-id="popular" role="button">پرمخاطب ها</a>
+                            <div class="sort-list flex items-center flex-wrap">
+                                <a href="#" class="sort-select-btn sort-btn sort-btn--active" data-id="default" role="button">همه دوره ها</a>
+                                <a href="#" class="sort-select-btn sort-btn" data-id="cheapest" role="button">ارزان ترین</a>
+                                <a href="#" class="sort-select-btn sort-btn" data-id="expensive" role="button">گران ترین</a>
+                                <a href="#" class="sort-select-btn sort-btn" data-id="popular" role="button">پرمخاطب ها</a>
                             </div>
                         </div>
                     </div>
@@ -173,20 +173,20 @@
                 </button>
                 <span class="bottom-sheet__name">مرتب سازی بر اساس</span>
             </div>
-            <div class="bottom-sheet__body">
-                <a href="#" data-id="default"  class="bottom-sheet__item bottom-sheet__item--selected">
+            <div class="sort-list bottom-sheet__body">
+                <a href="#" data-id="default"  class="sort-select-btn bottom-sheet__item bottom-sheet__item--selected">
                     <span>همه دوره ها</span>
                     <svg class="w-5 h-5 "><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="cheapest" class="bottom-sheet__item">
+                <a href="#" data-id="cheapest" class="sort-select-btn bottom-sheet__item">
                     <span>ارزان ترین</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="expensive" class="bottom-sheet__item">
+                <a href="#" data-id="expensive" class="sort-select-btn bottom-sheet__item">
                     <span>گرانترین</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="popular" class="bottom-sheet__item">
+                <a href="#" data-id="popular" class="sort-select-btn bottom-sheet__item">
                     <span>پرمخاطب ها</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
@@ -212,12 +212,12 @@
             <form class="filter__body" id="filter_mobile">
                 <label class="toggle w-full flex items-center justify-between py-5">
                     <span class="text-sm text-zinc-700 dark:text-white select-none">فقط دوره های رایگان</span>
-                    <input type="checkbox" name="only_free" value="yes" class="toggle_input ">
+                    <input data-id="free"  type="checkbox" name="only_free" value="yes" class="toggle_input ">
                     <span class="toggle_marker bg-gray-400 dark:bg-grayTheme"></span>
                 </label>
                 <label class="toggle w-full flex items-center justify-between py-5">
                     <span class="text-sm text-zinc-700 dark:text-white select-none">در حال پیش فروش</span>
-                    <input type="checkbox" name="only_free" value="yes" class="toggle_input ">
+                    <input data-id="presell"  type="checkbox" name="only_free" value="yes" class="toggle_input ">
                     <span class="toggle_marker bg-gray-400 dark:bg-grayTheme"></span>
                 </label>
             </form>

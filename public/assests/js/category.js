@@ -1,6 +1,7 @@
 import {NavBar} from "../components/nav_bar/_nav-bar.js"
 import {Footer} from "../components/footer/footer.js"
 import {getUrlParam} from "../components/utilities/utilities.js"
+import {sortCourses} from "../components/sort-courses/sort.js"
 window.customElements.define("navbar-tag",NavBar)
 window.customElements.define("footer-tg",Footer)
 const getbottomSheet = document.querySelector(".bottom-sheet");
@@ -166,6 +167,7 @@ btn.addEventListener("click",sortActivate)
 })
 window.addEventListener("load",()=>{
     getDataByCategory();
+    sortCourses();
 })
 
 
