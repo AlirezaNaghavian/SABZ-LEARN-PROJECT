@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 /* toggle checkbox */
+#search-input:focus{
+    outline: none !important;
+}
 .toggle{
     position: relative;
     cursor: pointer;
