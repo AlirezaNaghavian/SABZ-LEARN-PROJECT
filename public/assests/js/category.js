@@ -1,9 +1,11 @@
 import {NavBar} from "../components/nav_bar/_nav-bar.js"
 import {Footer} from "../components/footer/footer.js"
 import {getUrlParam} from "../components/utilities/utilities.js"
-import {sortCourses} from "../components/sort-courses/sort.js"
+import {sortCourses ,basedFreeOffer,sortFreeCheckBox} from "../components/sort-courses/sort.js"
 window.customElements.define("navbar-tag",NavBar)
 window.customElements.define("footer-tg",Footer)
+const SortBtn = document.querySelectorAll(".sort-select-btn");
+const freeInput = document.querySelectorAll(".freeInp");
 const getbottomSheet = document.querySelector(".bottom-sheet");
 const bottomSheetItem = document.querySelectorAll(".bottom-sheet__item");
 const getCloseSortBtn =document.querySelector(".bottom-sheet__close-btn");
@@ -167,7 +169,34 @@ btn.addEventListener("click",sortActivate)
 })
 window.addEventListener("load",()=>{
     getDataByCategory();
-    sortCourses();
 })
+freeInput.forEach(inp =>{
+   inp.addEventListener("change",(e)=>{
+   if(e.target.checked){
+    sortFreeCheckBox(e)
+    SortBtn.forEach((sortBtn) => {
+  sortBtn.addEventListener("click", (e) => {
+    let getDataId  = e.target.dataset.id
+    basedFreeOffer(getDataId)
+  });
+});
+   }
+   else{
+    sortFreeCheckBox(e)
+    SortBtn.forEach((sortBtn) => {
+        sortBtn.addEventListener("click", (e) => {
+          let getDataId  = e.target.dataset.id
+          sortCourses(getDataId);
+        });
+      });
+   }
+   })
+})
+SortBtn.forEach((sortBtn) => {
+    sortBtn.addEventListener("click", (e) => {
+      let getDataId  = e.target.dataset.id
+      sortCourses(getDataId);
+    });
+  });
 
-
+  
