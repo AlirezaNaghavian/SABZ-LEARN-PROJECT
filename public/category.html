@@ -9,6 +9,9 @@
 </head>
 <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
     <svg class="hidden">
+        <symbol id="danger" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 33 33">
+            <path id="Combined_Shape" d="M9.347,33C3.756,33,0,29.078,0,23.239V9.761C0,3.922,3.756,0,9.347,0H23.652C29.243,0,33,3.922,33,9.761V23.239C33,29.078,29.243,33,23.65,33ZM2.476,9.761V23.239c0,4.427,2.7,7.287,6.871,7.287h14.3c4.177,0,6.876-2.86,6.876-7.287V9.761c0-4.425-2.7-7.285-6.874-7.285H9.347C5.172,2.476,2.476,5.336,2.476,9.761Zm17.1,11.556L16.5,18.234l-3.079,3.079a1.237,1.237,0,1,1-1.749-1.749l3.079-3.079L11.666,13.4a1.237,1.237,0,0,1,1.749-1.749L16.5,14.736l3.079-3.078a1.236,1.236,0,0,1,1.749,1.748l-3.08,3.08,3.083,3.083a1.237,1.237,0,1,1-1.749,1.749Z"></path>
+        </symbol>
         <symbol id="outline-chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
           </symbol>
@@ -90,7 +93,7 @@
                                         فقط دوره های رایگان
                                     </span>
                                     <label class="toggle">
-                                        <input class="toggle_input" type="checkbox" name="only_free" value="yes">
+                                        <input data-id="free"  class="toggle_input check-sort-input freeInp" type="checkbox" name="only_free" value="yes">
                                         <span class="toggle_marker dark:bg-[#1c1c28] bg-[#e5e7eb]">
                                            
                                         </span>
@@ -103,7 +106,7 @@
                                     در حال پیش فروش
                                     </span>
                                     <label class="toggle">
-                                        <input class="toggle_input" type="checkbox" name="presell" value="yes">
+                                        <input data-id="presell"  class="toggle_input check-sort-input" type="checkbox" name="presell" value="yes">
                                         <span class="toggle_marker dark:bg-[#1c1c28] bg-[#e5e7eb]">
 
                                         </span>
@@ -135,11 +138,11 @@
                                 </svg>
                                 <span class="flex items-center">مرتب سازی :</span>
                             </span>
-                            <div class="flex items-center flex-wrap">
-                                <a href="#" class="sort-btn sort-btn--active" data-id="default" role="button">همه دوره ها</a>
-                                <a href="#" class="sort-btn" data-id="cheapest" role="button">ارزان ترین</a>
-                                <a href="#" class="sort-btn" data-id="expensive" role="button">گران ترین</a>
-                                <a href="#" class="sort-btn" data-id="popular" role="button">پرمخاطب ها</a>
+                            <div class="sort-list flex items-center flex-wrap">
+                                <a href="#" class="sort-select-btn sort-btn sort-btn--active" aria-label = "normal" data-id="default" role="button">همه دوره ها</a>
+                                <a href="#" class="sort-select-btn sort-btn" aria-label = "cheap" data-id="cheapest" role="button">ارزان ترین</a>
+                                <a href="#" class="sort-select-btn sort-btn" aria-label = "expense" data-id="expensive" role="button">گران ترین</a>
+                                <a href="#" class="sort-select-btn sort-btn" aria-label = "pop" data-id="popular" role="button">پرمخاطب ها</a>
                             </div>
                         </div>
                     </div>
@@ -173,20 +176,20 @@
                 </button>
                 <span class="bottom-sheet__name">مرتب سازی بر اساس</span>
             </div>
-            <div class="bottom-sheet__body">
-                <a href="#" data-id="default"  class="bottom-sheet__item bottom-sheet__item--selected">
+            <div class="sort-list bottom-sheet__body">
+                <a href="#" data-id="default"  aria-label = "normal" class="sort-select-btn bottom-sheet__item bottom-sheet__item--selected">
                     <span>همه دوره ها</span>
                     <svg class="w-5 h-5 "><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="cheapest" class="bottom-sheet__item">
+                <a href="#" data-id="cheapest"  aria-label = "cheap"class="sort-select-btn bottom-sheet__item">
                     <span>ارزان ترین</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="expensive" class="bottom-sheet__item">
+                <a href="#" data-id="expensive" aria-label = "expense" class="sort-select-btn bottom-sheet__item">
                     <span>گرانترین</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
-                <a href="#" data-id="popular" class="bottom-sheet__item">
+                <a href="#" data-id="popular" aria-label = "pop" class="sort-select-btn bottom-sheet__item">
                     <span>پرمخاطب ها</span>
                     <svg class="w-5 h-5 hidden"><use xlink:href="#check"></use></svg>
                 </a>
@@ -203,27 +206,19 @@
                     </button>
                     <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">فیلتر</span>
                 </div>
-                <button class="filter__clean-btn">
-                    <svg class="w-5 h-5"><use xlink:href="#trash"></use></svg>
-                    <span>حذف فیلترها</span>
-                </button>
-
             </div>
             <form class="filter__body" id="filter_mobile">
                 <label class="toggle w-full flex items-center justify-between py-5">
                     <span class="text-sm text-zinc-700 dark:text-white select-none">فقط دوره های رایگان</span>
-                    <input type="checkbox" name="only_free" value="yes" class="toggle_input ">
+                    <input data-id="free"  type="checkbox" name="only_free" value="yes" class="toggle_input check-sort-input freeInp">
                     <span class="toggle_marker bg-gray-400 dark:bg-grayTheme"></span>
                 </label>
                 <label class="toggle w-full flex items-center justify-between py-5">
                     <span class="text-sm text-zinc-700 dark:text-white select-none">در حال پیش فروش</span>
-                    <input type="checkbox" name="only_free" value="yes" class="toggle_input ">
+                    <input data-id="presell"  type="checkbox" name="only_free" value="yes" class="toggle_input check-sort-input">
                     <span class="toggle_marker bg-gray-400 dark:bg-grayTheme"></span>
                 </label>
             </form>
-            <div class="filter__footer">
-                <button class="filter__submit-btn">اعمال فیلتر ها</button>
-            </div>
         </div>
     </main>
     <footer class="pt-8 lg:pt-16 mt-24 bg-white dark:bg-transparent dark:border-t border-t-gray-700 font-danaLight text-slate-500 dark:text-slate-400 text-base xl:text-lg">
