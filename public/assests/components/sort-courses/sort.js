@@ -11,7 +11,7 @@ const cardContent = (course)=>{
     <div class="course  flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
     <!-- card-cover -->
     <div class="relative h-[168px] ">
-        <a href="#" class="w-full h-full block" title="${course.name}">
+        <a href="course.html?name=${course.shortName}" class="w-full h-full block" title="${course.name}">
             
             <img src="http://localhost:4000/courses/covers/${course.cover}" class="w-full h-full object-cover rounded-2xl" loading="lazy" alt="">
         </a>
@@ -23,7 +23,7 @@ const cardContent = (course)=>{
             <span class="text-right  text-sky-500 dark:text-yellow-400 font-normal font-Dana leading-none text-xs px-1.5 py-1 ">${course.cat_title}</span>
         </a>
            <h4 class="text-zinc-700 dark:text-white   font-DanaMedium leading-normal mb-2.5 line-clamp-2 h-12">
-            <a href="#">
+            <a href="course.html?name=${course.shortName}">
                ${course.name}
             </a>
            </h4>
