@@ -16,6 +16,8 @@ courseHeader(getRes)
 courseInfoSec(getRes)
 mobileRatesys(getRes)
 mobileCreatorData(getRes)
+asideSec(getRes)
+fullDescriptionData(getRes)
 }
 
 const courseHeader = (arr)=>{
@@ -174,5 +176,68 @@ const mobileCreatorData =(arr)=>{
     <span>مشاهده پروفایل</span>
 </a>
     `)
+}
+const asideSec = (arr)=>{
+    asideCourseData.insertAdjacentHTML("beforeend",`
+    <!-- student & rating & progress -->
+    <div class="hidden lg:block bg-white dark:bg-gray-800  p-5 shadow-light dark:shadow-none  rounded-2xl">
+        <div class="flex gap-5">
+            <div class="flex items-center justify-between flex-grow  bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+                <svg class="w-8 h-8 text-baseColor"><use xlink:href="#users-fill"></use></svg>
+                <div class="flex flex-col items-center justify-center">
+                    <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">${arr.studens}</span>
+                    <p class="text-slate-500 dark:text-gray-500 text-sm">دانشجو</p>
+                </div>
+            </div>
+            <div class="flex items-center justify-between flex-grow  bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+                <svg class="w-8 h-8 text-amber-400 dark:text-yellow-400"><use xlink:href="#star-fill"></use></svg>
+                <div class="flex flex-col items-center justify-center">
+                    <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">5.0</span>
+                    <p class="text-slate-500 dark:text-gray-500 text-sm">رضایت</p>
+                </div>
+            </div>
+        </div>
+        <!-- progress bar -->
+        <div class="mt-5">
+            <div class="flex items-center justify-between mb-4 text-zinc-700 dark:text-white text-xl">
+                <span>درصد تکمیل دوره</span>
+                <span>${arr.isComplete ? "100%":`${(arr.sessions.length/23 *100).toFixed(0)}%`}</span>
+
+            </div>
+            <progress class=" h-[.625rem] py-[5px] bg-secondary rounded-4xl" value="${arr.isComplete ? "100":`${(arr.sessions.length/23 *100).toFixed(0)}`}" max="100" style="${arr.isComplete ? "width:100%;":`width:${(arr.sessions.length/23 *100).toFixed(0)}%`};"></progress>
+        </div>
+    </div>
+    <!-- course teacher -->
+    <div class="hidden lg:block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl text-center">
+        <img src="http://localhost:4000/courses/covers/${arr.creator.profile}" class="block mx-auto mb-2 w-[90px] h-[90px] rounded-full" alt="">
+        <h4 class="text-zinc-700 dark:text-white text-2xl mb-1">${arr.creator.name}</h4>
+        <a href="#" class="flex items-center justify-center gap-x-2.5 text-slate-500 dark:text-gray-500 text-sm">
+            <span>مدرس دوره</span>
+            <svg class="w-5 h-5"><use xlink:href="#arrow-right-on-rectangle"></use></svg>
+        </a>
+        <p class="text-zinc-700 dark:text-white font-Dana mt-2.5">توسعه دهنده  ${arr.cat_title}</p>
+    </div>
+    <!-- course short link -->
+    <div class="hidden lg:block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl">
+        <span class="flex items-center gap-x-2.5 text-zinc-700 mb-5 -mr-5 dark:text-white font-DanaBold text-2xl">
+            <!-- solid objec -->
+            <span class="block w-7 h-2 bg-sky-500 dark:bg-secondary rounded-l-sm"></span>
+            <span>لینک کوتاه</span>
+
+        </span>
+        <div class="flex gap-x-2.5 items-center justify-between px-4 h-[65px] text-slate-500 dark:text-gray-500 bg-gray-100 dark:bg-gray-700 border border-dashed border-gray-600/30 rounded-xl">
+          <button >
+            <svg class="w-6 h-6"><use xlink:href="#clipboard-document"></use></svg>
+          </button>  
+          <span class="text-xl truncate " dir="ltr">https://sabzlearn.ir/?p=2860</span>
+        </div>
+    </div>
+    
+    `)
+}
+const fullDescriptionData = (arr)=>{
+    console.log(arr.descPic);
+fullCourseInfo.innerHTML = arr.fullDesc? arr.fullDesc : "" + `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`
+fullCourseInfo.innerHTML += `${arr.descPic? `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`:""} `
 }
 export{getCourseData}
