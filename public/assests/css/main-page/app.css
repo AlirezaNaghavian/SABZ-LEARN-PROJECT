@@ -3478,6 +3478,10 @@ video {
   background-color: rgb(46 213 115 / var(--tw-bg-opacity));
 }
 
+.hover\:bg-baseColor\/70:hover{
+  background-color: rgb(46 213 115 / 0.7);
+}
+
 .hover\:bg-baseColor\/90:hover{
   background-color: rgb(46 213 115 / 0.9);
 }
@@ -3495,6 +3499,10 @@ video {
 .hover\:bg-gray-400:hover{
   --tw-bg-opacity: 1;
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-secondary\/70:hover{
+  background-color: rgb(78 129 251 / 0.7);
 }
 
 .hover\:bg-sky-600:hover{
