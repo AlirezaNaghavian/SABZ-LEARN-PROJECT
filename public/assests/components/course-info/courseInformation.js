@@ -8,12 +8,16 @@ const courseSessions = document.getElementById("lessons")
 const courseComment = document.getElementById("course-comment");
 const asideCourseData = document.getElementById("aside-course-info");
 const getCourseData = async () =>{
-const urlParam = getUrlParam("name");
+    const urlParam = getUrlParam("name");
 const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`)
 const getRes = await fetchCourseData.json();
+
 courseHeader(getRes)
 courseInfoSec(getRes)
+mobileRatesys(getRes)
+mobileCreatorData(getRes)
 }
+
 const courseHeader = (arr)=>{
         courseInfoHeader.insertAdjacentHTML("beforeend",`
         <!-- course info -->
@@ -125,6 +129,50 @@ const courseInfoSec = (arr) =>{
         <p class="text-slate-500 dark:text-gray-500 text-center md:text-right mt-0.5 sm:mt-1.5">به صورت آنلاین</p>
     </div>
 </div>
+    `)
+}
+const mobileRatesys = (arr)=>{
+    mobileRating.insertAdjacentHTML("beforeend",`
+    
+    <div class="flex gap-3.5">
+    <div class="flex items-center justify-between flex-grow bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+        <svg class="text-baseColor w-8 h-8"><use xlink:href="#users-fill"></use></svg>
+        <div class="flex flex-col items-center justify-center">
+            <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">${arr.studens}</span>
+            <p class="text-slate-500 dark:text-gray-500 text-sm">دانشجو</p>
+        </div>
+    </div>
+    <div class="flex items-center justify-between flex-grow bg-gray-100 dark:bg-gray-700 py-4 px-5 rounded-2xl">
+        <svg class="text-amber-400 dark:text-yellow-400 w-8 h-8"><use xlink:href="#star-fill"></use></svg>
+        <div class="flex flex-col items-center justify-center">
+            <span class="font-DanaBold text-2xl text-zinc-700 dark:text-white">5.0</span>
+            <p class="text-slate-500 dark:text-gray-500 text-sm">رضایت</p>
+        </div>
+    </div>
+</div>
+<!-- mobile progress bar -->
+<div class="mt-5">
+    <div class="flex items-center justify-between mb-3 text-zinc-700 dark:text-white text-xl">
+        <span>درصد تکمیل دوره</span>
+        <span>${arr.isComplete ? "100%":`${(arr.sessions.length/23 *100).toFixed(0)}%`}</span>
+    </div>
+    <progress class=" rounded-2xl h-[.625rem] py-2 bg-sky-600 " value="${arr.isComplete ? "100":`${(arr.sessions.length/23 *100).toFixed(0)}`}" max="100" style="${arr.isComplete ? "width:100%;":`width:${(arr.sessions.length/23 *100).toFixed(0)}%`};"></progress>
+</div>
+    `)
+}
+const mobileCreatorData =(arr)=>{
+    mobileTeacherData.insertAdjacentHTML("beforeend",`
+    <div class="flex items-center justify-center gap-x-2.5 pb-5 border-b border-b-gray-100 dark:border-b-slate-600 mb-3.5">
+    <img src="http://localhost:4000/courses/covers/${arr.creator.profile}" class="block h-[60px] w-[60px] object-cover rounded-full" alt="حمید رضا عبادی">
+    <div class="flex flex-col items-center text-right">
+        <h4 class="teacher_mobile_name text-zinc-700 dark:text-white text-2xl mb-1 font-DanaBold">${arr.creator.name}</h4>
+        <p class="text-slate-500 dark:text-gray-500 text-sm mt-1.5"> توسعه دهنده  ${arr.cat_title}</p>
+    </div>
+</div>
+<a href="#" class="flex items-center justify-center gap-x-1.5 text-slate-500 dark:text-gray-500 text-sm">
+    <svg class="w-5 h-5"><use xlink:href="#arrow-right-on-rectangle"></use></svg>
+    <span>مشاهده پروفایل</span>
+</a>
     `)
 }
 export{getCourseData}
