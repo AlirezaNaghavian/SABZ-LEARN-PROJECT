@@ -80,7 +80,7 @@
                         <div class="h-[68px] shadow-light dark:shadow-none bg-white dark:bg-gray-800 dark:border border-gray-700 rounded-2xl">
                             <div class="h-full flex items-center justify-between text-slate-500 dark:text-gray-500">
                                 <input id="search-input" type="text" name="s" class="w-full rounded-2xl focus:outline-none focus:border-none   text-sm font-Dana pr-7 border-none" style="background-color: transparent;" placeholder="در بین دوره ها جستجو کنید">
-                                <button class="mr-4 ml-6" type="submit">
+                                <button id="searchCatBtn" class="mr-4 ml-6" type="button">
                                     <svg class="w-7 h-7"><use xlink:href="#outline-search-icon"></use></svg>
                                 </button>
                             </div>
@@ -150,6 +150,19 @@
                     <div id="cat_course_wrapper" class="posts_wrap grid grid-rows-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
                         <!-- render in js file -->
                         <!-- render in js file -->
+                    </div>
+                    <div id="empty-field-wrapper" class=" hidden">
+                        <div class="alert alert--danger archive_empty dark:bg-red-500 bg-rose-400 " style="border-radius: 1rem;padding-top: 2rem;padding-bottom: 2rem;">
+                            <div class="alert__body flex items-center mr-12 gap-y-4 gap-x-4 text-white font-DanaBold">
+                                <svg class="alert__icon w-8 h-8">
+                                    <use xlink:href="#danger"></use>
+                                </svg>
+                                <div class="alert__content">
+                                    <span class="alert__title">خطا</span>
+                                    <p class="alert__text">این آرشیو یا فیلتر ها هیچ دوره‌ای ندارند.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <!-- show more button -->
                     <div class="show-more flex justify-center items-center w-52 h-14  mt-10 mx-auto bg-gray-200 dark:bg-gray-700 text-zinc-700 dark:text-white text-xl rounded-full cursor-pointer transition-colors">

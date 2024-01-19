@@ -1,6 +1,7 @@
 import {NavBar} from "../components/nav_bar/_nav-bar.js"
 import {Footer} from "../components/footer/footer.js"
 import {getUrlParam} from "../components/utilities/utilities.js"
+import {searchCourses} from "../components/search-inputs/local-category-search.js"
 import {sortCourses ,basedFreeOffer,sortFreeCheckBox} from "../components/sort-courses/sort.js"
 window.customElements.define("navbar-tag",NavBar)
 window.customElements.define("footer-tg",Footer)
@@ -15,6 +16,7 @@ const getFitlerSheet= document.querySelector(".filter-sec");
 const filterBtn  = document.getElementById("filter-btn");
 const filterCloseBtn = document.querySelector(".filter__close-btn");
 const getSortBtn  = document.querySelectorAll(".sort-btn");
+const searchInput = document.getElementById("search-input");
 const sortActivate = (event)=>{
     event.preventDefault(); 
     getSortBtn.forEach((newEvent)=>{
@@ -170,6 +172,9 @@ btn.addEventListener("click",sortActivate)
 window.addEventListener("load",()=>{
     getDataByCategory();
 })
+// ///////
+// sort event listeners
+// ///////
 freeInput.forEach(inp =>{
    inp.addEventListener("change",(e)=>{
    if(e.target.checked){
@@ -198,5 +203,11 @@ SortBtn.forEach((sortBtn) => {
       sortCourses(getDataId);
     });
   });
+//   //////////////
+// search event listeners
+//   //////////////
 
-  
+
+searchInput.addEventListener("input",(e)=>{
+    searchCourses(e)
+})

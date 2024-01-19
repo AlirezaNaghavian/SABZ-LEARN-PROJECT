@@ -296,4 +296,4 @@ checkBoxBtns.forEach(sortBtn =>{
         sortBasedPresell(e)
     })
 })
-export { sortCourses ,basedFreeOffer,sortFreeCheckBox};
+export { sortCourses ,basedFreeOffer,sortFreeCheckBox,cardContent};
