@@ -7,8 +7,9 @@ const fullCourseInfo = document.getElementById("full-info")
 const courseSessions = document.getElementById("lessons")
 const courseComment = document.getElementById("course-comment");
 const asideCourseData = document.getElementById("aside-course-info");
+const finallCourseTime = document.getElementById("course_whole_time");
 const getCourseData = async () =>{
-    const urlParam = getUrlParam("name");
+const urlParam = getUrlParam("name");
 const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`)
 const getRes = await fetchCourseData.json();
 
@@ -18,6 +19,7 @@ mobileRatesys(getRes)
 mobileCreatorData(getRes)
 asideSec(getRes)
 fullDescriptionData(getRes)
+sessions(getRes)
 }
 
 const courseHeader = (arr)=>{
@@ -38,7 +40,7 @@ const courseHeader = (arr)=>{
                     <a href="#" class="${arr.isUserRegisteredToThisCourse =true ?"bg-baseColor w-full sm:w-auto button-xl text-white flex select-none cursor-pointer justify-center rounded-xl items-center transition-colors hover:bg-baseColor/70" : "bg-secondary w-full sm:w-auto button-xl text-white flex select-none cursor-pointer justify-center rounded-xl items-center transition-colors hover:bg-secondary/70"}">
                         <svg class="${arr.isUserRegisteredToThisCourse = true  ? "w-[25px] h-[30px]" : "hidden"}"><use xlink:href="#shield-done"></use></svg>
                         <svg class="${arr.isUserRegisteredToThisCourse = false ? "w-[25px] h-[30px] fill-white" : " hidden"}"><use xlink:href="#play-circle"></use> </svg>
-                        <span id="reg-title">${arr.isUserRegisteredToThisCourse = true? "شرکت در دوره":"مشاهده جلسات"}</span>
+                        ${arr.isUserRegisteredToThisCourse = true ? `<span id="reg-title">شرکت در دوره</span>`:`<span id="reg-title">مشاهده جلسات</span>`}
                     </a>
                     <div class="text-center sm:text-right mb-5 sm:mb-0">
                         <div class="flex items-center justify-center sm:justify-end mb-1">
@@ -239,5 +241,75 @@ const fullDescriptionData = (arr)=>{
     console.log(arr.descPic);
 fullCourseInfo.innerHTML = arr.fullDesc? arr.fullDesc : "" + `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`
 fullCourseInfo.innerHTML += `${arr.descPic? `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`:""} `
+}
+const sessions =  (arr) =>{
+    finallCourseTime.innerHTML =arr.time
+    if (arr.sessions.length) {
+     arr.sessions.forEach((course,index)=>{
+        courseSessions.innerHTML +=`    
+        <div class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group ">
+        <!-- course-session-title -->
+        ${course.free === 1 ?  
+            `
+        <a href="#" class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+        <span class="flex items-center justify-center shrink-0 w-5 h-5
+          md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
+           dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
+        ${index +1}
+        </span>
+        <h4 class="text-zinc-700 dark:text-white group-hover:text-baseColor text-sm md:text-lg transition-colors">
+        ${course.title}
+        </h4>
+    </a>
+    ` :
+     `
+    <span  class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+        <span class="flex items-center justify-center shrink-0 w-5 h-5
+          md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
+           dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
+        ${index +1}
+        </span>
+        <h4 class="text-zinc-700 dark:text-white group-hover:text-baseColor text-sm md:text-lg transition-colors">
+        ${course.title}
+        </h4>
+    </span>
+    
+    `}
+       
+        <div class="flex items-center  w-full justify-between">
+            <span class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 dark:bg-slate-600 text-zinc-700
+             dark:text-white group-hover:bg-baseColor/10 group-hover:text-baseColor text-xs rounded transition-colors">${course.free === 0 ? "نقدی" : "جلسه رایگان"}</span>
+             <div class="flex items-center gap-x-1.5 md:gap-x-2">
+                <span class="text-slate-500 dark:text-gray-500 text-sm md:text-lg">${course.time}</span>
+                <svg class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 dark:text-white group-hover:text-baseColor transition-colors"><use xlink:href="#play-circle"></use></svg>
+             </div>
+        </div>
+    </div>
+        `
+     })
+    } else {
+        courseSessions.innerHTML +=`
+        <div class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group ">
+<!-- course-session-title -->
+<p  class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+    <span class="flex items-center justify-center shrink-0 w-5 h-5
+      md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
+       dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
+  ‍1
+    </span>
+    <h4 class="text-zinc-700 dark:text-white group-hover:text-baseColor text-sm md:text-lg transition-colors">جسله ای منتشر نشده است</h4>
+</p>
+<div class="flex items-center  w-full justify-between">
+    <span class="inline-block h-[25px] leading-[25px] px-2.5 bg-gray-200 dark:bg-slate-600 text-zinc-700
+     dark:text-white group-hover:bg-baseColor/10 group-hover:text-baseColor text-xs rounded transition-colors">متنشر نشده</span>
+     <div class="flex items-center gap-x-1.5 md:gap-x-2">
+        <span class="text-slate-500 dark:text-gray-500 text-sm md:text-lg">00:00</span>
+        <svg class="w-5 h-6 md:w-6 md:h-6 text-zinc-700 dark:text-white group-hover:text-baseColor transition-colors"><use xlink:href="#play-circle"></use></svg>
+     </div>
+</div>
+</div>
+        
+        `
+    }
 }
 export{getCourseData}
