@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>sabzlear-lesson</title>
     <link rel="stylesheet" href="assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assests/css/videojs/video-js.css">
     <link rel="stylesheet" href="assests/css/session/session.css">
 </head>
 <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
@@ -77,10 +78,25 @@
                 </div>
                 <!-- course lesson -->
                 <div class="relative mb-3 md:mb-5 rounded-xl md:rounded-2xl overflow-hidden">
-                    <div class="plyr plyr--full-ui plyr--video plyr--html5 plyr--fullscreen-enabled plyr--paused plyr--pip-supported plyr__poster-enabled">
+                    <div class="">
 
-                        <!-- video player -->
-                        <!-- video player -->
+                        <video
+                        id="my-video"
+                        class="video-js w-full xs:h-[14rem] md:h-[17rem]  lg:h-[20rem] xl:h-[30rem] "
+                        controls
+                        poster="../backend/public/courses/covers/9761a4f83d7bcdc466ed39fafdb6235a192ef9ea97f484393ce93175c656d22b.png"
+                        data-setup="{}"
+                      >
+                        <source src="jsExPrjcts-77-login-form-content.mp4" type="video/mp4" />
+                       
+                        <p class="vjs-no-js">
+                          To view this video please enable JavaScript, and consider upgrading to a
+                          web browser that
+                          <a href="https://videojs.com/html5-video-support/" target="_blank"
+                            >supports HTML5 video</a
+                          >
+                        </p>
+                      </video>
                     </div>
                 </div>
                 <!-- course lesson title -->
@@ -116,7 +132,7 @@
 
             </div>
             <!-- left side -->
-            <div class=" w-full lg:col-span-4 col-span-12  flex flex-col lg:flex-row gap-4 md:gap-0">
+            <div class=" w-full lg:col-span-4 col-span-12   flex flex-col lg:flex-row gap-4 md:gap-5">
                 <div class="chapters">
                     <div class="chapters__wrapper flex flex-col">
                         <div class="chapter">
@@ -267,7 +283,7 @@
             </div>
         </section>
         <!--  -->
-        <section id="lesson-qaa" class="grid grid-cols-12 gap-4 md:gap-5 mt-4 md:mt-5">
+        <section id="lesson-qaa" class=" grid grid-cols-12 gap-4 xs:mt-48 sm:mt-16 md:gap-5 mt-4 md:mt-5">
             <div class="w-full lg:col-span-8 col-span-12">
                 <div id="qa-section" class="bg-white  dark:bg-gray-800 px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-light dark:shadow-none rounded-2xl">
                     <!-- seaction heade -->
@@ -286,7 +302,7 @@
                                 <span class="text-slate-500 dark:text-gray-500 text-sm" data-newtxt = "پرسش جدید">پرسش جدید</span>
                             </div>
                         </div>
-                        <!-- کتابخانه تکست ادیتور باید اینجا باشد -->
+                        <div id="editor" dir="rtl" class=" h-48 text-slate-500 dark:text-gray-500 focus:text-zinc-700 dark:focus:text-white bg-gray-100 dark:bg-gray-700 border border-transparent focus:border-gray-200 dark:focus:border-slate rounded-2xl" style="opacity: 0;"></div>
                         
                     </div>
                 </div>
@@ -346,6 +362,15 @@
 <footer class="pt-8 lg:pt-16 mt-24 bg-white dark:bg-transparent dark:border-t border-t-gray-700 font-DanaMedium text-slate-500 dark:text-slate-400 text-base xl:text-lg">
     <footer-tg></footer-tg>
 </footer>
-    <script type="module" src="assests/js/session.js"></script>
+<script src="../public/assests/js/ckeditor.js"></script>
+<script>
+    ClassicEditor
+        .create( document.querySelector( '#editor' ) )
+        .catch( error => {
+            console.error( error );
+        } );
+</script>
+<script src="assests/js/video.js"></script>
+<script type="module" src="assests/js/session.js"></script>
 </body>
 </html>

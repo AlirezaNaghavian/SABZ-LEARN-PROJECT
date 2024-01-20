@@ -1,33 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-.plyr--video {
-    overflow: hidden;
-}
-.plyr--full-ui {
-    box-sizing: border-box;
-}
-.plyr {
-    -moz-osx-font-smoothing: grayscale;
-    -webkit-font-smoothing: antialiased;
-    align-items: center;
-    direction: ltr;
-    display: flex;
-    flex-direction: column;
-    font-family: inherit;
-    font-family: var(--plyr-font-family,inherit);
-    font-variant-numeric: tabular-nums;
-    font-weight: 400;
-    font-weight: var(--plyr-font-weight-regular,400);
-    line-height: 1.7;
-    line-height: var(--plyr-line-height,1.7);
-    max-width: 100%;
-    min-width: 200px;
-    position: relative;
-    text-shadow: none;
-    transition: box-shadow .3s ease;
-    z-index: 0;
-}
 /* left side */
 /* left side */
 /* left side */
@@ -59,8 +32,15 @@
 }
 @media (min-width: 1024px){
 .chapters {
-    height: 100%;
-    max-height: 645px;
+    height: 90%;
+    max-height: 745px;
+    width: 100%;
+}
+}
+@media (min-width: 320px) and (max-width:640px){
+.chapters {
+    height: 40%;
+    max-height: 405px;
     width: 100%;
 }
 }

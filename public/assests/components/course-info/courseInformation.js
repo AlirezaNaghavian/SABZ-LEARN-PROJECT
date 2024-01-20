@@ -1,4 +1,4 @@
-import { getUrlParam  } from "../utilities/utilities.js"
+import { getUrlParam ,getToken } from "../utilities/utilities.js"
 const courseInfoHeader = document.getElementById("course-info-header");
 const CourseBoxInfo = document.getElementById("courseBoxInfo")
 const mobileRating = document.getElementById("mobile-rating")
@@ -9,8 +9,11 @@ const courseComment = document.getElementById("course-comment");
 const asideCourseData = document.getElementById("aside-course-info");
 const finallCourseTime = document.getElementById("course_whole_time");
 const getCourseData = async () =>{
+const token = getToken();
 const urlParam = getUrlParam("name");
-const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`)
+const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`,{
+    Authorization : `Bearer ${token}`
+})
 const getRes = await fetchCourseData.json();
 
 courseHeader(getRes)
@@ -238,7 +241,6 @@ const asideSec = (arr)=>{
     `)
 }
 const fullDescriptionData = (arr)=>{
-    console.log(arr.descPic);
 fullCourseInfo.innerHTML = arr.fullDesc? arr.fullDesc : "" + `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`
 fullCourseInfo.innerHTML += `${arr.descPic? `<img src="http://localhost:4000/courses/covers/${arr.descPic}"></img>`:""} `
 }
@@ -251,7 +253,7 @@ const sessions =  (arr) =>{
         <!-- course-session-title -->
         ${course.free === 1 ?  
             `
-        <a href="#" class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+        <a href="session.html?name=${arr.shortName}&id=${course._id}" class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
         <span class="flex items-center justify-center shrink-0 w-5 h-5
           md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
            dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
