@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>sabzlear-lesson</title>
+    <link rel="stylesheet" href="assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assests/css/session/session.css">
+</head>
+<body class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    <svg class="hidden">
+        <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
+        </symbol>
+        <symbol id="arrow-down-tray" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+        </symbol>
+        <symbol id="envelope" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"></path>
+        </symbol>
+        <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5"></path>
+        </symbol>
+        <symbol id="exclamation-circle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 11-18 0 9 9 0 0118 0zm-9 3.75h.008v.008H12v-.008z"></path>
+        </symbol>
+        <symbol id="pencil-square" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L10.582 16.07a4.5 4.5 0 01-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 011.13-1.897l8.932-8.931zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0115.75 21H5.25A2.25 2.25 0 013 18.75V8.25A2.25 2.25 0 015.25 6H10"></path>
+        </symbol>
+        <symbol id="clock" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </symbol>
+        <symbol id="video-camera" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z"></path>
+    </symbol>
+    <symbol id="arrow-right-on-rectangle" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"></path>
+    </symbol>
+    </svg>
+<!-- header -->
+<header class="dark:border-b dark:border-b-gray-700 bg-white  dark:bg-grayTheme">
+    <navbar-tag></navbar-tag>
+ </header>
+<!-- header -->
+<main class="mt-8">
+    <div class="container">
+          <!-- breadcrumb-->
+          <div class="breadcrumb hidden md:flex overflow-x-auto text-sm lg:text-xl">
+            <div class="breadcrumb__item">
+                <a href="#" class="breadcrumb__link">
+                    <svg class="h-6 w-6"><use xlink:href="#home"></use></svg>
+                </a>
+            </div>
+            <div class="breadcrumb__item">
+                <a href="#" class="breadcrumb__link">
+                    دوره ها
+                </a>
+            </div>
+            <div class="breadcrumb__item">
+                <a href="#" class="breadcrumb__link">
+                    فرانت اند
+                </a>
+            </div>
+            <div class="breadcrumb__item">
+                <a href="#" class="breadcrumb__link">
+                    مینی پروژه های تخصصی با Html، Css + دیزاین اختصاصی	  
+                </a>
+            </div>
+        </div>
+        <section class="grid grid-cols-12    gap-4 md:gap-5 mt-5 md:mt-7">
+            <!-- player -->
+            <div class="w-full lg:col-span-8 col-span-12 bg-white dark:bg-gray-800 px-3.5 pb-3.5 pt-5 md:px-5 md:pb-5 md:pt-7 shadow-light dark:shadow-none rounded-2xl">
+                <!-- course title -->
+                <div class="flex items-start gap-x-3.5 mb-4 md:mb-5">
+                    <span class="block shrink-0 w-2.5 h-10 bg-sky-500 dark:bg-secondary rounded-sm"></span>
+                    <h3 class="text-zinc-700 dark:text-white font-Morabba_bold text-2xl/10 lg:text-3xl/[44px]">پروژه های تخصصی با جاوا اسکریپت برای بازار کار</h3>
+                </div>
+                <!-- course lesson -->
+                <div class="relative mb-3 md:mb-5 rounded-xl md:rounded-2xl overflow-hidden">
+                    <div class="plyr plyr--full-ui plyr--video plyr--html5 plyr--fullscreen-enabled plyr--paused plyr--pip-supported plyr__poster-enabled">
+
+                        <!-- video player -->
+                        <!-- video player -->
+                    </div>
+                </div>
+                <!-- course lesson title -->
+                <div class="flex items-start pb-5 mb-5 border-b border-b-gray-100 dark:border-b-gray-700">
+                    <span class="inline-block text-slate-500 dark:text-gray-500 font-DanaBold text-lg md:text-2xl border-l border-l-gray-200 dark:border-l-gray-700 pl-2 ml-2">
+                        120
+                    </span>
+                    <h5 class="h-auto lg:h-[86px] xl:max-h-14 text-zinc-700 dark:text-white font-DanaBold text-base md:text-xl">داینامیک سازی صفحه جزئیات دوره</h5>
+                </div>
+                <!-- course CTA buttons -->
+                <div class="flex justify-between items-center flex-wrap gap-4 tracking-tight">
+                    <div class="w-full sm:w-auto flex items-center flex-wrap gap-3 child:flex-grow child:sm:flex-grow-0">
+                        <a href="https://tech.sabzlearn.ir/uploads/ce01010101it/js-expert-project/jsExPrjcts-121-get-course-details-from-server.mp4?h=JDGSdx4JlpK4Q90vqlD6Iw&amp;t=1705828486" class="rounded-xl flex items-center justify-center py-3 gap-x-2 bg-green-400/90 px-3 bg-baseColor dark:bg-baseColor/90 text-white ">
+                            <svg class="w-5 h-5">
+                                <use xlink:href="#arrow-down-tray"></use>
+                            </svg>
+                            دانلود ویدیو
+                        </a>
+                        <a href="https://files.sabzlearn.ir/uploads/ce01010101it/js-expert-project/121-get-course-details-from-server.zip" class="rounded-xl flex items-center justify-center py-3 gap-x-2 px-3 bg-amber-400 dark:bg-yellow-400/10 text-white dark:text-yellow-400">
+                            <svg class="w-5 h-5">
+                                <use xlink:href="#envelope"></use>
+                            </svg>
+                            دانلود پیوست
+                        </a>
+                    </div>
+                    <a target="_blank" href="https://sabzlearn.ir/lesson/34-24567?grdl=true" class="rounded-xl flex items-center justify-center py-3 gap-x-2 px-3 bg-gray-200 dark:bg-gray-700 text-slate-500 dark:text-gray-300 flex-grow sm:flex-grow-0">
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#arrow-down-tray"></use>
+                        </svg>
+                        <span class="inline-block">دانلود همگانی</span>
+                    </a>
+                </div>
+
+            </div>
+            <!-- left side -->
+            <div class=" w-full lg:col-span-4 col-span-12  flex flex-col lg:flex-row gap-4 md:gap-0">
+                <div class="chapters">
+                    <div class="chapters__wrapper flex flex-col">
+                        <div class="chapter">
+                            <div class="chapter__head ">
+                                <span class="text-base md:text-lg font-DanaMedium transition-colors py-5 ">معرفی دوره</span>
+                                <svg class="w-5 h-5 transition-all">
+                                <use xlink:href="#chevron-down"></use>
+                                </svg>
+                            </div>
+                            <div class="chapter__lessons">
+                             <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="#" class="text-sm md:text-base ">معرفی دوره + پاسخ به سوالات متداول</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">13:22</span>
+                                </div>
+                              </div>
+                        </div>
+                        <div class="chapter">
+                            <div class="chapter__head flex  py-5">
+                                <span class="text-base md:text-lg font-danaMedium transition-colors  truncate ">پیاده سازی پروژه دیوار (به انتخاب دانشجو های دوره)</span>
+                                <svg class="w-5 h-5 transition-all">
+                                    <use xlink:href="#chevron-down"></use>
+                                </svg>
+                            </div>
+                            <div class="chapter__lessons">
+                                    <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-25374" class="text-sm md:text-base">معرفی پروژه + بررسی فصل</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">09:17</span>
+                                </div>
+                                     <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27868" class="text-sm md:text-base">چه فیچر های جدیدی رو تو پروژه دیوار یاد می‌گیریم؟</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">11:26</span>
+                                </div>
+                                  <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27873" class="text-sm md:text-base">ایجاد Folder Structure اصولی برای پروژه</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">04:51</span>
+                                </div>
+                                  <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27874" class="text-sm md:text-base">مثل یک سنیور عمل کن ✌️❤️</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">11:30</span>
+                                </div>
+                                  <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27875" class="text-sm md:text-base">تحویل بک‌اند و فایل Api Document</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">06:54</span>
+                                </div>
+                                   <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27876" class="text-sm md:text-base">نمایش شهر های پربازدید در HomePage</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">14:04</span>
+                                </div>
+                                   <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27877" class="text-sm md:text-base">ذخیره سازی شهر انتخابی کاربر در Cookie</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">06:51</span>
+                                </div>
+                                  <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27878" class="text-sm md:text-base">ریدایرکت کردن کاربر به صفحه شهر مربوطه طبق کوکی</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm">13:07</span>
+                                </div>
+                               <div class="lesson lesson--complete">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27879" class="text-sm md:text-base">دریافت لیست همه شهر‌ها از Server</a>
+                                    </div><span class="text-xs md:text-sm">07:04</span></div>
+                                 <div class="lesson">
+                                    <div class="flex items-center gap-x-1.5">
+                                        <span class="lesson__status"></span>
+                                        <a href="https://sabzlearn.ir/lesson/34-27880" class="text-sm md:text-base">توسعه قابلیت جستجو بین شهر‌ها توسط کاربر</a>
+                                    </div>
+                                    <span class="text-xs md:text-sm"> 13:02</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- mobile in show -->
+                <div class="block lg:hidden space-y-4 md:space-y-5">
+                    <div class="block">
+                        <div class="flex gap-3 md:gap-4 md:mt-10">
+                           <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                            <svg class="text-baseColor w-7 h-7"><use xlink:href="#exclamation-circle"></use></svg>
+                            <div class="flex flex-col items-center justify-center mt-2.5 gap-y-1">
+                                <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">در حال برگزاری</span>
+                                <p class="text-slate-500 dark:text-gray-500 text-xs">وضعیت دوره</p>
+                            </div>
+                           </div> 
+                           <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                            <svg class="text-baseColor w-7 h-7"><use xlink:href="#clock"></use></svg>
+                            <div class="flex flex-col items-center justify-center mt-2.5 gap-y-1">
+                                <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">45:08</span>
+                                <p class="text-slate-500 dark:text-gray-500 text-xs">زمان دوره</p>
+                            </div>
+                           </div> 
+                           <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                            <svg class="text-baseColor w-7 h-7"><use xlink:href="#video-camera"></use></svg>
+                            <div class="flex flex-col items-center justify-center mt-2.5 gap-y-1">
+                                <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">225</span>
+                                <p class="text-slate-500 dark:text-gray-500 text-xs">جلسات دوره</p>
+                            </div>
+                           </div> 
+                        </div>
+                    </div>
+                    <!-- progress bar -->
+                    <div class="bg-white dark:bg-gray-800 p-5 pb-4 shadow-light dark:shadow-none rounded-2xl">
+                        <div class="flex items-center justify-between mb-3.5 text-zinc-700 dark:text-white text-xl">
+                            <span class="font-DanaBold">پیشرفت شما</span>
+                            <span>0%</span>
+                        </div>
+                        <progress class=" w-full h-[.625rem] py-[5px] bg-secondary rounded-4xl" value="0" max="100"></progress>
+                    </div>
+                    <!-- course creator mobile -->
+                    <div class="block lg:hidden bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl text-center">
+                        <img class="block mx-auto mb-2 w-[90px] h-[90px] rounded-full" src="https://secure.gravatar.com/avatar/50db59beddbfed36a1646dae99ca7b2d?s=96&amp;d=mm&amp;r=g" alt="محمدامین سعیدی راد">
+                        <h4 class="text-zinc-700 dark:text-white text-2xl mb-1">محمدامین سعیدی راد</h4>
+                        <a href="https://sabzlearn.ir/teacher/ce01010101it" class="flex items-center justify-center gap-x-1.5 text-slate-500 dark:text-gray-500 text-sm">
+                            مدرس دوره  
+                            <svg class="w-5 h-5">
+                            <use xlink:href="#arrow-right-on-rectangle"></use>
+                                </svg>
+                        </a>
+                            <p class="text-zinc-700 dark:text-white font-danaLight mt-2.5">اولین کدم رو 14 سالگی زدم، حدود 9 سال پیش که با زبان ویژوال بیسیک بود و بعد حدودا 2 سال تو فیلد برنامه نویسی موبایل با زبان جاوا کار کردم و در نهایت با عشقی به اسم جاوا اسکریپت آشنا شدم و حدودا یه 7 سالی هست جاوا اسکریپت کد می‌زنم و به صورت Mern Stack فعالیت می‌کنم.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--  -->
+        <section id="lesson-qaa" class="grid grid-cols-12 gap-4 md:gap-5 mt-4 md:mt-5">
+            <div class="w-full lg:col-span-8 col-span-12">
+                <div id="qa-section" class="bg-white  dark:bg-gray-800 px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-light dark:shadow-none rounded-2xl">
+                    <!-- seaction heade -->
+                    <div class="flex items-center justify-between flex-wrap mb-6">
+                        <div class="flex items-center gap-x-3.5">
+                            <span class="block w-2.5 h-10 bg-amber-400 dark:text-yellow-400 rounded-sm"></span>
+                             <h3 class="text-zinc-700 dark:text-white font-Morabba_bold text-2xl md:text-3xl">پرسش و پاسخ</h3>
+                        </div>
+                    </div>
+                    <!-- comment form -->
+                    <div class="mb-6" id="qa-form">
+                        <div class="flex gap-x-2 mb-3">
+                            <img src="assests/imges/user-profile/1f840c0520e5e22242c0400d8afeeffe.png" class="block w-10 h-10 md:w-14 md:h-14 object-cover rounded-full shrink-0" alt="">
+                            <div class="flex flex-col">
+                                <span class="text-zinc-700 dark:text-white font-DanaMedium text-base md:text-xl">alirezangh123123</span>
+                                <span class="text-slate-500 dark:text-gray-500 text-sm" data-newtxt = "پرسش جدید">پرسش جدید</span>
+                            </div>
+                        </div>
+                        <!-- کتابخانه تکست ادیتور باید اینجا باشد -->
+                        
+                    </div>
+                </div>
+                <!-- aside desktop section -->
+            </div>
+            <aside class="hidden lg:block lg:col-span-4   w-full  shrink-0 sticky top-5 space-y-5">
+                <!-- Mini Box Information like time, status, lessons count -->
+                <div class="block">
+                    <div class="flex gap-3 md:gap-4">
+                       <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                        <svg class="text-baseColor w-7 h-7"><use xlink:href="#exclamation-circle"></use></svg>
+                        <div class="flex flex-col items-center justify-center mt-2.5">
+                            <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">در حال برگزاری</span>
+                            <p class="text-slate-500 dark:text-gray-500 text-xs">وضعیت دوره</p>
+                        </div>
+                       </div> 
+                       <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                        <svg class="text-baseColor w-7 h-7"><use xlink:href="#clock"></use></svg>
+                        <div class="flex flex-col items-center justify-center mt-2.5">
+                            <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">45:08</span>
+                            <p class="text-slate-500 dark:text-gray-500 text-xs">زمان دوره</p>
+                        </div>
+                       </div> 
+                       <div class="w-full flex flex-col justify-center items-center gap-y-1 bg-white py-3 dark:bg-gray-800 text-center shadow-light dark:shadow-none rounded-2xl">
+                        <svg class="text-baseColor w-7 h-7"><use xlink:href="#video-camera"></use></svg>
+                        <div class="flex flex-col items-center justify-center mt-2.5">
+                            <span class="font-DanaBold text-lg text-zinc-700 dark:text-white">225</span>
+                            <p class="text-slate-500 dark:text-gray-500 text-xs">جلسات دوره</p>
+                        </div>
+                       </div> 
+                    </div>
+                </div>
+                <!-- progress desktop bar -->
+                <div class="bg-white dark:bg-gray-800 p-5 pb-4 shadow-light dark:shadow-none rounded-2xl">
+                    <div class="flex items-center justify-between mb-3.5 text-zinc-700 dark:text-white text-xl">
+                        <span class="font-DanaBold">پیشرفت شما</span>
+                        <span>0%</span>
+                    </div>
+                    <progress class=" w-full h-[.625rem] py-[5px] bg-secondary rounded-4xl" value="0" max="100"></progress>
+                </div>
+                <!-- course creator desk version -->
+                <div class="block bg-white dark:bg-gray-800 px-5 py-6 shadow-light dark:shadow-none rounded-2xl text-center">
+                    <img class="block mx-auto mb-2 w-[90px] h-[90px] rounded-full" src="https://secure.gravatar.com/avatar/50db59beddbfed36a1646dae99ca7b2d?s=96&amp;d=mm&amp;r=g" alt="محمدامین سعیدی راد">
+                    <h4 class="text-zinc-700 dark:text-white text-2xl mb-1">محمدامین سعیدی راد</h4>
+                    <a href="https://sabzlearn.ir/teacher/ce01010101it" class="flex items-center justify-center gap-x-1.5 text-slate-500 dark:text-gray-500 text-sm">
+                        مدرس دوره
+                        <svg class="w-5 h-5">
+                            <use xlink:href="#arrow-right-on-rectangle"></use>
+                        </svg>
+                    </a>
+                    <p class="text-zinc-700 dark:text-white font-DanaMedium mt-2.5">اولین کدم رو 14 سالگی زدم، حدود 9 سال پیش که با زبان ویژوال بیسیک بود و بعد حدودا 2 سال تو فیلد برنامه نویسی موبایل با زبان جاوا کار کردم و در نهایت با عشقی به اسم جاوا اسکریپت آشنا شدم و حدودا یه 7 سالی هست جاوا اسکریپت کد می‌زنم و به صورت Mern Stack فعالیت می‌کنم.</p>
+                </div>
+            </aside>
+        </section>
+    </div>
+</main>
+<footer class="pt-8 lg:pt-16 mt-24 bg-white dark:bg-transparent dark:border-t border-t-gray-700 font-DanaMedium text-slate-500 dark:text-slate-400 text-base xl:text-lg">
+    <footer-tg></footer-tg>
+</footer>
+    <script type="module" src="assests/js/session.js"></script>
+</body>
+</html>
