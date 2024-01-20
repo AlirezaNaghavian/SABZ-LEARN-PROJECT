@@ -14,10 +14,13 @@
   "author": "alirezangh",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.4.0"
+    "tailwindcss": "^3.4.0",
+    "video.js": "^8.9.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-alignment": "^41.0.0",
     "sweetalert2": "^11.10.3",
-    "swiper": "^11.0.5"
+    "swiper": "^11.0.5",
+    "videojs-plus": "^1.6.9"
   }
 }

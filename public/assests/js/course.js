@@ -1,5 +1,6 @@
 import { NavBar } from "../components/nav_bar/_nav-bar.js";
 import { Footer } from "../components/footer/footer.js";
+import {getCourseData} from "../components/course-info/courseInformation.js"
 const getCourseContentDesc = document.getElementsByClassName("course_content")[0];
 const courseContentShadow = document.getElementsByClassName("course-content-shadow")[0];
 const getexpandTitle =  document.getElementsByClassName("expand-title")[0] 
@@ -74,3 +75,6 @@ topicName.addEventListener("click",openCourseSeessions)
 expandBtn.addEventListener("click",expandDescription)
 window.customElements.define("navbar-tag",NavBar)
 window.customElements.define("footer-tg",Footer)
+window.addEventListener("load",()=>{
+    getCourseData();
+})
