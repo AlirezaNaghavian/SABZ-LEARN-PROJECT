@@ -1,4 +1,4 @@
-import { getUrlParam ,getToken } from "../utilities/utilities.js"
+import { getUrlParam ,getToken,showNotfication } from "../utilities/utilities.js"
 const courseInfoHeader = document.getElementById("course-info-header");
 const CourseBoxInfo = document.getElementById("courseBoxInfo")
 const mobileRating = document.getElementById("mobile-rating")
@@ -8,6 +8,9 @@ const courseSessions = document.getElementById("lessons")
 const courseComment = document.getElementById("course-comment");
 const asideCourseData = document.getElementById("aside-course-info");
 const finallCourseTime = document.getElementById("course_whole_time");
+const notficationWrapper =document.getElementsByClassName("notification")[0]
+const notifyLine = document.getElementsByClassName("notification__line")[0];
+const isReply = document.getElementById("comment-is-reply");
 const getCourseData = async () =>{
 const token = getToken();
 const urlParam = getUrlParam("name");
@@ -69,7 +72,6 @@ const courseHeader = (arr)=>{
     
 }
 const courseInfoSec = (arr) =>{
-    console.log(arr);
     CourseBoxInfo.insertAdjacentHTML("beforeend",`
     
     <div class="flex flex-col md:flex-row justify-center md:justify-start  items-center gap-y-2 gap-x-4 text-center md:text-right bg-white dark:bg-gray-800 p-3.5 sm:p-5 shadow-light dark:shadow-none rounded-2xl">
@@ -315,10 +317,10 @@ const sessions =  (arr) =>{
         `
     }
 }
+
 const commentHandler = (arr)=>{
    if (arr.comments.length) {
     arr.comments.forEach(comment =>{
-        console.log(comment);
         courseComment.insertAdjacentHTML("beforeend",` 
         <!-- comment list -->
         <div class="space-y-3.5 sm:space-y-5 comments_wrap">
@@ -394,15 +396,11 @@ const commentHandler = (arr)=>{
            :
            
            ""}
-    </div>
-    </div>
             </div>
             </div>
-            
+            </div>
+            </div>    
         </div>
-       
-        
-        
         `)
     })
     courseComment.innerHTML += `
@@ -426,6 +424,73 @@ const commentHandler = (arr)=>{
         </div>
     `)
    }
-
+   const getCommentForm =document.getElementById("comment-form")
+   const addCommentBtn =document.getElementById("add-comment-btn");
+   const cancelCommentBtn =document.getElementById("comment-cancel-btn");
+   const userCommentId= document.getElementById("comment-id");
+   const userReplyCommnet  = document.getElementById("comment-is-reply");
+   const submitCommentBtn = document.getElementsByClassName("subsub")[0];
+  
+   submitCommentBtn.addEventListener("click",async()=>{
+    const urlParam = getUrlParam("name");
+    const token = getToken();
+    const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`,{
+    Authorization : `Bearer ${token}`
+})
+const getRes = await fetchCourseData.json();
+    addNewComment(getRes)
+   })
+   const addComment = async()=>{
+    if (getToken()) {
+        const userData = document.getElementById("user-data")
+        let fetchGetMe = await fetch(`http://localhost:4000/v1/auth/me`,{
+            headers:{
+                "Authorization": `Bearer ${getToken()}`
+            }
+          })
+          const getMeRes =await fetchGetMe.json();
+          userData.innerHTML = getMeRes.username
+        getCommentForm.classList.add("active")
+    } else {
+        notficationWrapper.innerHTML = ""
+        showNotfication("خطا","ابتدا ثبت نام کنید یا وارد شوید","text-red-600","bg-rose-500")
+    }  
+   }
+   const cancelSendComment = ()=>{
+    getCommentForm.classList.remove("active")
+         userCommentId.value= ""
+         userReplyCommnet.value = ""
+   }
+   cancelCommentBtn.addEventListener("click",cancelSendComment)
+   addCommentBtn.addEventListener("click",addComment)
 }
+const addNewComment = async (e)=>{
+    const getCommentForm =document.getElementById("comment-form")
+    let shortNameValue = e.shortName;
+    let textArea = document.getElementById("comment-textarea");
+    let commentContent = {
+        body: textArea.value,
+        courseShortName : shortNameValue,
+        score : 5
+    }
+    const fetchComment = await fetch(`http://localhost:4000/v1/comments`,{
+        method : "POST",
+        headers:{
+            Authorization : `Bearer ${getToken()}`,
+            "Content-Type" : "application/json"
+        },
+        body : JSON.stringify(commentContent)
+    })
+    const getResponse = await fetchComment.json();
+    if(fetchComment.status === 201){
+        showNotfication("موفق","کامنت شما ارسال گردید در صورت تایید مدیریت ثبت خواهد شد","text-green-500","bg-green-600")
+        textArea.value  =""
+        getCommentForm.classList.remove("active")
+        isReply.setAttribute("value","no")
+        
+    }else{
+        showNotfication("خطا","مشکلی پیش آمده لطفا دوباره تلاش کنید","text-red-600","bg-rose-500")
+
+    }
+   }
 export{getCourseData}
