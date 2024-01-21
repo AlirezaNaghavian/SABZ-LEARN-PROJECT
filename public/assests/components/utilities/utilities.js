@@ -1,5 +1,5 @@
 const categoryCourseWrapper = document.getElementById("cat_course_wrapper");
-
+const notficationWrapper =document.getElementsByClassName("notification")[0]
 const saveIntoLStorage = (key, value) => {
   return localStorage.setItem(key, JSON.stringify(value));
 };
@@ -86,4 +86,50 @@ const cardContent = (course)=>{
   `)
   return
 }
-export { saveIntoLStorage, getFromLstarage, getToken,getUrlParam ,cardContent };
+
+const showNotfication = (title,content,colorIcon,colorLine)=>{
+  notficationWrapper.classList.add("notification--show");
+  notficationWrapper.classList.add("notification--danger");
+
+  notficationWrapper.insertAdjacentHTML("beforeend",`
+  <div class="notification__wrapper">
+  <svg class="notification__icon ${colorIcon}">
+      <use href="#check-circle-solid"></use>
+  </svg>
+  <div class="notification__content">
+      <span class="notification__title">${title}</span>
+      <span class="notification__text">${content}</span>
+  </div>
+</div>
+<span class="notification__line  ${colorLine}"></span>
+  
+  `)
+  const notifyLine = document.getElementsByClassName("notification__line")[0];
+  console.log(notifyLine);
+  let widthPercent = 100;
+  let startTime;
+  
+  function animate() {
+    const currentTime = new Date().getTime();
+    const elapsed = currentTime - startTime;
+    const duration = 5000; // 5000 milliseconds (5 seconds)
+  
+    widthPercent = 100 - (elapsed / duration) * 100;
+    notifyLine.style.cssText = `width: calc(${widthPercent}% - 8px);`;
+  
+    if (widthPercent > 0) {
+      requestAnimationFrame(animate);
+    } else {
+      setTimeout(() => {
+        // Hide notification after 1 second
+        notficationWrapper.classList.remove("notification--show");
+        notficationWrapper.classList.remove("notification--danger");
+        notifyLine.style.cssText = ""
+      }, 1000);
+    }
+  }
+  // Start animation
+  startTime = new Date().getTime();
+  animate();
+}
+export { saveIntoLStorage, getFromLstarage, getToken,getUrlParam ,cardContent ,showNotfication};

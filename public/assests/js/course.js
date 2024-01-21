@@ -9,12 +9,8 @@ const expandBtn = document.getElementById("expand-btn");
 const topicName = document.getElementsByClassName("topic-name")[0];
 const topicIcon = document.querySelector(".topic-name svg")
 const topicBody = document.getElementsByClassName("topic-body")[0];
-const getCommentForm = document.getElementById("comment-form")
-const addCommentBtn =document.getElementById("add-comment-btn");
-const userCommentId= document.getElementById("comment-id");
-const userReplyCommnet  = document.getElementById("comment-is-reply");
-const cancelCommentBtn =document.getElementById("comment-cancel-btn");
-const replyBtn = document.getElementsByClassName("comment__reply-btn")[0];
+const submitCommentBtn = document.getElementById("comment-submit-btn");
+
 // expan more details
 let descOpen = false
 const expandDescription = ()=>{
@@ -49,28 +45,6 @@ const openCourseSeessions = ()=>{
 
 
 }
-// add course comment
-// open comment section
-const addComment = ()=>{
-    getCommentForm.classList.add("active")
-    userCommentId.value= 2860
-    userReplyCommnet.value = "no"
-}
-// close comment section
-const cancelSendComment = ()=>{
-    getCommentForm.classList.remove("active")
-    userCommentId.value= ""
-    userReplyCommnet.value = ""
-}
-const replyUserComment = ()=>{
-    getCommentForm.classList.add("active")
-    userCommentId.value= 2860
-    userReplyCommnet.value = "yes"
-    // این تیکه ناقصه و فقط استایل ها هندل شده هنوز داینامیک نشده
-}
-replyBtn.addEventListener("click",replyUserComment)
-cancelCommentBtn.addEventListener("click",cancelSendComment)
-addCommentBtn.addEventListener("click",addComment)
 topicName.addEventListener("click",openCourseSeessions)
 expandBtn.addEventListener("click",expandDescription)
 window.customElements.define("navbar-tag",NavBar)
