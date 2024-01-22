@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* ckedito custom styles */
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable {
+  @apply h-48 text-slate-500 dark:text-gray-500 focus:text-zinc-700 dark:focus:text-white bg-gray-100 dark:bg-grayTheme/40 outline-none  border-none   dark:focus:border-slate-600 rounded-b-xl;
+
+}
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar {
+    @apply text-slate-500 dark:text-gray-500 focus:text-zinc-700 dark:focus:text-white bg-gray-100 dark:bg-slate-400 outline-none  border-none dark:focus:border-slate-600 rounded-t-xl;
+}
+
+
+  

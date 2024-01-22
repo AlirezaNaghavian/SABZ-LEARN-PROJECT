@@ -5,6 +5,7 @@
 @import "../sign-up_&_login/login.css";
 @import "../blogs/blogs.css";
 @import "../session/session.css";
+@import "../ckeditor/ckeditor.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -48,7 +49,7 @@
 }
 @media screen and (min-width: 475px) and (max-width: 640px) {
   .container {
-    min-width: 475px ;
+    min-width: 475px;
   }
 }
 
@@ -64,15 +65,15 @@
 
 @layer utilities {
   .box-center {
-      @apply flex justify-center items-center;
-    }
-    .bg-secondary-dark {
-      --tw-gradient-to: #3f6cd8 var(--tw-gradient-to-position);
-      --tw-gradient-to-position: ;
-    }
-    .bg-conic-gradient {
-      background-image: conic-gradient(from 90deg, var(--tw-gradient-stops));
-    }
+    @apply flex justify-center items-center;
+  }
+  .bg-secondary-dark {
+    --tw-gradient-to: #3f6cd8 var(--tw-gradient-to-position);
+    --tw-gradient-to-position: ;
+  }
+  .bg-conic-gradient {
+    background-image: conic-gradient(from 90deg, var(--tw-gradient-stops));
+  }
 }
 /* set tittle section component styles */
 @layer components {
@@ -132,21 +133,39 @@
   height: 180px;
 }
 .blog__banner::before {
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 90%) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 90%
+  ) !important;
 }
 .blog__banner::after {
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
 }
-.dark .blog__banner::after{
-  background: linear-gradient(0deg, rgba(40,41,61,1) 0%, rgba(40,41,61,0) 100%) !important;
+.dark .blog__banner::after {
+  background: linear-gradient(
+    0deg,
+    rgba(40, 41, 61, 1) 0%,
+    rgba(40, 41, 61, 0) 100%
+  ) !important;
 }
-.dark .blog__banner::before{
-  background: linear-gradient(0deg, rgba(40,41,61,1) 0%, rgba(40,41,61,0) 90%) !important;
+.dark .blog__banner::before {
+  background: linear-gradient(
+    0deg,
+    rgba(40, 41, 61, 1) 0%,
+    rgba(40, 41, 61, 0) 90%
+  ) !important;
 }
 /* instagram banner */
-.bg-section-pattern-br{
-  background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to bottom right, #502ED6, #CD2F6A, #FFE354);
+.bg-section-pattern-br {
+  background-image: url(../../imges/banners/section-pattern.png),
+    linear-gradient(to bottom right, #502ed6, #cd2f6a, #ffe354);
 }
 .bg-section-pattern {
-  background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to right, #502ED6, #CD2F6A, #FFE354);
+  background-image: url(../../imges/banners/section-pattern.png),
+    linear-gradient(to right, #502ed6, #cd2f6a, #ffe354);
 }

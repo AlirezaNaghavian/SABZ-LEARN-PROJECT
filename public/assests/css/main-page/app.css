@@ -923,6 +923,76 @@ input {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity));
 }
 
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* ckedito custom styles */
+
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable{
+  height: 12rem;
+  border-bottom-right-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable:focus{
+  --tw-text-opacity: 1;
+  color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable){
+  background-color: rgb(28 28 40 / 0.4);
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable:focus){
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar{
+  border-top-left-radius: 0.75rem;
+  border-top-right-radius: 0.75rem;
+  border-style: none;
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(100 116 139 / var(--tw-text-opacity));
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar:focus{
+  --tw-text-opacity: 1;
+  color: rgb(63 63 70 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar){
+  --tw-bg-opacity: 1;
+  background-color: rgb(148 163 184 / var(--tw-bg-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
+}
+
+:is(:where(.dark) .ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar:focus){
+  --tw-border-opacity: 1;
+  border-color: rgb(71 85 105 / var(--tw-border-opacity));
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 /* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 
 /*
@@ -3680,7 +3750,7 @@ video {
 
 @media screen and (min-width: 475px) and (max-width: 640px) {
   .container {
-    min-width: 475px ;
+    min-width: 475px;
   }
 }
 
@@ -3733,29 +3803,47 @@ video {
 }
 
 .blog__banner::before {
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 90%) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 90%
+  ) !important;
 }
 
 .blog__banner::after {
-  background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%) !important;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  ) !important;
 }
 
-.dark .blog__banner::after{
-  background: linear-gradient(0deg, rgba(40,41,61,1) 0%, rgba(40,41,61,0) 100%) !important;
+.dark .blog__banner::after {
+  background: linear-gradient(
+    0deg,
+    rgba(40, 41, 61, 1) 0%,
+    rgba(40, 41, 61, 0) 100%
+  ) !important;
 }
 
-.dark .blog__banner::before{
-  background: linear-gradient(0deg, rgba(40,41,61,1) 0%, rgba(40,41,61,0) 90%) !important;
+.dark .blog__banner::before {
+  background: linear-gradient(
+    0deg,
+    rgba(40, 41, 61, 1) 0%,
+    rgba(40, 41, 61, 0) 90%
+  ) !important;
 }
 
 /* instagram banner */
 
-.bg-section-pattern-br{
-  background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to bottom right, #502ED6, #CD2F6A, #FFE354);
+.bg-section-pattern-br {
+  background-image: url(../../imges/banners/section-pattern.png),
+    linear-gradient(to bottom right, #502ed6, #cd2f6a, #ffe354);
 }
 
 .bg-section-pattern {
-  background-image: url(../../imges/banners/section-pattern.png), linear-gradient(to right, #502ED6, #CD2F6A, #FFE354);
+  background-image: url(../../imges/banners/section-pattern.png),
+    linear-gradient(to right, #502ed6, #cd2f6a, #ffe354);
 }
 
 .placeholder\:font-Dana::-moz-placeholder{
