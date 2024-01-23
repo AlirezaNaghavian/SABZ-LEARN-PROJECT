@@ -6,6 +6,7 @@
 @import "../blogs/blogs.css";
 @import "../session/session.css";
 @import "../ckeditor/ckeditor.css";
+@import "../global-search/search.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

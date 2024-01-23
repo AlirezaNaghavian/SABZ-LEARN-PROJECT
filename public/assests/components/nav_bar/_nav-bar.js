@@ -1,4 +1,4 @@
-import { getToken } from "../utilities/utilities.js";
+import { getToken,getUrlParam } from "../utilities/utilities.js";
 const nav_template = document.createElement("template");
 nav_template.innerHTML = `
 
@@ -162,11 +162,11 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
             <!-- search mobile form -->
             <form class="block mt-7 px-7">
                 <label class="relative w-full h-12 flex justify-between transition-all">
-                    <input type="text" class="rounded-xl bg-gray-100 dark:focus:text-white text-slate-500 placeholder:text-slate-500 dark:text-gray-500
+                    <input type="text" class="global-search-input rounded-xl bg-gray-100 dark:focus:text-white text-slate-500 placeholder:text-slate-500 dark:text-gray-500
                      dark:placeholder-gray-500 w-full h-full dark:border dark:border-gray-700
                       dark:focus:border-gray-600 dark:bg-gray-800 text-base pl-12 pr-5 block
-                       transition-all" name="s" placeholder="جستجو">
-                       <button class="absolute flex left-0  pl-4   top-0 bottom-0 h-6 my-auto text-slate-500 dark:text-gray-500" type="submit" role="button">
+                       transition-all"  placeholder="جستجو">
+                       <button class="global-search-btn absolute flex left-0  pl-4   top-0 bottom-0 h-6 my-auto text-slate-500 dark:text-gray-500" type="submit" role="button">
                         <svg class="w-6 h-6  flex items-center justify-center  "><use xlink:href="#outline-search-icon"></use></svg>
                        </button>
                 </label>
@@ -207,13 +207,13 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
     <div class="relative group hidden lg:block  "  >
         <form class=" hidden xl:block">
             <label class="relative h-14 block transition-all">
-                <input type="text" name="s" placeholder="جستجو" class="rounded-full dark:focus:text-white text-slate-500
+                <input type="text"  placeholder="جستجو" class="global-search-input rounded-full dark:focus:text-white text-slate-500
                 dark:text-gray-600 placeholder:text-slate-50 dark:placeholder-gray-600 w-48 focus:w-64 focus:outline-none
                 h-full border border-transparent focus:border-gray-200
                 dark:border-gray-700 focus:text-zinc-700 dark:focus:border-gray-600
                 bg-gray-300 dark:bg-grayTheme   text-base placeholder:text-lg pl-14 pr-5 block 
                   transition-all">
-                  <button class="absolute left-5 top-0 bottom-0 h-7 w-7 my-auto text-slate-500 dark:text-gray-600" type="submit" role="button">
+                  <button class="global-search-btn absolute left-5 top-0 bottom-0 h-7 w-7 my-auto text-slate-500 dark:text-gray-600" type="submit" role="button">
                     <svg class="h-7 w-7"><use xlink:href="#outline-search-icon"></use></svg>
                   </button>
             </label>
@@ -229,12 +229,12 @@ d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75
             <div class="lg-search-btn hide absolute -left-24 top-full pt-4 z-50 transition-all" id="active-search-box">
                 <form >
                     <label class="relative flex justify-around items-center w-64  ">
-                        <input type="text" name="s" placeholder="جستجو بین دوره ها" 
-                        class="w-full h-[68px] pr-4 pl-16 text-lg bg-white
+                        <input type="text"  placeholder="جستجو بین دوره ها" 
+                        class="global-search-input w-full h-[68px] pr-4 pl-16 text-lg bg-white
                          dark:bg-gray-700 placeholder:text-slate-500
                           dark:placeholder:text-gray-400 text-gray-700
                            dark:text-gray-500 rounded-2xl">
-                           <button class="absolute left-0 top-0 bottom-0 h-full my-auto text-slate-500 dark:text-gray-600" type="submit" role="button">
+                           <button class="global-search-btn absolute left-0 top-0 bottom-0 h-full my-auto text-slate-500 dark:text-gray-600" type="submit" role="button">
                             <svg class="ml-5 w-6 h-6"><use xlink:href="#outline-search-icon"></use></svg>
                            </button>
                     </label>
@@ -407,7 +407,7 @@ class NavBar extends HTMLElement {
     // logout user 
      const logOut = ()=>{
         localStorage.removeItem("user")
-        location.reload()
+        location.href = "index.html"
      }
     //get user token
     const token = async()=>{
@@ -498,6 +498,31 @@ class NavBar extends HTMLElement {
         });
       });
     }
+    // /////////////
+    // global search section
+    // /////////////
+
+    const leadToResultSearch = (e)=>{
+        this.globalSearchInput = this.shadowRoot.querySelectorAll(".global-search-input")
+        this.globaSearchBtns=this.shadowRoot.querySelectorAll(".global-search-btn");
+        
+      if(e.value){
+
+          const urlParam = getUrlParam("value");
+          location.href =`global-search.html?value=${e.value.trim()}`
+      }
+    }
+    this.globalSearchInput = this.shadowRoot.querySelectorAll(".global-search-input")
+    this.globaSearchBtns=this.shadowRoot.querySelectorAll(".global-search-btn");
+    this.globaSearchBtns.forEach(searchBtn =>{
+        searchBtn.addEventListener("click",(e)=>{
+            e.preventDefault();
+            this.globalSearchInput.forEach(inputs =>{
+                console.log(inputs.value);
+                leadToResultSearch(inputs)
+            })
+        })
+    })
     this.overlayShadow.addEventListener("click",onClickOverlay)
       this.userProfileWrapper.addEventListener("click",showUserProfile)
       window.addEventListener("load",async()=>{

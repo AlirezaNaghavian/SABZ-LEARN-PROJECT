@@ -46,7 +46,7 @@ const cardContent = (course)=>{
           <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs child:transition-colors group ">
              <div class="flex items-center border-x-amber-100 hover:text-baseColor transition-colors">
               <svg class="w-4 h-4 group-hover:text-baseColor"><use xlink:href="#card-user-icon"></use></svg>
-              <a href="#" class=" group-hover:text-baseColor">${course.creator}</a>
+              <a href="#" class=" group-hover:text-baseColor">${course.creatorName}</a>
              </div>
               <div class="flex items-center gap-x-1 text-xs text-slate-500 dark:text-slate-400">
                   <svg class="h-4 w-4"><use xlink:href="#card-clock"></use></svg>
@@ -87,7 +87,7 @@ const cardContent = (course)=>{
   return
 }
 
-const showNotfication = (title,content,colorIcon,colorLine)=>{
+const showNotfication = async (title,content,colorIcon,colorLine)=>{
   notficationWrapper.classList.add("notification--show");
   notficationWrapper.classList.add("notification--danger");
 
