@@ -6,10 +6,14 @@
     <title>sabzlear-lesson</title>
     <link rel="stylesheet" href="assests/css/main-page/app.css">
     <link rel="stylesheet" href="assests/css/videojs/video-js.css">
+    <link rel="stylesheet" href="assests/css/notfication/notify.css">
     <link rel="stylesheet" href="assests/css/session/session.css">
 </head>
 <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
     <svg class="hidden">
+        <symbol id="check-circle-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+            <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm13.36-1.814a.75.75 0 10-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 00-1.06 1.06l2.25 2.25a.75.75 0 001.14-.094l3.75-5.25z" clip-rule="evenodd"></path>
+        </symbol>
         <symbol id="home" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path>
         </symbol>
@@ -38,6 +42,9 @@
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9"></path>
     </symbol>
     </svg>
+    <div class="notification">
+      
+    </div>
 <!-- header -->
 <header class="dark:border-b dark:border-b-gray-700 bg-white  dark:bg-grayTheme">
     <navbar-tag></navbar-tag>
@@ -102,24 +109,39 @@
             <div class="w-full lg:col-span-8 col-span-12">
                 <div id="qa-section" class="bg-white  dark:bg-gray-800 px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-light dark:shadow-none rounded-2xl">
                     <!-- seaction heade -->
-                    <div class="flex items-center justify-between flex-wrap mb-6">
-                        <div class="flex items-center gap-x-3.5">
-                            <span class="block w-2.5 h-10 bg-amber-400 dark:text-yellow-400 rounded-sm"></span>
-                             <h3 class="text-zinc-700 dark:text-white font-Morabba_bold text-2xl md:text-3xl">پرسش و پاسخ</h3>
-                        </div>
-                    </div>
+             
                     <!-- comment form -->
+                    <div  class="bg-white dark:bg-gray-800 px-3.5 md:px-5 pt-5 md:pt-7 pb-3.5 md:pb-6 shadow-light dark:shadow-none rounded-2xl mt-4 sm:mt-5 flex flex-col space-y-5">
                     <div class="mb-6" id="qa-form">
                         <div class="flex gap-x-2 mb-3">
                             <img src="assests/imges/user-profile/1f840c0520e5e22242c0400d8afeeffe.png" class="block w-10 h-10 md:w-14 md:h-14 object-cover rounded-full shrink-0" alt="">
                             <div class="flex flex-col">
-                                <span class="text-zinc-700 dark:text-white font-DanaMedium text-base md:text-xl">alirezangh123123</span>
-                                <span class="text-slate-500 dark:text-gray-500 text-sm" data-newtxt = "پرسش جدید">پرسش جدید</span>
+                                <span id="userNameData" class="text-zinc-700 dark:text-white font-DanaMedium text-base md:text-xl">alirezangh123123</span>
+                                <!-- <span class="text-slate-500 dark:text-gray-500 text-sm" data-newtxt = "پرسش جدید">پرسش جدید</span> -->
                             </div>
                         </div>
-                        <div id="editor" dir="rtl" class=" h-48 text-slate-500 dark:text-gray-500 focus:text-zinc-700 dark:focus:text-white bg-gray-100 dark:bg-gray-700 border border-transparent focus:border-gray-200 dark:focus:border-slate rounded-2xl" style="opacity: 0;"></div>
-                        
+                        <!-- <div id="comment-support-form">
+                            <div class="flex gap-x-2 mb-3">
+                            </div>
+                            <input type="hidden" value id="comment-id">
+                            <input type="hidden" value id="comment-is-reply">
+                            <textarea  id="comment-support-textarea" placeholder="نظر خود را بنویسید..."  rows="6"
+                            class="block w-full p-3 md:p-5 text-sm md:text-base text-slate-500 dark:text-gray-500
+                             focus:text-zinc-700 dark:focus:text-white bg-gray-100
+                              dark:bg-gray-700 border border-transparent focus:border-gray-200
+                               dark:focus:border-slate-600 rounded-2xl placeholder:font-Dana transition-colors"
+                            ></textarea>
+                             submit comment
+                            <div class="flex gap-x-2 justify-end mt-2.5">
+                                <button class="flex gap-0.5 px-[18px]  py-2 text-base text-white bg-gray-500 rounded-xl" id="comment-support-cancel-btn">لغو</button>
+                                <button type="submit"  class="subsub flex gap-0.5 px-[18px] py-2 text-base text-white bg-secondary rounded-xl" id="comment-support-submit-btn">ثبت</button>
+                            </div>
+                        </div>  -->
                     </div>
+               
+                    
+                </div>
+           
                 </div>
                 <!-- aside desktop section -->
             </div>
@@ -132,14 +154,6 @@
 <footer class="pt-8 lg:pt-16 mt-24 bg-white dark:bg-transparent dark:border-t border-t-gray-700 font-DanaMedium text-slate-500 dark:text-slate-400 text-base xl:text-lg">
     <footer-tg></footer-tg>
 </footer>
-<script src="../public/assests/js/ckeditor.js"></script>
-<script>
-    ClassicEditor
-        .create( document.querySelector( '#editor' ) )
-        .catch( error => {
-            console.error( error );
-        } );
-</script>
 <script src="assests/js/video.js"></script>
 <script type="module" src="assests/js/session.js"></script>
 </body>

@@ -249,14 +249,14 @@ fullCourseInfo.innerHTML += `${arr.descPic? `<img src="http://localhost:4000/cou
 }
 const sessions =  (arr) =>{
     finallCourseTime.innerHTML =arr.time
-    if (arr.sessions.length) {
+    if (arr.sessions.length  ) {
      arr.sessions.forEach((course,index)=>{
         courseSessions.innerHTML +=`    
         <div class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group ">
         <!-- course-session-title -->
         ${course.free === 1 ?  
             `
-        <a href="session.html?name=${arr.shortName}&id=${course._id}" class="flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
+        <a    class="cursor-pointer session-link flex items-center gap-x-1.5 md:gap-x-2.5 shrink-0 w-[85%] ">
         <span class="flex items-center justify-center shrink-0 w-5 h-5
           md:w-7 md:h-7 bg-white font-DanaBold text-xs md:text-base text-zinc-700
            dark:text-white dark:bg-gray-800 group-hover:bg-baseColor group-hover:text-white rounded-md transition-colors">
@@ -291,8 +291,10 @@ const sessions =  (arr) =>{
         </div>
     </div>
         `
+     
      })
-    } else {
+    } 
+    else {
         courseSessions.innerHTML +=`
         <div class="md:flex items-center gap-2.5 flex-wrap space-y-3.5 md:space-y-0 py-4 md:py-6 px-3.5 md:px-5 group ">
 <!-- course-session-title -->
@@ -316,6 +318,26 @@ const sessions =  (arr) =>{
         
         `
     }
+    const sessionLink = document.querySelectorAll(".session-link");
+   sessionLink.forEach(linkBtn =>{
+    linkBtn.addEventListener("click",async()=>{
+        const token = getToken();
+        const urlParam = getUrlParam("name");
+        const fetchCourseData= await fetch(`http://localhost:4000/v1/courses/${urlParam}`,{
+            Authorization : `Bearer ${token}`
+        })
+        const arr = await fetchCourseData.json();
+        console.log(arr);
+        if(!token){
+            showNotfication("خطا","لطفا ثبت نام کنید یا وارد شوید","text-red-600","bg-rose-500")
+        }else{
+          
+            arr.sessions.forEach(course =>{
+                linkBtn.setAttribute("href",`session.html?name=${arr.shortName}&id=${course._id}`)
+            })
+        }
+    })
+})
 }
 
 const commentHandler = (arr)=>{
