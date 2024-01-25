@@ -7,6 +7,7 @@
 @import "../session/session.css";
 @import "../ckeditor/ckeditor.css";
 @import "../global-search/search.css";
+@import "../../../Admin-panel/man-page/assest/main-style.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
