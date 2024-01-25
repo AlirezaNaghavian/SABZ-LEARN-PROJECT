@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>پنل ادمین - صفحه اصلی</title>
     <link rel="stylesheet" href="../../assests/css/main-page/app.css" />
+    <link rel="stylesheet" href="assest/apexcharts.css">
     <link rel="stylesheet" href="assest/main-style.css" />
   </head>
   <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
@@ -45,7 +46,7 @@
             </div>
           
             <section class="mt-8 px-[8rem]  grid grid-cols-3 gap-x-4">
-              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-light flex flex-col gap-y-4 ">
+              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-xl flex flex-col gap-y-4 ">
                 <!-- card-title -->
                 <div class="card-title relative">
                   <h5 class="font-DanaBold relative title-content text-lg text-gray-700 dark:text-white mr-6">درآمد</h5>
@@ -63,7 +64,7 @@
                 </div>
                 <span class="text-gray-400 dark:text-gray-200 font-DanaBold mr-6">درآمد در یک ماه گذشته</span>
               </div>
-              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-light flex flex-col gap-y-4 ">
+              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-xl flex flex-col gap-y-4 ">
                 <!-- card-title -->
                 <div class="card-title relative">
                   <h5 class="font-DanaBold relative title-content text-lg text-gray-700 dark:text-white mr-6">فروش</h5>
@@ -81,7 +82,7 @@
                 </div>
                 <span class="text-gray-400 dark:text-gray-200 font-DanaBold mr-6">فروش در یک ماه گذشته</span>
               </div>
-              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-light flex flex-col gap-y-4 ">
+              <div class="rounded-lg py-6 bg-slate-300 dark:bg-slate-600 shadow-xl flex flex-col gap-y-4 ">
                 <!-- card-title -->
                 <div class="card-title relative">
                   <h5 class="font-DanaBold relative title-content text-lg text-gray-700 dark:text-white mr-6">هزینه</h5>
@@ -100,10 +101,16 @@
                 <span class="text-gray-400 dark:text-gray-200 font-DanaBold mr-6">هزینه ها در یک ماه گذشته</span>
               </div>
             </section>
+            <section class="mt-20 px-[8rem]">
+              <div id="cost-chart"></div>
+            </section>
+          
            </section>
               
         </div>
     </main>
+    <script src="assest/apexcharts.js"></script>
+    <script src="assest/custom-chart.js"></script>
     <script type="module" src="assest/main.js"></script>
   </body>
 </html>
