@@ -13,7 +13,7 @@ headerTemplate.innerHTML +=`
   
 </svg>
 
-<div class="container w-[70%] header-secttion  flex justify-between ">
+<div class=" w-[80%] mx-auto header-secttion  flex justify-between ">
 <!-- right-side-header -->
 <div class="right-side-wrapper flex items-center">
   <form class="search-box-form">

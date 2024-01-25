@@ -8,3 +8,13 @@
     min-width: 475px;
   }
 }
+
+.card-title h5::after,.card-title h5::before{
+  content: "" ;
+  width: 16px ;
+  margin: 0px 3px;
+  height: 2px ;
+  display: inline-block;
+  @apply bg-blue-800;
+    
+}
