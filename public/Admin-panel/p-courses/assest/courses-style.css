@@ -1,0 +1,19 @@
+@import "../../../assests/components/panel-header/panel-header.css";
+@import "../../../assests/components/side-bar-panel/aside.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media screen and (min-width: 475px) and (max-width: 640px) {
+    .container {
+      min-width: 475px;
+    }
+  }
+  .ck.ck-reset.ck-editor.ck-rounded-corners .ck-editor__editable {
+    @apply h-60 text-slate-500 dark:text-gray-200 focus:text-zinc-700 dark:focus:text-white bg-gray-300 dark:bg-white/40 outline-none  border-none   dark:focus:border-slate-600 rounded-b-xl;
+  
+  }
+  .ck.ck-reset.ck-editor.ck-rounded-corners .ck-toolbar {
+      @apply text-slate-500 dark:text-gray-500 focus:text-zinc-700 dark:focus:text-white bg-gray-300 dark:bg-white/40 outline-none  border-none dark:focus:border-slate-600 rounded-t-xl;
+  }
+  
+  
