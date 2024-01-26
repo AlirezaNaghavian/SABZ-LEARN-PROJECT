@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fa" class="h-full" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>category-penel</title>
+    <link rel="stylesheet" href="../../assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assest/p-category.css">
+</head>
+<body class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    <svg class="hidden">
+        <symbol id="mini-bell" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M10 2a6 6 0 0 0-6 6c0 1.887-.454 3.665-1.257 5.234a.75.75 0 0 0 .515 1.076 32.91 32.91 0 0 0 3.256.508 3.5 3.5 0 0 0 6.972 0 32.903 32.903 0 0 0 3.256-.508.75.75 0 0 0 .515-1.076A11.448 11.448 0 0 1 16 8a6 6 0 0 0-6-6ZM8.05 14.943a33.54 33.54 0 0 0 3.9 0 2 2 0 0 1-3.9 0Z" clip-rule="evenodd" />
+          </symbol>
+          <symbol id="chevron-down" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+          </symbol>
+          <symbol id="cashpoint" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z" />
+          </symbol>
+          <symbol id="shopping-cart-solid" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" >
+            <path d="M2.25 2.25a.75.75 0 0 0 0 1.5h1.386c.17 0 .318.114.362.278l2.558 9.592a3.752 3.752 0 0 0-2.806 3.63c0 .414.336.75.75.75h15.75a.75.75 0 0 0 0-1.5H5.378A2.25 2.25 0 0 1 7.5 15h11.218a.75.75 0 0 0 .674-.421 60.358 60.358 0 0 0 2.96-7.228.75.75 0 0 0-.525-.965A60.864 60.864 0 0 0 5.68 4.509l-.232-.867A1.875 1.875 0 0 0 3.636 2.25H2.25ZM3.75 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0ZM16.5 20.25a1.5 1.5 0 1 1 3 0 1.5 1.5 0 0 1-3 0Z" />
+          </symbol>
+          <symbol id="dollar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" >
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+          </symbol>
+          
+          
+    </svg>
+    <main>
+        <div class="w-full flex">
+            <aside class="w-[15%] bg-grayTheme/90 dark:bg-slate-600/50 flex flex-col min-h-screen">
+                <aside-tg></aside-tg>
+            </aside>
+              <!-- header-component -->
+              <section class="w-[85%] mt-8">
+                <header-tg></header-tg>
+                <div class="container mt-20 ">
+                    <h3 class="text-gray-700 font-DanaBold   dark:text-white text-2xl">
+                        افزودن دسته بندی جدید
+                    </h3>
+                  </div>
+                  <!-- category body  -->
+                  <div class="container mt-12 add-form-course-wrapper shadow-2xl   pb-12">
+                    <form class="course-panel-form ">
+                        <!-- course form header -->
+                        <div class="flex justify-between items-center gap-x-8">
+                            <div class="flex flex-col gap-y-2 w-1/2">
+                                <label for="cat-title" class="font-DanaBold text-gray-700  dark:text-white">عنوان</label>
+                                <input id="cat-title" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا عنوان را وارد کنید...">
+                            </div>
+                            <div class="flex flex-col gap-y-2 w-1/2">
+                                <label for="cat-destination" class="font-DanaBold text-gray-700  dark:text-white">مقصد</label>
+                                <input id="cat-destination" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا مقصد را وارد کنید...">
+                            </div>
+                        </div>
+                        <div class="mt-8 flex justify-between items-center gap-x-8">
+                            <div class="flex flex-col gap-y-2 ">
+                                <button class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">افزودن</button>
+                            </div>
+                        </div>
+                     
+                      
+                    </form>
+                 <!-- user list table -->
+                 <div class="course-list-table mt-12 shadow-xl bg-slate-300 pt-4  rounded-xl">
+                    <div class="home-content-latset-users">
+                        <div class="home-content-users-title child:font-DanaBold text-lg mr-3">
+                            <span class="text-blue-700 font-DanaBold">لیست  دسته بندی ها</span>
+                        </div>
+                        <div class="home-content-users-table">
+                            <table class="table w-full">
+                                <thead class="flex justify-between w-full ">
+                                    <tr class="flex justify-around w-full px-2 text-lg mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
+                                        <th>شماره</th>
+                                        <th>عنوان</th>
+                                        <th>مقصد</th>
+                                        <th>ویرایش</th>
+                                        <th>حذف</th>
+                                      
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                  </div>
+              </section>
+        </div>
+    </main>
+
+
+    <script type="module" src="assest/p-category.js"></script>
+</body>
+</html>
