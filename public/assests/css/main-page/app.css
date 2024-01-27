@@ -3792,6 +3792,11 @@ video {
   padding-right: 1.75rem;
 }
 
+.px-8{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
 .px-9{
   padding-left: 2.25rem;
   padding-right: 2.25rem;
