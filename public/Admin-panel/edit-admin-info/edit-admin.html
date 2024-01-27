@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fa" class="h-full" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>edit-amdin</title>
+    <link rel="stylesheet" href="../../assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assest/edit-admin.css">
+</head>
+<body  class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    
+<main>
+    <div class="w-full flex">
+        <aside class="w-[15%] bg-grayTheme/90 dark:bg-slate-600/50 flex flex-col min-h-screen">
+            <aside-tg></aside-tg>
+        </aside>
+     
+        <!-- header-component -->
+        
+        <section class="w-[85%] mt-8">
+            <header-tg></header-tg>
+            <div class="container mt-20 ">
+                <h3 class="text-gray-700 font-DanaBold   dark:text-white text-2xl">
+                ویرایش اطلاعات
+                </h3>
+              </div>
+        
+            <div class="container mt-12 add-form-course-wrapper shadow-2xl   pb-12">
+                <form class="course-panel-form ">
+                    <!-- course form header -->
+                    <div class="flex justify-between items-center gap-x-8">
+                        <div class="flex flex-col gap-y-2 w-1/2">
+                            <label for="admin-fullName" class="font-DanaBold text-gray-700  dark:text-white">نام و نام خانوادگی</label>
+                            <input id="admin-fullName" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا نام کامل خود را وارد کنید...">
+                        </div>
+                        <div class="flex flex-col gap-y-2 w-1/2">
+                            <label for="admin-userName" class="font-DanaBold text-gray-700  dark:text-white">نام کاربری</label>
+                            <input id="admin-userName" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا نام کاربری را وارد کنید...">
+                        </div>
+                    </div>
+                    <!-- course description -->
+                   
+                    <div class="mt-8 flex justify-between items-center gap-x-8">
+                        <div class="flex flex-col gap-y-2 w-1/2">
+                            <label for="admin-email" class="font-DanaBold text-gray-700  dark:text-white">ایمیل</label>
+                            <input id="admin-email" type="email" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا  ایمیل معتبر خود را وارد کنید...">
+                        </div>
+                        <div class="flex flex-col gap-y-2 w-1/2">
+                            <label for="admin-userPassword" class="font-DanaBold text-gray-700  dark:text-white">رمز عبور جدید</label>
+                            <input id="admin-userPassword" type="password" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا رمز عبور خود را وارد کنید...">
+                        </div>
+                    </div>
+                    <div class="mt-8 flex justify-between items-center gap-x-8">
+                        <div class="flex flex-col gap-y-2 w-1/2">
+                            <label for="admin-phone-number" class="font-DanaBold text-gray-700  dark:text-white">شماره تلفن</label>
+                            <input id="admin-phone-number" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا شماره تلفن خود را وارد کنید...">
+                        </div>
+                        <div class="flex flex-col gap-y-2 ">
+                
+                            <button class="bg-secondary text-sm rounded-lg px-8 py-2 text-white hover:bg-secondaryDark transition-all" type="submit">ویرایش اطلاعات</button>
+                        </div>
+                    </div>
+                 
+                  
+                </form>
+       
+              </div>
+        </section>
+    </div>
+</main>
+
+
+
+    <script type="module" src="assest/edit-admin.js"></script>
+</body>
+</html>
