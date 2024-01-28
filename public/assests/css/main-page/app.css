@@ -2919,6 +2919,11 @@ video {
   width: min-content;
 }
 
+.w-max{
+  width: -moz-max-content;
+  width: max-content;
+}
+
 .min-w-\[1024px\]{
   min-width: 1024px;
 }
