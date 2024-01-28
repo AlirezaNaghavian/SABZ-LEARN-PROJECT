@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="fa" class="h-full" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-compaign</title>
+    <link rel="stylesheet" href="../../assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assest/p-compaign.css">
+</head>
+<body class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    
+<main>
+    <div class="w-full flex">
+        <aside class="w-[15%] bg-grayTheme/90 dark:bg-slate-600/50 flex flex-col min-h-screen">
+            <aside-tg></aside-tg>
+        </aside>
+        <section class="w-[85%] mt-8">
+            <header-tg></header-tg>
+            <div class="container mt-20 ">
+                <h3 class="text-gray-700 font-DanaBold   dark:text-white text-2xl">
+                    برگزاری کمپین جدید
+                </h3>
+              </div>
+              <div class="container mt-12 add-compaign-course-wrapper">
+                <form class="course-panel-form">
+               
+                    <div class="mt-12 flex flex-col  w-full  gap-x-8">
+                        <div class="mt-8 flex justify-between items-center gap-x-8">
+                            <div class="flex flex-col gap-y-2 w-1/2">
+                                <label for="comaign-percent" class="font-DanaBold text-gray-700  dark:text-white">درصد تخفیف کمپین</label>
+                                <input id="comaign-percent" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا درصد تخفیف کمپین را وارد کنید...">
+                            </div>
+                        
+                        </div>
+                        <!-- course-upload-files -->
+                        <div class="flex flex-col w-max mt-4 mr-3 gap-y-2 ">
+                
+                            <button class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">برگزاری کمپین</button>
+                        </div>
+                    </div>
+                </form>
+              </div>
+        </section>
+    </div>
+</main>
+
+
+    <script type="module" src="assest/p-compaign.js"></script>
+</body>
+</html>
