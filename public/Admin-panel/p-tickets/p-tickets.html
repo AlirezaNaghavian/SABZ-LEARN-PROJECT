@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fa" class="h-full" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>p-tickets</title>
+    <link rel="stylesheet" href="../../assests/css/main-page/app.css">
+    <link rel="stylesheet" href="assest/p-tickets.css">
+</head>
+<body class="font-Dana bg-gray-100 dark:bg-grayTheme">
+    
+<main>
+    <div class="w-full flex">
+        <aside class="w-[15%] bg-grayTheme/90 dark:bg-slate-600/50 flex flex-col min-h-screen">
+            <aside-tg></aside-tg>
+        
+        </aside> 
+          <!-- header-component -->
+        <section class="w-[85%] mt-8 container">
+            <header-tg></header-tg>
+            <div class="tickets-list-table  mt-12 shadow-xl bg-slate-300 pt-4  rounded-xl">
+                <div class="home-content-latset-users">
+                    <div class="home-content-users-title child:font-DanaBold text-lg mr-3">
+                        <span class="text-blue-700 font-DanaBold">لیست  تیکت  ها</span>
+                    </div>
+                    <div class="home-content-users-table">
+                        <table class="table w-full">
+                            <thead class="flex justify-between w-full ">
+                                <tr class="flex justify-around w-full px-2 text-lg mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
+                                    <th>شماره</th>
+                                    <th>عنوان</th>
+                                    <th>ارسال کننده</th>
+                                    <th>دوره</th>
+                                    <th>سطح اولویت</th>
+                                    <th>دپارتمان</th>
+                                    <th>نوع تیکت</th>
+                                    <th>تاریخ ثبت</th>
+                                    <th>مشاهده</th>
+                                    <th>پاسخ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+
+    <script type="module" src="assest/p-tickets.js"></script>
+</body>
+</html>
