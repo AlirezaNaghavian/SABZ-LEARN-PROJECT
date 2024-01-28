@@ -1,0 +1,10 @@
+@import "../../../assests/components/panel-header/panel-header.css";
+@import "../../../assests/components/side-bar-panel/aside.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@media screen and (min-width: 475px) and (max-width: 640px) {
+    .container {
+      min-width: 475px;
+    }
+  }
