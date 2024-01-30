@@ -21,7 +21,7 @@ header_user_template.innerHTML +=`
     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5M12 17.25h8.25"></path>
 </symbol>
 </svg>
-<header class="container   flex items-center justify-between  dark:bg-grayTheme md:bg-transparent dark:border-b md:border-none border-b-gray-700 mb-6 md:mb-14 p-5 md:p-0">
+<header class="container   flex items-center justify-between  dark:bg-grayTheme md:bg-transparent  border-b-gray-700 mb-6 md:mb-14 p-5 md:p-0">
 <h3 class="hidden lg:block font-DanaBold text-2xl text-zinc-700 dark:text-white">
     علیرضا نقویان عزیز؛ خوش اومدی 🙌
 </h3>

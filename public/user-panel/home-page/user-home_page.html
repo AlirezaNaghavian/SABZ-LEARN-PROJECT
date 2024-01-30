@@ -9,6 +9,24 @@
 </head>
 <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
     <svg class="hidden">
+        <symbol id="arrow-left-mini" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+            <path fill-rule="evenodd" d="M17 10a.75.75 0 01-.75.75H5.612l4.158 3.96a.75.75 0 11-1.04 1.08l-5.5-5.25a.75.75 0 010-1.08l5.5-5.25a.75.75 0 111.04 1.08L5.612 9.25H16.25A.75.75 0 0117 10z" clip-rule="evenodd"></path>
+        </symbol>
+        <symbol id="ticket" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 6v.75m0 3v.75m0 3v.75m0 3V18m-9-5.25h5.25M7.5 15h3M3.375 5.25c-.621 0-1.125.504-1.125 1.125v3.026a2.999 2.999 0 010 5.198v3.026c0 .621.504 1.125 1.125 1.125h17.25c.621 0 1.125-.504 1.125-1.125v-3.026a2.999 2.999 0 010-5.198V6.375c0-.621-.504-1.125-1.125-1.125H3.375z"></path>
+        </symbol>
+        <symbol id="credit-card" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 002.25-2.25V6.75A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25v10.5A2.25 2.25 0 004.5 19.5z"></path>
+        </symbol>
+        <symbol id="rocket-launch" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m-.119-8.54a6 6 0 00-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 00-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 01-2.448-2.448 14.9 14.9 0 01.06-.312m-2.24 2.39a4.493 4.493 0 00-1.757 4.306 4.493 4.493 0 004.306-1.758M16.5 9a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+        </symbol>
+        <symbol id="envelope-open" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 9v.906a2.25 2.25 0 01-1.183 1.981l-6.478 3.488M2.25 9v.906a2.25 2.25 0 001.183 1.981l6.478 3.488m8.839 2.51l-4.66-2.51m0 0l-1.023-.55a2.25 2.25 0 00-2.134 0l-1.022.55m0 0l-4.661 2.51m16.5 1.615a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V8.844a2.25 2.25 0 011.183-1.98l7.5-4.04a2.25 2.25 0 012.134 0l7.5 4.04a2.25 2.25 0 011.183 1.98V19.5z"></path>
+        </symbol>
+        <symbol id="currency-dollar" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </symbol>
         <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
         </symbol>
@@ -113,7 +131,239 @@
             <section class="w-full max-w-[1432px] container bg-gray-100 dark:bg-grayTheme md:p-10 lg:rounded-4xl">
                 <!-- header-section -->
                 <header-tg></header-tg>
+                <!-- personal panel data -->
+                <div class="px-5 md:px-0">
+                    <h3 class="lg:hidden font-DanaBold text-zinc-700 dark:text-white mb-7">علیرضا نقویان عزیز؛ خوش اومدی 🙌</h3>
+             <!-- grid data mini card -->
+             <div class="flex flex-wrap gap-x-3 gap-y-4 md:gap-x-10 mb-10">
+                <div class="flex items-center gap-x-2.5 md:gap-x-4 flex-grow md:flex-grow-0 md:w-60 bg-amber-400 dark:bg-yellow-400 p-2 rounded-2xl">
+                    <div class="flex items-center justify-center w-14 h-14 md:w-[68px] md:h-[68px] bg-white/20 rounded-2xl">
+                        <svg class="w-8 h-8 md:w-9 md:h-9 text-white">
+                            <use href="#credit-card"></use>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-y-1.5 md:gap-y-2 text-white">
+                        <span class="text-xs">مجموع پرداخت ها</span>
+                        <span class="font-DanaBold text-sm md:text-lg">718,500&nbsp;<span class="slms-price_symbol">تومان</span></span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-2.5 md:gap-x-4 flex-grow md:flex-grow-0 md:w-60 bg-sky-500 dark:bg-secondary p-2 rounded-2xl">
+                    <div class="flex items-center justify-center w-14 h-14 md:w-[68px] md:h-[68px] bg-white/20 rounded-2xl">
+                        <svg class="w-8 h-8 md:w-9 md:h-9 text-white">
+                            <use href="#rocket-launch"></use>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-y-1.5 md:gap-y-2 text-white">
+                        <span class="text-xs">دوره های من</span>
+                        <span class="font-DanaBold text-sm md:text-lg">9 دوره</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-2.5 md:gap-x-4 flex-grow md:flex-grow-0 md:w-60 bg-pink-500 dark:bg-rose-500 p-2 rounded-2xl">
+                    <div class="flex items-center justify-center w-14 h-14 md:w-[68px] md:h-[68px] bg-white/20 rounded-2xl">
+                        <svg class="w-8 h-8 md:w-9 md:h-9 text-white">
+                            <use href="#ticket"></use>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-y-1.5 md:gap-y-2 text-white">
+                        <span class="text-xs">مجموع تیکت ها</span>
+                        <span class="font-DanaBold text-sm md:text-lg">2 تیکت</span>
+                    </div>
+                </div>
+                <div class="flex items-center gap-x-2.5 md:gap-x-4 flex-grow md:flex-grow-0 md:w-60 bg-baseColor p-2 rounded-2xl">
+                    <div class="flex items-center justify-center w-14 h-14 md:w-[68px] md:h-[68px] bg-white/20 rounded-2xl">
+                        <svg class="w-8 h-8 md:w-9 md:h-9 text-white">
+                            <use href="#currency-dollar"></use>
+                        </svg>
+                    </div>
+                    <div class="flex flex-col gap-y-1.5 md:gap-y-2 text-white">
+                        <span class="text-xs">موجودی حساب</span>
+                        <span class="font-DanaBold text-sm md:text-lg">0 تومان</span>
+                    </div>
+                </div>
+            </div>
+            <!-- grid course and ticket data -->
+            <div class=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2 gap-7 items-start">
+                <div>
+                    <div class="flex justify-between items-center bg-white dark:bg-gray-800 px-3.5 py-2.5 md:p-4.5 mb-4 md:mb-5 rounded-2xl">
+                        <span class="font-DanaMedium md:text-xl text-zinc-700 dark:text-white">اخیرا مشاهده شده</span>
+                        <a href="https://sabzlearn.ir/my-account/courses" class="rounded-xl flex items-center text-center justify-center px-4 py-2 bg-sky-500/10 text-sky-500 dark:bg-secondary/10 dark:text-secondary text-sm">
+                            همه دوره های ثبت‌نام شده
+                            <svg class="w-4 h-4">
+                                <use href="#arrow-left-mini"></use>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2 gap-x-5 gap-y-4">
+                             <div class="course flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
+                                    <!-- Course Banner -->
+                                 <div class="relative h-42">
+                                    <a class="w-full h-full block" href="https://sabzlearn.ir/course/js-exp-project/#lessons" title="پروژه های تخصصی با جاوا اسکریپت برای بازار کار">
+                                        <img class="block w-full  h-full object-cover rounded-2xl" src="https://sabzlearn.ir/wp-content/uploads/2023/12/ezgif.com-jpg-to-webp-converted-16-1-768x432.webp" alt="پروژه های تخصصی با جاوا اسکریپت برای بازار کار">
+                                    </a>
+                                </div>
+                                    <!-- Course Body -->
+                                    <div class="px-5 pb-3.5 pt-2.5 flex-grow ">
+                                        <!-- Course Title -->
+                                        <h4 class="font-DanaMedium h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                            <a href="https://sabzlearn.ir/course/js-exp-project/#lessons">پروژه های تخصصی با جاوا اسکریپت برای بازار کار</a>
+                                        </h4>
+                                        <!-- Course Footer -->
+                                        <div class="pt-3 border-t border-t-gray-100 dark:border-t-gray-700">
+                                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                                <span class="text-zinc-700 dark:text-white">میزان مشاهده</span>
+                                                <span class="text-slate-500 dark:text-slate-400">2%</span>
+                                            </div>
+                                            <div class="bg-gray-100 dark:bg-gray-700 h-[5px] rounded-full">
+                                                <div class="bg-primary h-full rounded-full" style="width: 2%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                            <div class="course flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
+                                    <!-- Course Banner -->
+                                                                <div class="relative h-42">
+                                            <a class="w-full h-full block" href="https://sabzlearn.ir/course/tailwind-css/#lessons" title="آموزش جامع و پروژه محور Tailwind css">
+                                                <img class="block w-full h-full h-full object-cover rounded-2xl" src="https://sabzlearn.ir/wp-content/uploads/2023/12/ezgif.com-jpg-to-webp-converted-30-1-768x432.webp" alt="آموزش جامع و پروژه محور Tailwind css">
+                                            </a>
+                                        </div>
+                                                            <!-- Course Body -->
+                                    <div class="px-5 pb-3.5 pt-2.5 flex-grow ">
+                                        <!-- Course Title -->
+                                        <h4 class="font-danaMedium h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                            <a href="https://sabzlearn.ir/course/tailwind-css/#lessons">آموزش جامع و پروژه محور Tailwind css</a>
+                                        </h4>
+                                        <!-- Course Footer -->
+                                        <div class="pt-3 border-t border-t-gray-100 dark:border-t-gray-700">
+                                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                                <span class="text-zinc-700 dark:text-white">میزان مشاهده</span>
+                                                <span class="text-slate-500 dark:text-slate-400">58%</span>
+                                            </div>
+                                            <div class="bg-gray-100 dark:bg-gray-700 h-[5px] rounded-full">
+                                                <div class="bg-primary h-full rounded-full" style="width: 58%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                            <div class="course flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
+                                    <!-- Course Banner -->
+                                                                <div class="relative h-42">
+                                            <a class="w-full h-full block" href="https://sabzlearn.ir/course/java-script-zero-to-hero/#lessons" title="آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه">
+                                                <img class="block w-full h-full h-full object-cover rounded-2xl" src="https://sabzlearn.ir/wp-content/uploads/2023/12/Com_JAVASCRIPT-1-768x432.webp" alt="آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه">
+                                            </a>
+                                        </div>
+                                                            <!-- Course Body -->
+                                    <div class="px-5 pb-3.5 pt-2.5 flex-grow ">
+                                        <!-- Course Title -->
+                                        <h4 class="font-danaMedium h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                            <a href="https://sabzlearn.ir/course/java-script-zero-to-hero/#lessons">آموزش جاوا اسکریپت رایگان مقدماتی تا پیشرفته + مینی پروژه</a>
+                                        </h4>
+                                        <!-- Course Footer -->
+                                        <div class="pt-3 border-t border-t-gray-100 dark:border-t-gray-700">
+                                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                                <span class="text-zinc-700 dark:text-white">میزان مشاهده</span>
+                                                <span class="text-slate-500 dark:text-slate-400">0%</span>
+                                            </div>
+                                            <div class="bg-gray-100 dark:bg-gray-700 h-[5px] rounded-full">
+                                                <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                            <div class="course flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
+                                    <!-- Course Banner -->
+                                                                <div class="relative h-42">
+                                            <a class="w-full h-full block" href="https://sabzlearn.ir/course/free-vuejs-training/#lessons" title="آموزش رایگان ویو جی اس مقدماتی تا پیشرفته">
+                                                <img class="block w-full h-full h-full object-cover rounded-2xl" src="https://sabzlearn.ir/wp-content/uploads/2023/12/Com_vue-1-768x432.webp" alt="آموزش رایگان ویو جی اس مقدماتی تا پیشرفته">
+                                            </a>
+                                        </div>
+                                                            <!-- Course Body -->
+                                    <div class="px-5 pb-3.5 pt-2.5 flex-grow ">
+                                        <!-- Course Title -->
+                                        <h4 class="font-danaMedium h-12 line-clamp-2 text-zinc-700 dark:text-white mb-2.5">
+                                            <a href="https://sabzlearn.ir/course/free-vuejs-training/#lessons">آموزش رایگان ویو جی اس مقدماتی تا پیشرفته</a>
+                                        </h4>
+                                        <!-- Course Footer -->
+                                        <div class="pt-3 border-t border-t-gray-100 dark:border-t-gray-700">
+                                            <div class="flex items-center justify-between text-xs mb-1.5">
+                                                <span class="text-zinc-700 dark:text-white">میزان مشاهده</span>
+                                                <span class="text-slate-500 dark:text-slate-400">0%</span>
+                                            </div>
+                                            <div class="bg-gray-100 dark:bg-gray-700 h-[5px] rounded-full">
+                                                <div class="bg-primary h-full rounded-full" style="width: 0%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="bg-white dark:bg-gray-800 p-3.5 md:p-4.5 rounded-2xl">
+                        <div class="flex justify-between items-center pb-3.5 md:pb-4.5 mb-6 md:mb-7 border-b border-b-gray-200 dark:border-b-gray-700">
+                            <span class="font-danaMedium md:text-xl text-zinc-700 dark:text-white">تیکت های اخیر</span>
+                            <a href="https://sabzlearn.ir/my-account/tickets" class="flex items-center gap-x-1.5 text-sky-500 dark:text-secondary text-sm">
+                                همه تیکت ها
+                                <svg class="w-4 h-4">
+                                    <use href="#arrow-left-mini"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <div>
+                                                    <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                                        <a href="https://sabzlearn.ir/my-account/view_ticket?id=9616" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">در دسترس نبودن ویدئوی دوره</a>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs text-slate-500 dark:text-slate-400">1402/10/16</span>
+                                            <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                                        </div>
+                                    </div>
+                                                    <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                                        <a href="https://sabzlearn.ir/my-account/view_ticket?id=9376" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">درخواست دسترسی به فیگما</a>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs text-slate-500 dark:text-slate-400">1402/10/08</span>
+                                            <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                                        </div>
+                                    </div>
+                                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-3.5 md:p-4.5 rounded-2xl mt-7">
+                        <div class="flex justify-between items-center pb-3.5 md:pb-4.5 mb-6 md:mb-7 border-b border-b-gray-200 dark:border-b-gray-700">
+                            <span class="font-danaMedium md:text-xl text-zinc-700 dark:text-white">پرسش های اخیر</span>
+                        </div>
+                        <div>
+                <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                      <a href="https://sabzlearn.ir/lesson/34-24631/#q-6925" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">پروژه های تخصصی با جاوا اسکریپت برای بازار کار - توسعه قابلیت پاسخگویی به کامنت های کاربران</a>
+                            <div class="flex items-center gap-3">
+                                <span class="text-xs text-slate-500 dark:text-slate-400">1402/11/05</span>
+                                <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                             </div>
+                         </div>
+                                <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                    <a href="https://sabzlearn.ir/lesson/34-24559/#q-6790" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">پروژه های تخصصی با جاوا اسکریپت برای بازار کار - دریافت دوره‌ها بر اساس دسته بندی از سرور</a>
+                                        <div class="flex items-center gap-3">
+                        <span class="text-xs text-slate-500 dark:text-slate-400">1402/11/04</span>
+                        <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                    </div>
+                 </div>
+                                <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                    <a href="https://sabzlearn.ir/lesson/34-24559/#q-6568" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">پروژه های تخصصی با جاوا اسکریپت برای بازار کار - دریافت دوره‌ها بر اساس دسته بندی از سرور</a>
+                    <div class="flex items-center gap-3">
+                        <span class="text-xs text-slate-500 dark:text-slate-400">1402/10/28</span>
+                        <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                    </div>
+                </div>
+                                <div class="flex items-center justify-between flex-wrap gap-y-3 p-3 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-xl transition-colors">
+                                        <a href="https://sabzlearn.ir/lesson/48-24434/#q-6063" class="text-zinc-700 dark:text-white w-full sm:max-w-sm sm:truncate">آموزش جامع و پروژه محور Tailwind css - صحبت پایانی - نکات بسیار مهم برای ادامه مسیر و یادگیری</a>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-xs text-slate-500 dark:text-slate-400">1402/10/17</span>
+                                            <span class="text-xs py-1 px-1.5 text-slate-500 dark:text-yellow-400 bg-slate-500/10 dark:bg-yellow-400/10 rounded">بسته شده</span>
+                     </div>
+                    </div>
+                     </div>
+                    </div>
+                </div>
+            </div>
+                </div>
             </section>
+            
     </main>
 <!-- overlay -->
 <div class="app-overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all hide"></div>
