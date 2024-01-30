@@ -1484,6 +1484,16 @@ input {
   }
 }
 
+.hide{
+  visibility: hidden;
+  opacity: 0;
+}
+
+.show{
+  visibility: visible;
+  opacity: 100;
+}
+
 /* ! tailwindcss v3.4.0 | MIT License | https://tailwindcss.com */
 
 /*
@@ -2325,6 +2335,10 @@ video {
 
 .right-2\.5{
   right: 0.625rem;
+}
+
+.right-\[0rem\]{
+  right: 0rem;
 }
 
 .top-0{
@@ -5174,10 +5188,6 @@ video {
 
   .md\:mt-7{
     margin-top: 1.75rem;
-  }
-
-  .md\:block{
-    display: block;
   }
 
   .md\:flex{

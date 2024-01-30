@@ -9,6 +9,9 @@
 </head>
 <body class="font-Dana bg-gray-100 dark:bg-grayTheme">
     <svg class="hidden">
+        <symbol id="x-mark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+        </symbol>
         <symbol id="bell" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"></path>
         </symbol>
@@ -71,19 +74,19 @@
     <main class="md:bg-white md:dark:bg-gray-800  flex gap-x-10 2xl:gap-x-14 lg:px-8 xl:px-14 2xl:px-25 lg:py-7">
         <!-- aside-section -->
         <aside class="sidebar fixed top-0 bottom-0 -right-[64rem] z-30 lg:static bg-white dark:bg-gray-800 flex flex-col w-64 lg:w-56 lg:mt-10 px-7 py-5 lg:px-0 lg:py-0 shrink-0 lg:min-h-[calc(100vh-68px)] transition-all lg:transition-none">
-            <div class="flex items-center justify-between pb-5 mb-7 border-b md:border-none border-b-gray-200 dark:border-b-slate-600">
+            <div class="flex items-center justify-between pb-5 mb-7 border-b md:border-none border-b-gray-200 dark:border-b-slate-600 gap-x-4">
                 <a href="https://sabzlearn.ir" class="flex items-center gap-x-1.5 md:gap-x-2.5">
                     <img src="assest/imges/logo-login.webp" class="h-12 md:h-14 " alt="سبز لرن">
                     <svg class="w-[86px] md:w-32 h-10 md:h-[57px]">
                         <use xlink:href="#logo-type"></use>
                     </svg>
                 </a>
-                <svg class="sidebar__close-btn text-slate-500 dark:text-slate-400 w-5 h-5 md:hidden">
+                <svg class="sidebar__close-btn text-slate-500 dark:text-slate-400 w-8 h-8 lg:hidden">
                     <use href="#x-mark"></use>
                 </svg>
             </div>
             <div class="space-y-4 text-zinc-700 dark:text-white">
-                    <a href="#" class="flex items-center gap-x-2.5 h-10 px-3 rounded-lg bg-primary text-white">
+                    <a href="#" class="flex items-center gap-x-2.5 h-10 px-3 rounded-lg bg-primary dark:text-white">
                        
                         <svg class="w-6 h-6"><use href="#home"></use></svg>پیشخوان</a>
                            
@@ -104,7 +107,7 @@
                        
                                     <svg class="w-6 h-6"><use href="#logout-icon"></use></svg>خروج </a>
                      
-                                </div>
+              </div>
             </aside>
             <!-- main-content side -->
             <section class="w-full max-w-[1432px] container bg-gray-100 dark:bg-grayTheme md:p-10 lg:rounded-4xl">
@@ -112,8 +115,9 @@
                 <header-tg></header-tg>
             </section>
     </main>
-
-
+<!-- overlay -->
+<div class="app-overlay fixed w-full h-full top-0 left-0 bg-black/40 z-40 md:backdrop-blur transition-all hide"></div>
+<div class="overlay invisible opacity-0 fixed w-full h-full top-0 left-0 bg-black/40 z-40 transition-all"></div>
     <script type="module" src="assest/js/user-home-panel.js"></script>
 </body>
 </html>

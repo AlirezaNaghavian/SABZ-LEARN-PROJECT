@@ -69,6 +69,10 @@ class Header extends HTMLElement {
         this.shadowRoot.append(header_user_template.content.cloneNode(true))
         this.toggleTheme = this.shadowRoot.querySelector(".toggle-theme");
         this.header = this.shadowRoot.querySelector("header")
+        this.sideBarBtn = this.shadowRoot.querySelector(".sidebar__open-btn");
+        const AsideWrapper = document.querySelector(".sidebar");
+        const overlayApp = document.querySelector(".app-overlay");
+        const closeSideBarBtn = document.querySelector(".sidebar__close-btn");
         // change theme
         this.toggleTheme.addEventListener("click",()=>{
             this.header.classList.toggle("dark");
@@ -88,6 +92,32 @@ class Header extends HTMLElement {
                 document.querySelector("html").classList.add("dark");
             }
         }
+        // side bar menu
+        this.sideBarBtn.addEventListener("click",()=>{
+            AsideWrapper.classList.remove("-right-[64rem]")
+            AsideWrapper.classList.add("right-[0rem]");
+            AsideWrapper.classList.add("z-50")
+            overlayApp.classList.remove("hide")
+            overlayApp.classList.add("show")
+        })
+        // close side bar menu
+        const closeSideBar = ()=>{
+            AsideWrapper.classList.add("-right-[64rem]")
+            AsideWrapper.classList.remove("right-[0rem]");
+            AsideWrapper.classList.remove("z-50")
+            overlayApp.classList.add("hide")
+            overlayApp.classList.remove("show")
+        }
+        // clickable overlay 
+        const OnclickOverlay = ()=>{
+            AsideWrapper.classList.add("-right-[64rem]")
+            AsideWrapper.classList.remove("right-[0rem]");
+            AsideWrapper.classList.remove("z-50")
+            overlayApp.classList.add("hide")
+            overlayApp.classList.remove("show")
+        }
+        closeSideBarBtn.addEventListener("click",closeSideBar)
+        overlayApp.addEventListener("click",OnclickOverlay)
         window.addEventListener("load",checkThemeStatus)
     }
 }
