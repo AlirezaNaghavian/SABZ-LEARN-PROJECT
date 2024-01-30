@@ -9,6 +9,7 @@
 @import "../global-search/search.css";
 @import "../../../Admin-panel/man-page/assest/main-style.css";
 @import "../../../Admin-panel/p-courses/assest/courses-style.css";
+@import "../../../user-panel/home-page/assest/css/home-user.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
