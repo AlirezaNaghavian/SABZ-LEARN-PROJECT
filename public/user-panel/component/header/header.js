@@ -69,6 +69,7 @@ class Header extends HTMLElement {
         this.shadowRoot.append(header_user_template.content.cloneNode(true))
         this.toggleTheme = this.shadowRoot.querySelector(".toggle-theme");
         this.header = this.shadowRoot.querySelector("header")
+        
         this.sideBarBtn = this.shadowRoot.querySelector(".sidebar__open-btn");
         const AsideWrapper = document.querySelector(".sidebar");
         const overlayApp = document.querySelector(".app-overlay");
