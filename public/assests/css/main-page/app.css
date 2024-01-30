@@ -3824,6 +3824,10 @@ video {
   padding: 0.875rem;
 }
 
+.p-4{
+  padding: 1rem;
+}
+
 .p-5{
   padding: 1.25rem;
 }
@@ -4902,10 +4906,6 @@ video {
     width: 25rem;
   }
 
-  .xs\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .xs\:justify-between{
     justify-content: space-between;
   }
@@ -5053,6 +5053,10 @@ video {
 
   .sm\:max-w-xs{
     max-width: 20rem;
+  }
+
+  .sm\:max-w-md{
+    max-width: 28rem;
   }
 
   .sm\:flex-grow{
@@ -5422,6 +5426,12 @@ video {
     margin-bottom: calc(1.25rem * var(--tw-space-y-reverse));
   }
 
+  .md\:truncate{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
   .md\:rounded-2xl{
     border-radius: 1rem;
   }
@@ -5453,6 +5463,10 @@ video {
 
   .md\:p-5{
     padding: 1.25rem;
+  }
+
+  .md\:p-6{
+    padding: 1.5rem;
   }
 
   .md\:px-0{
