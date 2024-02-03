@@ -1,3 +1,4 @@
+import {getToken} from "../../components/utilities/utilities.js"
 const headerTemplate = document.createElement("template");
 headerTemplate.innerHTML +=`
 <link rel="stylesheet" href="../../assests/css/main-page/app.css" />
@@ -13,7 +14,7 @@ headerTemplate.innerHTML +=`
   
 </svg>
 
-<div class=" w-[80%] mx-auto header-secttion  flex justify-between ">
+<div id="wrapper"  class=" w-[80%] mx-auto header-secttion  flex justify-between ">
 <!-- right-side-header -->
 <div class="right-side-wrapper flex items-center">
   <form class="search-box-form">
@@ -29,39 +30,7 @@ headerTemplate.innerHTML +=`
   </div>
 </div>
   <!-- left-side-header -->
-  <div id="admin-pesonal-profile" class="relative left-side-wrapper flex items-center gap-x-2">
-    <div class="header-person-wrapper flex gap-x-4">
-               <!-- personal-admin-data -->
-      <div class="flex items-center gap-x-2 cursor-pointer">
-        <svg class="w-7 h-7 dark:text-gray-100 "><use xlink:href="#chevron-down"></use></svg>
-        <span class="user__Admin__Name font-DanaBold text-gray-700 dark:text-white">
-            آرمین شهبازی
-        </span>
-    </div>
-  <!-- admin photo -->
-  <img src="../../../backend/public/user-profile/ARMIN.png" class="rounded-full w-16 object-cover" alt="">
-    </div>
-    <div class="absolute z-50 drop-down-data  bg-[#aad1fd] dark:bg-gray-800/50 top-full mt-2 flex flex-col space-y-2 justify-start py-4 items-start rounded-xl shadow-light dark:shadow-none">
-        
-        <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2">
-            <span class="text-gray-700 dark:text-white ">ایمیل:</span>
-            <span class="text-gray-700 dark:text-white">alireza20002485@gmail.com</span>
-        </p>
-        <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
-            <span class="text-gray-700 dark:text-white ">نام کاربری:</span>
-            <span class="text-gray-700 dark:text-white ">armin_sh</span>
-        </p>
-        <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
-            <span class="text-gray-700 dark:text-white "> نقش:</span>
-            <span class="text-gray-700 dark:text-white ">ADMIN</span>
-        </p>
-        <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
-            <span class="text-gray-700 dark:text-white "> پیوستن:</span>
-            <span class="text-gray-700 dark:text-white ">۱۴۰۰/۰۵/۱۱</span>
-        </p>
-    </div>
-
-  </div>
+ 
 </div>
 
 `
@@ -73,6 +42,7 @@ class HeaderTemplate extends HTMLElement {
         this.attachShadow({mode:"open"});
         this.shadowRoot.append(headerTemplate.content.cloneNode(true));
         this.headerWrapper = this.shadowRoot.querySelector(".header-secttion");
+
         this.lightBtn= this.shadowRoot.querySelector("#light-btn").addEventListener("click",()=>{
           document.querySelector("html").classList.remove("dark")
           this.headerWrapper.classList.remove("dark")
@@ -83,7 +53,7 @@ class HeaderTemplate extends HTMLElement {
           this.headerWrapper.classList.add("dark")
           localStorage.setItem("theme","dark")
         })
-
+        // dark mode
         let checkTheme = () => {
           let getThemeData = localStorage.getItem("theme");
           if (getThemeData == "dark") {
@@ -91,8 +61,58 @@ class HeaderTemplate extends HTMLElement {
             document.querySelector("html").classList.add("dark");
           }
         };
+        // /////////////
+        // show admin info
+        // /////////////
+        const adminInfo = async()=>{
+          this.allSideWrapper = this.shadowRoot.querySelector("#wrapper")
+          const fetchAdminInfo = await fetch(`http://localhost:4000/v1/auth/me`,{
+            headers : {
+              Authorization : `Berear ${getToken()}`
+            }
+          })
+          const getAdminDataRes = await fetchAdminInfo.json();
+          this.allSideWrapper.insertAdjacentHTML("beforeend",`
+          
+          <div id="admin-pesonal-profile" class="relative left-side-wrapper flex items-center gap-x-2">
+          <div class="header-person-wrapper flex gap-x-4">
+                     <!-- personal-admin-data -->
+            <div class="flex items-center gap-x-2 cursor-pointer">
+              <svg class="w-7 h-7 dark:text-gray-100 "><use xlink:href="#chevron-down"></use></svg>
+              <span class="user__Admin__Name font-DanaBold text-gray-700 dark:text-white">
+                ${getAdminDataRes.name}
+              </span>
+          </div>
+        <!-- admin photo -->
+        <img src="${getAdminDataRes.profile? `http://localhost:4000/user-profile/${getAdminDataRes.profile}` : "http://localhost:4000/user-profile/nonProfile.png"}" class="rounded-full w-16 object-cover" alt="${getAdminDataRes.name}">
+          </div>
+          <div class="absolute z-50 drop-down-data  bg-[#aad1fd] dark:bg-gray-800/50 top-full mt-2 flex flex-col space-y-2 justify-start py-4 items-start rounded-xl shadow-light dark:shadow-none">
+              
+              <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2">
+                  <span class="text-gray-700 dark:text-white ">ایمیل:</span>
+                  <span id="admin-email" class="text-gray-700 dark:text-white">${getAdminDataRes.email}</span>
+              </p>
+              <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
+                  <span class="text-gray-700 dark:text-white ">نام کاربری:</span>
+                  <span id="admin-userName" class="text-gray-700 dark:text-white ">${getAdminDataRes.username}</span>
+              </p>
+              <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
+                  <span class="text-gray-700 dark:text-white "> نقش:</span>
+                  <span id="admin-role" class="text-gray-700 dark:text-white ">${getAdminDataRes.role}</span>
+              </p>
+              <p class="px-4  flex justify-between child:font-DanaMedium gap-x-2 w-full">
+                  <span class="text-gray-700 dark:text-white "> پیوستن:</span>
+                  <span id="joinTime" class="text-gray-700 dark:text-white ">${getAdminDataRes.createdAt.slice(0,10).split("-").join("/")}</span>
+              </p>
+          </div>
+      
+        </div>
+          `)
+          
+        }
         window.addEventListener("load",()=>{
           checkTheme()
+          adminInfo()
         })
     }
 }
