@@ -132,4 +132,5 @@ const showNotfication = async (title,content,colorIcon,colorLine)=>{
   startTime = new Date().getTime();
   animate();
 }
+
 export { saveIntoLStorage, getFromLstarage, getToken,getUrlParam ,cardContent ,showNotfication};

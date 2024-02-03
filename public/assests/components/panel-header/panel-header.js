@@ -72,7 +72,6 @@ class HeaderTemplate extends HTMLElement {
             }
           })
           const getAdminDataRes = await fetchAdminInfo.json();
-          console.log(getAdminDataRes);
           this.allSideWrapper.insertAdjacentHTML("beforeend",`
           
           <div id="admin-pesonal-profile" class="relative left-side-wrapper flex items-center gap-x-2">
