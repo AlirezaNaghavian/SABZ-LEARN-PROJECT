@@ -41,7 +41,7 @@
                     </h3>
                   </div>
                   <div class="container mt-12 add-form-course-wrapper">
-                    <form class="course-panel-form">
+                    <form id="create-new-course-form" class="course-panel-form">
                         <!-- course form header -->
                         <div class="flex justify-between items-center gap-x-8">
                             <div class="flex flex-col gap-y-2 w-1/2">
@@ -79,8 +79,7 @@
                             <div class="flex flex-col gap-y-2 w-1/2">
                                 <div class="number input flex justify-between items-center dark:text-white">
                                     <label class="input-title font-DanaBold text-lg ">دسته‌بندی دوره:</label>
-                                    <select class="category-list font-DanaMedium text-gray-700  ">
-                                        <option value="-1" class="font-DanaMedium text-gray-700 ">دسته بندی مورد نظر را انتخاب کنید</option>
+                                    <select id="set_category" class="category-list font-DanaMedium text-gray-700  ">
                                     </select>
                                     <span class="error-message text-red-500"></span>
                                 </div>
@@ -102,13 +101,13 @@
                                         <div class="available flex">
                                             <label for="enter-presell" class="flex justify-between gap-x-4">
                                                 <span class="font-DanaMedium text-lg">پیش فروش</span>
-                                                <input type="radio" class="w-6 h-6" id="enter-presell" value="presell" name="presell" checked="">
+                                                <input type="radio" class="w-6 h-6" id="set-presell" value="presell" name="presell" checked="">
                                             </label>
                                         </div>
                                         <div class="unavailable">
                                             <label for="enter-status" class="flex justify-between gap-x-4">
                                                 <span class="font-DanaMedium text-lg">در حال برگزاری</span>
-                                                <input type="radio" class="w-6 h-6" id="enter-status" value="start" name="presell">
+                                                <input type="radio" class="w-6 h-6" id="set-start" value="start" name="presell">
                                             </label>
                                         </div>
                                     </div>
@@ -117,7 +116,7 @@
                             <!-- course-upload-files -->
                             <div class="flex flex-col gap-y-2 ">
                     
-                                <button class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">افزودن</button>
+                                <button id="addNewCourseBtn" class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">افزودن</button>
                             </div>
                         </div>
                     </form>
@@ -130,7 +129,7 @@
                             <div class="home-content-users-table">
                                 <table class="table ">
                                     <thead>
-                                        <tr class="grid grid-cols-10 child:col-span-1 child:gap-x-12 text-[22px] mt-8 child:text-gray-700 rounded-lg bg-gray-300 max-w-[1920px]  child:py-4">
+                                        <tr class="grid grid-cols-10 child:col-span-1 child:text-center child:mx-auto child:gap-x-12 text-[22px] mt-8 child:text-gray-700 rounded-lg bg-gray-300 max-w-[1920px]  child:py-4">
                                             <th>شماره</th>
                                             <th>نام دوره</th>
                                             <th>مبلغ</th>
@@ -143,7 +142,10 @@
                                             <th>حذف</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody id="course_tBody">
+                                      <!-- loaded in js file -->
+                                      <!-- loaded in js file -->
+                                      <!-- loaded in js file -->
                                     </tbody>
                                 </table>
                             </div>
@@ -155,13 +157,7 @@
     </main>
 
     <script src="assest/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
+    <script src="../../assests/js/sweetalert2.all.js"></script>
     <script type="module" src="assest/p-courses.js"></script>
 </body>
 </html>

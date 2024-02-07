@@ -1,4 +1,4 @@
-const aside_template =document.createElement("template");
+const aside_template = document.createElement("template");
 aside_template.innerHTML += `
 <link rel="stylesheet" href="../../assests/css/main-page/app.css" />
 <link rel="stylesheet" href="assest/main-style.css" />
@@ -18,39 +18,35 @@ aside_template.innerHTML += `
 </div>
 <!-- menu list -->
 <div class=" flex flex-col mt-4  space-y-4 menu-list overflow-y-auto">
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white   active-menu">صفحه اصلی</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">دوره ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">منو ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کاربران</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">دسته بندی ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">جسات</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">مقاله ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کامنت ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کد ها تخفیف</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">تیکت ها</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">برگزاری کمپین</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">ویرایش اطلاعات</button>
-<button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">خروج</button>
+<a href="../man-page/index.html?id=index"><button id="index" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white   ">صفحه اصلی</button></a>
+<a href="../p-courses/courses.html?id=courses"><button id="courses" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">دوره ها</button></a>
+<a href="../p-menus/p-menu.html?id=menu"><button id="menu" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">منوها</button></a>
+<a href="../p-user-list/p-user.html?id=users"><button id="users" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کاربران</button></a>
+<a href="../p-category/p-category.html?id=category"><button id="category" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">دسته بندی ها</button></a>
+<a href="../p-sessions/p-sessions.html?id=sessions"><button id="sessions" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">جلسات</button></a>
+<a href="../p-articles/p-article.html?id=articles"><button id="articles" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">مقاله ها</button></a>
+<a href="../p-comment/p-comment.html?id=comments"><button id="comments" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کامنت ها</button></a>
+<a href="../p-discount/p-discount.html?id=discounts"><button id="discounts" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">کد های تخفیف</button></a>
+<a href="../p-tickets/p-tickets.html?id=tickets"><button id="tickets" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">تیکت ها</button></a>
+<a href="../p-compaign/p-compaign.html?id=compaigns"><button id="compaigns" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">برگزاری کمپین</button></a>
+<a href="../edit-admin-info/edit-admin.html?id=edit"><button id="edit" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">ویرایش اطلاعات</button></a>
+<a href="#"><button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">خروج</button></a>
 </div>
 
-`
+`;
 class Aside extends HTMLElement {
-constructor(){
+  constructor() {
     super();
-    this.attachShadow({mode:"open"});
+    this.attachShadow({ mode: "open" });
     this.shadowRoot.append(aside_template.content.cloneNode(true));
-   this.listMenu= this.shadowRoot.querySelectorAll(".menu-list button")   ;
-    // add active menu class 
-    this.listMenu.forEach(firstResult =>{
-        firstResult.addEventListener("click",()=>{
-            this.listMenu.forEach(secondResult =>{
-                if(firstResult !== secondResult){
-                    secondResult.classList.remove("active-menu")
-                }
-            })
-            firstResult.classList.add("active-menu");
-        })
-    })
+    const getUrlParam = new URLSearchParams(location.search);
+    const getParam = getUrlParam.get("id");
+    this.targetItem = this.shadowRoot.querySelector(`#${getParam}`)
+    // add active menu class
+    const addActiveAside = () => {
+      this.targetItem.classList.add("active-menu")
+    };
+    window.addEventListener("load",addActiveAside)
+  }
 }
-}
-export default Aside
+export default Aside;

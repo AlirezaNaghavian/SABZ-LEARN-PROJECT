@@ -56,7 +56,7 @@ const cardContent = (course)=>{
         <div class="flex items-end justify-between mt-2">
             <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
                 <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-                <span>${course.studens}</span>
+                <span>${course.registers}</span>
             </span>
             <div class="flex items-start flex-col  ">
               <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">

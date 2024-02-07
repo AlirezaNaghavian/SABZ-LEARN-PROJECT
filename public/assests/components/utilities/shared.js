@@ -6,7 +6,6 @@ const routeAdminProtection = async( )=>{
         }
     })
     const getAdminDataRes = await fetchAdminData.json();
-    console.log(getAdminDataRes);
     if(getAdminDataRes.role !== "ADMIN"){
         location.replace("http://127.0.0.1:5502/public/login.html")
     }
