@@ -5,9 +5,9 @@ let categoryID = null;
 let status = `start`;
 let courseCover = null;
 const selectCategory = document.getElementById("set_category");
-const addCourseBtn = document.getElementById("addNewCourseBtn");
 const courseDescElem = document.querySelector("#editor textarea");
 const courseFormData = document.getElementById("create-new-course-form");
+
 // //////////
 // get all course in table
 // //////////
@@ -17,7 +17,7 @@ const getAllCourses = async () => {
   const allCoursesRes = await fetchAllCourses.json();
   allCoursesRes.forEach((course, index) => {
     courseItemList.insertAdjacentHTML(
-      "beforeend",
+      `beforeend`,
       `
             <tr class="grid grid-cols-10 container child:col-span-1 child:my-auto child:text-center child:gap-x-12 text-[22px] mt-8 child:text-gray-700 rounded-lg bg-gray-300 max-w-[1920px]  child:py-2">
     
@@ -46,13 +46,25 @@ const getAllCourses = async () => {
               course.isComplete === 0 ? "در حال برگزاری" : "به اتمام رسیده"
             }</td>
             <td class=" mr-auto  my-auto"  class="mr-auto">
-                <button type="button" class="btn bg-baseColor p-2 rounded-lg text-white" id="edit-btn">ویرایش</button>
+                <button type="button"  class="edit-btn btn bg-baseColor p-2 rounded-lg text-white" id="edit-btn">ویرایش</button>
             </td>
             <td class="mr-auto my-auto">
-                <button type="button" class="text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button>
+                <button type="button"  onclick=deleteCourse("${
+                  course._id
+                }")   class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button>
             </td>
-            </tr>`
+            </tr>
+            `
     );
+  });
+  const editBtn = document.querySelectorAll(".edit-btn");
+  editBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      Swal.fire({
+        text: "ویرایش دوره ها در بخش جلسات انجام می شود",
+        confirmButtonText: "باشه",
+      });
+    });
   });
 };
 // //////////
@@ -93,15 +105,6 @@ const setCategorySelecor = async () => {
 // //////////
 // create form data course and send in course page
 // //////////
-// let articleEditor = null;
-
-// ClassicEditor.create(document.querySelector('#editor'), {
-//     language: 'fa'
-// }).then(editor => {
-//     articleEditor = editor;
-// }).catch(error => {
-//     console.log(error);
-// });
 const createNewCourseData = async () => {
   try {
     const courseNameElem = document.getElementById("course-title");
@@ -136,21 +139,52 @@ const createNewCourseData = async () => {
         timer: 2000,
       });
       location.reload();
-    }else{
-
-      throw new Error("خطایی رخ داده است")
+    } else {
+      throw new Error("خطایی رخ داده است");
     }
   } catch (e) {
-await Swal.fire({
-  position: "top-mid",
-  icon: "error",
-  title: "خطا در ایجاد دوره جدید.",
-  showConfirmButton: false,
-  timer: 2000,
-});
+    await Swal.fire({
+      position: "top-mid",
+      icon: "error",
+      title: "خطا در ایجاد دوره جدید.",
+      showConfirmButton: false,
+      timer: 2000,
+    });
   }
 };
-
+// /////////////
+// remove and edit current courses
+// /////////////
+const deleteCourse = async (courseId) => {
+  await Swal.fire({
+    title: "آیا مطمئن هستید؟",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر منصرف شدم",
+    confirmButtonText: "بله حذف شود",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "موفقیت آمیز !",
+        text: "دوره مورد نظر حذف گرید",
+        icon: "success",
+      });
+      const fetchData = await fetch(
+        `http://localhost:4000/v1/courses/${courseId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Berear ${getToken()}`,
+          },
+        }
+      );
+      const getResData = await fetchData.json();
+      console.log(getResData);
+    }
+  });
+};
 courseFormData.addEventListener("submit", async (e) => {
   e.preventDefault();
   createNewCourseData();
@@ -159,6 +193,6 @@ window.addEventListener("load", () => {
   getAllCourses();
   setCategorySelecor();
 });
-
+window.deleteCourse = deleteCourse;// bind event handler to whole window
 window.customElements.define("header-tg", HeaderTemplate);
 window.customElements.define("aside-tg", Aside);
