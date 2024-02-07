@@ -46,18 +46,25 @@ const getAllCourses = async () => {
               course.isComplete === 0 ? "در حال برگزاری" : "به اتمام رسیده"
             }</td>
             <td class=" mr-auto  my-auto"  class="mr-auto">
-                <button type="button" class="btn bg-baseColor p-2 rounded-lg text-white" id="edit-btn">ویرایش</button>
+                <button type="button"  class="edit-btn btn bg-baseColor p-2 rounded-lg text-white" id="edit-btn">ویرایش</button>
             </td>
             <td class="mr-auto my-auto">
-                <button type="button" aria-label="${
+                <button type="button"  onclick=deleteCourse("${
                   course._id
-                }" onclick=deleteCourse("${
-        course._id
-      }")   class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button>
+                }")   class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button>
             </td>
             </tr>
             `
     );
+  });
+  const editBtn = document.querySelectorAll(".edit-btn");
+  editBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      Swal.fire({
+        text: "ویرایش دوره ها در بخش جلسات انجام می شود",
+        confirmButtonText: "باشه",
+      });
+    });
   });
 };
 // //////////
@@ -159,7 +166,7 @@ const deleteCourse = async (courseId) => {
     confirmButtonText: "بله حذف شود",
   }).then(async (result) => {
     if (result.isConfirmed) {
-       Swal.fire({
+      Swal.fire({
         title: "موفقیت آمیز !",
         text: "دوره مورد نظر حذف گرید",
         icon: "success",
@@ -186,6 +193,6 @@ window.addEventListener("load", () => {
   getAllCourses();
   setCategorySelecor();
 });
-window.deleteCourse = deleteCourse;
+window.deleteCourse = deleteCourse;// bind event handler to whole window
 window.customElements.define("header-tg", HeaderTemplate);
 window.customElements.define("aside-tg", Aside);
