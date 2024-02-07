@@ -6,7 +6,8 @@ const lastCourseSliderWrapper = document.getElementById("last-course-slider");
 const getCourseCardInfo = async () => {
   const courseFetch = await fetch(`http://localhost:4000/v1/courses`);
   const courseResponse = await courseFetch.json();
-  courseResponse.slice(0, 7).forEach((course) => {
+  courseResponse.slice(0, 8).forEach((course) => {
+    console.log(course);
     lastCourseWrapper.insertAdjacentHTML(
       "beforeend",
       `
@@ -22,7 +23,7 @@ const getCourseCardInfo = async () => {
       <!-- card-body-content -->
       <div class=" flex-grow px-6 pt-2.5 pb-3.5 ">
           <a href="#" class="badge-sec inline-flex items-center justify-center  bg-sky-500/10 dark:bg-yellow-400/10  rounded mb-2.5 ">
-              <span class="text-right  text-sky-500 dark:text-yellow-400 font-normal font-Dana leading-none text-xs px-1.5 py-1 ">${course.cat_title}</span>
+              <span class="text-right  text-sky-500 dark:text-yellow-400 font-normal font-Dana leading-none text-xs px-1.5 py-1 ">${course.categoryID.title.slice(12)}</span>
           </a>
              <h4 class="text-zinc-700 dark:text-white   font-DanaMedium leading-normal mb-2.5 line-clamp-2 h-12">
               <a href="#">
@@ -30,7 +31,7 @@ const getCourseCardInfo = async () => {
               </a>
              </h4>
              <p class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
-                ${course.description}
+        ${course.description}
              </p> 
       </div>
       <!-- card-footer -->
@@ -58,7 +59,7 @@ const getCourseCardInfo = async () => {
           <div class="flex items-end justify-between mt-2">
               <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
                   <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-                  <span>${course.studens}</span>
+                  <span>${course.registers}</span>
               </span>
               <div class="flex items-start flex-col  ">
                 <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">

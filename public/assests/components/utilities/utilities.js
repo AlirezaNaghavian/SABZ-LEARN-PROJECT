@@ -46,7 +46,7 @@ const cardContent = (course)=>{
           <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs child:transition-colors group ">
              <div class="flex items-center border-x-amber-100 hover:text-baseColor transition-colors">
               <svg class="w-4 h-4 group-hover:text-baseColor"><use xlink:href="#card-user-icon"></use></svg>
-              <a href="#" class=" group-hover:text-baseColor">${course.creatorName}</a>
+              <a href="#" class=" group-hover:text-baseColor">${course.creator}</a>
              </div>
               <div class="flex items-center gap-x-1 text-xs text-slate-500 dark:text-slate-400">
                   <svg class="h-4 w-4"><use xlink:href="#card-clock"></use></svg>
@@ -64,7 +64,7 @@ const cardContent = (course)=>{
       <div class="flex items-end justify-between mt-2">
           <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
               <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-              <span>${course.studens}</span>
+              <span>${course.registers}</span>
           </span>
           <div class="flex items-start flex-col  ">
             <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">
