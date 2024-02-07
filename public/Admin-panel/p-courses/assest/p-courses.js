@@ -7,7 +7,7 @@ let courseCover = null;
 const selectCategory = document.getElementById("set_category");
 const addCourseBtn = document.getElementById("addNewCourseBtn");
 const courseDescElem = document.querySelector("#editor textarea");
-
+const courseFormData = document.getElementById("create-new-course-form");
 // //////////
 // get all course in table
 // //////////
@@ -103,36 +103,57 @@ const setCategorySelecor = async () => {
 //     console.log(error);
 // });
 const createNewCourseData = async () => {
-  const courseNameElem = document.getElementById("course-title");
-  const coursePriceElem = document.getElementById("enter-course-price");
-  const courseShortName = document.getElementById("course-URL");
+  try {
+    const courseNameElem = document.getElementById("course-title");
+    const coursePriceElem = document.getElementById("enter-course-price");
+    const courseShortName = document.getElementById("course-URL");
 
-  const courseSupport = document.getElementById("enter-course-support");
-  const formData = new FormData();
-  formData.append(`name`, courseNameElem.value);
-  formData.append(`price`, Number(coursePriceElem.value));
-  formData.append(`description`, courseDescElem.value.trim());
-  formData.append(`shortName`, courseShortName.value);
-  formData.append(`support`, courseSupport.value);
-  formData.append(`categoryID`, categoryID);
-  formData.append("status", status);
-  formData.append(`cover`, courseCover);
-console.log(formData);
-  // post all data
-  const sendCourseData = await fetch(`http://localhost:4000/v1/courses`, {
-    method: "POST",
-    headers: {
-      Authorization: `Berear ${getToken()}`,
-    },
-    body: formData,
-  });
+    const courseSupport = document.getElementById("enter-course-support");
+    const formData = new FormData();
+    formData.append(`name`, courseNameElem.value);
+    formData.append(`price`, Number(coursePriceElem.value));
+    formData.append(`description`, courseDescElem.value.trim());
+    formData.append(`shortName`, courseShortName.value);
+    formData.append(`support`, courseSupport.value);
+    formData.append(`categoryID`, categoryID);
+    formData.append("status", status);
+    formData.append(`cover`, courseCover);
+    // post all data
+    const sendCourseData = await fetch(`http://localhost:4000/v1/courses`, {
+      method: "POST",
+      headers: {
+        Authorization: `Berear ${getToken()}`,
+      },
+      body: formData,
+    });
 
-  console.log(sendCourseData);
+    if (sendCourseData.status === 201) {
+      await Swal.fire({
+        position: "top-mid",
+        icon: "success",
+        title: "دوره جدید ایجاد شد.",
+        showConfirmButton: false,
+        timer: 2000,
+      });
+      location.reload();
+    }else{
+
+      throw new Error("خطایی رخ داده است")
+    }
+  } catch (e) {
+await Swal.fire({
+  position: "top-mid",
+  icon: "error",
+  title: "خطا در ایجاد دوره جدید.",
+  showConfirmButton: false,
+  timer: 2000,
+});
+  }
 };
 
-addCourseBtn.addEventListener("click", (e) => {
+courseFormData.addEventListener("submit", async (e) => {
   e.preventDefault();
-  createNewCourseData(e);
+  createNewCourseData();
 });
 window.addEventListener("load", () => {
   getAllCourses();

@@ -440,6 +440,7 @@ class NavBar extends HTMLElement {
         const menuResponse = await fetchMenudatas.json();
         // desktop menu
         menuResponse.forEach(menuItem =>{
+            console.log(menuItem);
             this.menuItemWrapper.insertAdjacentHTML("beforeend",`
             <li  class="relative group child-hover:text-baseColor">
             <a class="flex items-center active:text-baseColor gap-x-1.5 h-full text-zinc-700 dark:text-white text-lg font-normal font-Dana leading-7 " href="category.html?cat=${menuItem.href}">
