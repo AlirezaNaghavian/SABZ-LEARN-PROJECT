@@ -42,7 +42,7 @@
               </div>
               <!-- main menu body -->
               <div class="container mt-12 add-form-course-wrapper">
-                <form class="course-panel-form">
+                <form class="course-panel-form" id="menu-form-data">
                     <!-- course form header -->
                     <div class="flex justify-between items-center gap-x-8">
                         <div class="flex flex-col gap-y-2 w-1/2">
@@ -61,7 +61,7 @@
                         <div class="flex flex-col gap-y-2 w-1/2">
                             <div class="number input flex justify-between items-center dark:text-white">
                                 <label class="input-title font-DanaBold text-lg ">عنوان</label>
-                                <select class="category-list font-DanaMedium text-gray-700  ">
+                                <select id="menu-p-list" class="category-list font-DanaMedium text-gray-700  ">
                                     <option value="-1" class="font-DanaMedium text-gray-700 ">دوره پرنت را وارد نمایید</option>
                                 </select>
                                 <span class="error-message text-red-500"></span>
@@ -88,7 +88,7 @@
                         <div class="home-content-users-table">
                             <table class="table w-full">
                                 <thead class="flex justify-between w-full ">
-                                    <tr class="flex justify-between w-full px-4 text-lg mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
+                                    <tr class="flex justify-between w-full px-12 text-lg mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
                                         <th>شماره منو</th>
                                         <th>عنوان منو</th>
                                         <th>مقصد منو</th>
@@ -97,7 +97,7 @@
                                         <th>حذف</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="menu-tBody">
                                 </tbody>
                             </table>
                         </div>
@@ -109,7 +109,7 @@
 </main>
 
 
-
+    <script src="../../assests/js/sweetalert2.all.js"></script>
     <script type="module" src="assest/p-menu.js"></script>
 </body>
 </html>
