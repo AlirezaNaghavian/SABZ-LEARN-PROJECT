@@ -168,7 +168,7 @@ const deleteCourse = async (courseId) => {
     if (result.isConfirmed) {
       Swal.fire({
         title: "موفقیت آمیز !",
-        text: "دوره مورد نظر حذف گرید",
+        text: "دوره مورد نظر حذف گردید",
         icon: "success",
       });
       const fetchData = await fetch(
