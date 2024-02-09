@@ -2,7 +2,7 @@ import HeaderTemplate from "../../../assests/components/panel-header/panel-heade
 import Aside from "../../../assests/components/side-bar-panel/aside.js";
 import { getToken } from "../../../assests/components/utilities/utilities.js";
 const userTbody = document.getElementById("user-tBody")
-
+let userId = null
 const getAllUsers = async ()=>{
     const fetchUsers = await fetch(`http://localhost:4000/v1/users`,{
         headers:{
@@ -34,6 +34,47 @@ const getAllUsers = async ()=>{
     `)
  })
 }
+
+
+const deleteUser =async (userId)=>{
+  await Swal.fire({
+    title: "آیا مطمئن هستید؟",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    cancelButtonText: "خیر منصرف شدم",
+    confirmButtonText: "بله حذف شود",
+  }).then(async (result) => {
+    if (result.isConfirmed) {
+      Swal.fire({
+        title: "موفقیت آمیز !",
+        text: "کاربر مورد نظر حذف گردید",
+        icon: "success",
+      });
+      const fetchData = await fetch(
+        `http://localhost:4000/v1/users/${userId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Berear ${getToken()}`,
+          },
+        }
+      );
+      const getResData = await fetchData.json();
+      console.log(getResData);
+      location.reload();
+    }
+    else{
+     await Swal.fire({
+            title: "خطا!",
+            text: " مشکلی پیش آمده لطفا دوباره تلاش کنید",
+            icon: "error",
+          });
+    }
+  });
+}
+window.deleteUser = deleteUser;
 window.addEventListener("load",()=>{
     getAllUsers();
 })
