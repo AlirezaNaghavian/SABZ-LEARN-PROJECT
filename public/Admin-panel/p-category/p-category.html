@@ -42,7 +42,7 @@
                   </div>
                   <!-- category body  -->
                   <div class="container mt-12 add-form-course-wrapper shadow-2xl   pb-12">
-                    <form class="course-panel-form ">
+                    <form id="send-cat-form" class="course-panel-form ">
                         <!-- course form header -->
                         <div class="flex justify-between items-center gap-x-8">
                             <div class="flex flex-col gap-y-2 w-1/2">
@@ -71,16 +71,16 @@
                         <div class="home-content-users-table">
                             <table class="table w-full">
                                 <thead class="flex justify-between w-full ">
-                                    <tr class="flex justify-around w-full px-2 text-lg mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
+                                    <tr class="grid grid-cols-5 w-full  text-base mt-8 child:text-gray-700 rounded-lg bg-blue-300 child:py-4">
                                         <th>شماره</th>
                                         <th>عنوان</th>
-                                        <th>مقصد</th>
+                                        <th>badge مربوطه </th>
                                         <th>ویرایش</th>
                                         <th>حذف</th>
                                       
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="catagory-tBody">
                                 </tbody>
                             </table>
                         </div>
@@ -91,7 +91,7 @@
         </div>
     </main>
 
-
+    <script src="../../assests/js/sweetalert2.all.js"></script>
     <script type="module" src="assest/p-category.js"></script>
 </body>
 </html>
