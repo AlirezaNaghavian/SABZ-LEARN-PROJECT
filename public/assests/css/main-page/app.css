@@ -2638,13 +2638,6 @@ video {
   margin-top: auto;
 }
 
-.line-clamp-1{
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
-}
-
 .line-clamp-2{
   overflow: hidden;
   display: -webkit-box;
@@ -2940,10 +2933,6 @@ video {
   width: 2.25rem;
 }
 
-.w-\[10\%\]{
-  width: 10%;
-}
-
 .w-\[100px\]{
   width: 100px;
 }
@@ -3143,6 +3132,10 @@ video {
 
 .grid-cols-3{
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.grid-cols-5{
+  grid-template-columns: repeat(5, minmax(0, 1fr));
 }
 
 .grid-cols-6{

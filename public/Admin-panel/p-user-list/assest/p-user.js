@@ -2,7 +2,6 @@ import HeaderTemplate from "../../../assests/components/panel-header/panel-heade
 import Aside from "../../../assests/components/side-bar-panel/aside.js";
 import { getToken } from "../../../assests/components/utilities/utilities.js";
 const userTbody = document.getElementById("user-tBody")
-let userId = null
 const getAllUsers = async ()=>{
     const fetchUsers = await fetch(`http://localhost:4000/v1/users`,{
         headers:{
