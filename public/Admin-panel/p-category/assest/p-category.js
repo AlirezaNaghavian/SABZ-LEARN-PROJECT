@@ -47,11 +47,45 @@ const createCategory = async(e)=>{
     const getCatRes =await sendCatData.json();
     console.log(getCatRes);
 }
+const delCat = async(targetId)=>{
+    await Swal.fire({
+        title: "آیا مطمئن هستید؟",
+        icon: "error",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر منصرف شدم",
+        confirmButtonText: "بله حذف شود",
+      })
+      .then(async (result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: "موفقیت آمیز !",
+            text: "دسته بندی مورد نظر حذف گردید",
+            icon: "success",
+          });
+          const fetchData = await fetch(
+            `http://localhost:4000/v1/category/${targetId}`,
+            {
+              method: "DELETE",
+              headers: {
+                Authorization: `Berear ${getToken()}`,
+              },
+            }
+          );
+          const getResData = await fetchData.json();
+       
+          location.reload();
+        }
+       
+      })
+}
 categoryForm.addEventListener("submit",createCategory)
 window.addEventListener("load",()=>{
     getAllCategory();
     prepareValueData();
  
 })
+window.delCat = delCat
 window.customElements.define("header-tg",HeaderTemplate)
 window.customElements.define("aside-tg",Aside);
