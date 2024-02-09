@@ -1,6 +1,12 @@
 import HeaderTemplate from "../../../assests/components/panel-header/panel-header.js"
 import Aside from "../../../assests/components/side-bar-panel/aside.js";
+import { getToken } from "../../../assests/components/utilities/utilities.js";
 const categoryTbody = document.getElementById("catagory-tBody");
+const categoryForm = document.getElementById("send-cat-form");
+let catTitleValue;
+let catNameValue;
+const catNameInp = document.getElementById("cat-title")
+const catTitleInp = document.getElementById("cat-destination")
 
 const getAllCategory = async ()=>{
     const fetchCategory =await fetch(`http://localhost:4000/v1/category`)
@@ -21,8 +27,31 @@ const getAllCategory = async ()=>{
         `)
     })
 }
+const prepareValueData = ()=>{
+catNameInp.addEventListener("change",event => catNameValue = event.target.value)
+catTitleInp.addEventListener("change",event =>catTitleValue= event.target.value )
+}
+const createCategory = async(e)=>{
+    const catData = {
+        title :catTitleValue,
+        name:catNameValue,        
+    }
+    const sendCatData = await fetch(`http://localhost:4000/v1/category`,{
+        method:"POST",
+        headers:{
+            Authorization : `Berear ${getToken()}`,
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(catData)
+    })
+    const getCatRes =await sendCatData.json();
+    console.log(getCatRes);
+}
+categoryForm.addEventListener("submit",createCategory)
 window.addEventListener("load",()=>{
     getAllCategory();
+    prepareValueData();
+ 
 })
 window.customElements.define("header-tg",HeaderTemplate)
 window.customElements.define("aside-tg",Aside);
