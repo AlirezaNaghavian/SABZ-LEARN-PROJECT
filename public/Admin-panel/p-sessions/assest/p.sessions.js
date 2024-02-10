@@ -33,18 +33,14 @@ const getAllSessions= async()=>{
     const getSessionRes = await fetchSessionData.json();
     getSessionRes.forEach((session,index)=>{
         sessionTbody.insertAdjacentHTML("beforeend",`
-        <tr class="grid grid-cols-7  w-full child:my-auto child:text-center  child:mx-auto  mt-8 child:text-gray-700 rounded-lg bg-gray-300   child:py-2">
+        <tr class="grid grid-cols-6  w-full child:my-auto child:text-center  child:mx-auto  mt-8 child:text-gray-700 rounded-lg bg-gray-300   child:py-2">
 
         <td class=" flex justify-center text-right ml-auto my-auto" id="id">${index < 9 ? `0${index + 1}` : index + 1}</td>
         <td class=" flex justify-center text-center text-base my-auto "  id="name">${session.title}</td>
         <td class=" flex justify-center text-center text-base my-auto "  id="name">${session.time}</td>
         <td class=" flex justify-center text-center text-base my-auto "  id="userPhone">${new Date(session.createdAt).toLocaleDateString("en-Us",{dateStyle:"medium"})}</td>
         <td class=" flex text-wrap flex-wrap justify-center text-center text-sm my-auto"  id="userEmail">${session.course.name}</td>
-        <td class=" flex justify-center my-auto">
-            <button type="button"  class="edit-btn btn bg-secondary p-2 rounded-lg text-white" id="edit-btn">ویرایش</button>
-        </td>
-    
-            <td class=" my-auto"><button type="button"  onclick=deleteUser("${session._id}")  class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button></td>
+            <td class=" my-auto"><button type="button"  onclick=deleteSession("${session._id}")  class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button></td>
           
         </tr>
         
@@ -85,11 +81,41 @@ window.addEventListener("load",()=>{
     getAllSessions();
     prepareDataToSend();
 })
-
+const deleteSession  = async(sessionId)=>{
+    await Swal.fire({
+        title: "آیا مطمئن هستید؟",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        cancelButtonText: "خیر منصرف شدم",
+        confirmButtonText: "بله حذف شود",
+      }).then(async (result) => {
+        if (result.isConfirmed) {
+        await  Swal.fire({
+            title: "موفقیت آمیز !",
+            text: "جلسه مورد نظر حذف گردید",
+            icon: "success",
+          });
+          const fetchData = await fetch(
+            `http://localhost:4000/v1/courses/sessions/${sessionId}`,
+            {
+              method: "DELETE",
+              headers: {
+                Authorization: `Berear ${getToken()}`,
+              },
+            }
+          );
+          const getResData = await fetchData.json();
+          console.log(getResData);
+          location.reload();
+        }
+      });
+}
 
 sessionForm.addEventListener("submit",(e)=>{
-    e.preventDefault();
 createSessions()
 })
+window.deleteSession = deleteSession
 window.customElements.define("header-tg",HeaderTemplate)
 window.customElements.define("aside-tg",Aside);
