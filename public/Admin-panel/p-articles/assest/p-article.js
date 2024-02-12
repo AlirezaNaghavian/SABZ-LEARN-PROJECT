@@ -45,14 +45,19 @@ const sendData = await fetch(`http://localhost:4000/v1/articles`,{
     body: formData
 })
   if (sendData.ok) {
+    if (result.isConfirmed) {
+
       await Swal.fire({
         position: "top-mid",
         icon: "success",
         title: "مقاله جدید ایجاد شد.",
-        showConfirmButton: false,
+        showConfirmButton: true,
         timer: 2000,
-      });
-      location.reload();
+      }).then(()=>{
+
+        location.reload();
+      })
+    }
     }
 }
 const getAllArticles = async ()=>{
@@ -93,10 +98,11 @@ const deleteArticle = async(arId)=>{
         confirmButtonText: "بله حذف شود",
       }).then(async (result) => {
         if (result.isConfirmed) {
-          Swal.fire({
+         await Swal.fire({
             title: "موفقیت آمیز !",
             text: "مقاله مورد نظر حذف گردید",
             icon: "success",
+            showConfirmButton:true
           });
           const fetchData = await fetch(
             `http://localhost:4000/v1/articles/${arId}`,
