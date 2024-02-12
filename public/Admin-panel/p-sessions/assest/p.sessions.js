@@ -38,7 +38,7 @@ const getAllSessions= async()=>{
         <td class=" flex justify-center text-right ml-auto my-auto" id="id">${index < 9 ? `0${index + 1}` : index + 1}</td>
         <td class=" flex justify-center text-center text-base my-auto "  id="name">${session.title}</td>
         <td class=" flex justify-center text-center text-base my-auto "  id="name">${session.time}</td>
-        <td class=" flex justify-center text-center text-base my-auto "  id="userPhone">${new Date(session.createdAt).toLocaleDateString("en-Us",{dateStyle:"medium"})}</td>
+        <td class=" flex justify-center text-center text-base my-auto "  id="userPhone">${new Date(session.createdAt).toLocaleDateString("fa-IR",{dateStyle:"medium"})}</td>
         <td class=" flex text-wrap flex-wrap justify-center text-center text-sm my-auto"  id="userEmail">${session.course.name}</td>
             <td class=" my-auto"><button type="button"  onclick=deleteSession("${session._id}")  class="del-btn text-white bg-rose-500 p-2 rounded-lg" id="delete-btn">حذف</button></td>
           
