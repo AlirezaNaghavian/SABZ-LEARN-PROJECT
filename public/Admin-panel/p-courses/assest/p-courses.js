@@ -4,6 +4,7 @@ import { getToken } from "../../../assests/components/utilities/utilities.js";
 let categoryID = null;
 let status = `start`;
 let courseCover = null;
+let courseData = null;
 const selectCategory = document.getElementById("set_category");
 const courseDescElem = document.querySelector("#editor textarea");
 const courseFormData = document.getElementById("create-new-course-form");
@@ -71,6 +72,12 @@ const getAllCourses = async () => {
 // set category and status course section
 // //////////
 const setCategorySelecor = async () => {
+  ClassicEditor.create( document.querySelector( '#editor' ) ).then(editor =>{
+    courseData = editor
+    })
+    .catch( error => {
+        console.error( error );
+    } );
   const coursePresellStatus = document.getElementById("set-presell");
   const courseStartStatus = document.getElementById("set-start");
   const courseCoverInp = document.getElementById("course-cover");
@@ -115,7 +122,7 @@ const createNewCourseData = async () => {
     const formData = new FormData();
     formData.append(`name`, courseNameElem.value);
     formData.append(`price`, Number(coursePriceElem.value));
-    formData.append(`description`, courseDescElem.value.trim());
+    formData.append(`description`, courseData.getData());
     formData.append(`shortName`, courseShortName.value);
     formData.append(`support`, courseSupport.value);
     formData.append(`categoryID`, categoryID);

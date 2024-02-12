@@ -5,6 +5,7 @@ const getBlogWrapper = document.getElementById("blog-list-wrapper");
 const blogDatas = async ()=>{
     const fetchBlogData = await fetch(`http://localhost:4000/v1/articles`);
     const blogDataRes = await fetchBlogData.json();
+    console.log(blogDataRes);
     blogDataRes.slice(0,4).forEach(blog => {
         getBlogWrapper.insertAdjacentHTML("beforeend",`
         <div class="flex flex-col overflow-hidden bg-white dark:bg-gray-800 dark:shadow-none dark:border border-gray-700 rounded-2xl">
@@ -24,9 +25,10 @@ const blogDatas = async ()=>{
                                     </a>
                                 </h4>
                                 <!-- blog description -->
-                                <p class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
+                                <div class="font-DanaMedium text-sm h-20 line-clamp-4 text-slate-500 dark:text-slate-400 ">
                                     ${blog.description}
-                                </p>
+
+                                </div>
                             </div>
                             <!-- blog footer -->
                             <div class="mt-auto space-y-4">
@@ -34,11 +36,11 @@ const blogDatas = async ()=>{
                                 <div class="flex gap-2.5 flex-wrap text-slate-500 dark:text-slate-400 text-xs ">
                                     <div class="flex items-center gap-x-1 hover:text-baseColor transition-colors cursor-pointer">
                                       <svg class="h-4 w-4"><use xlink:href="#card-user-icon"></use></svg> 
-                                      <a href="#" >${blog.publisher}</a>
+                                      <a href="#" >${blog.creator.name}</a>
                                     </div>
                                     <div class="flex items-center gap-x-1 ">
                                         <svg class="h-4 w-4"><use xlink:href="#calender-icon"></use></svg>
-                                        <span class="data-numbers">${blog.publish_date}</span>
+                                        <span class="data-numbers">${new Date(blog.createdAt).toLocaleDateString("fa-IR",{dateStyle:"medium"})}</span>
                                     </div>
                                 </div>
                                 <!-- link-address -->

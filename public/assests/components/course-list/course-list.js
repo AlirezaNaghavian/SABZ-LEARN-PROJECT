@@ -30,9 +30,9 @@ const getCourseCardInfo = async () => {
                  ${course.name}
               </a>
              </h4>
-             <p class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
+             <div class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
         ${course.description}
-             </p> 
+             </div> 
       </div>
       <!-- card-footer -->
       <div class="px-6 pb-2">

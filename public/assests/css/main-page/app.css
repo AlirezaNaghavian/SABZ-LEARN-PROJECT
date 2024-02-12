@@ -4198,6 +4198,10 @@ video {
   padding-top: 2rem;
 }
 
+.pr-1{
+  padding-right: 0.25rem;
+}
+
 .text-center{
   text-align: center;
 }

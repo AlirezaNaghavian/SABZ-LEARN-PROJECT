@@ -37,9 +37,9 @@ const courseHeader = (arr)=>{
                 <h1 class="font-Morabba_bold text-2xl/[42px] sm:text-3xl/[48px] lg:text-[32px]/[48px] text-zinc-700 dark:text-white lg:line-clamp-2">
                     ${arr.name}
                 </h1>
-                <p class="font-Dana text-lg lg:text-xl/8 line-clamp-4 lg:line-clamp-2 xl:line-clamp-3 mt-3.5 xl:mt-5 text-zinc-700 dark:text-white">
-                ${arr.subHeaderDescription}
-                </p>
+                <div class="font-Dana text-lg lg:text-xl/8 line-clamp-4 lg:line-clamp-2 xl:line-clamp-3 mt-3.5 xl:mt-5 text-zinc-700 dark:text-white">
+                ${arr.description}
+                </div>
             </div>
             <div class="mt-5 pt-5 sm:pt-0 xl:mt-0 border-t sm:border-t-0 border-t-gray-100 dark:border-t-gray-700">
                 <div class="flex flex-col-reverse sm:flex-row justify-between mt-6 sm:mt-3.5 items-center">
@@ -65,7 +65,7 @@ const courseHeader = (arr)=>{
         </div>
         <!-- course banner -->
         <div class="shrink-0 mb-3 sm:mb-6 w-full h-auto md:w-10/12 lg:w-[440px] lg:h-[270px] xl:w-[610px] xl:h-[360px] rounded-2xl sm:rounded-3xl overflow-hidden">
-            <img src="http://localhost:4000/courses/covers/${arr.courseInfoCover}" alt="${arr.name}" class="w-full h-full object-cover">
+            <img src="http://localhost:4000/courses/covers/${arr.cover}" alt="${arr.name}" class="w-full h-full object-cover">
         </div>
         
         `)

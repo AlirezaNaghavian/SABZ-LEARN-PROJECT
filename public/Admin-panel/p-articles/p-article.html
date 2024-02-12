@@ -22,7 +22,7 @@
                     </h3>
                   </div>
                   <div class="container mt-12 add-form-course-wrapper">
-                    <form class="course-panel-form">
+                    <form class="course-panel-form" id="artice-form">
                         <!-- course form header -->
                         <div class="flex justify-between items-center gap-x-8">
                             <div class="flex flex-col gap-y-2 w-1/2">
@@ -39,7 +39,7 @@
                             <div class="flex flex-col gap-y-2 ">
                                
                                 <label for="enter-article-desc" class="font-DanaBold text-gray-700 font-extrabold text-xl dark:text-white">محتوای مقاله</label>
-                                <div id="#editor__articles">
+                                <div id="editor">
                                     <textarea name="article-desc" class="w-full  focus:outline-none bg-gray-300 dark:bg-white/40 pr-6 pt-8 text-gray-900  dark:text-white" placeholder="لطفا محتوای کامل مقاله را وارد کنید" id="enter-course-desc" cols="" rows="15">
                                     </textarea>
                                 </div>
@@ -59,7 +59,7 @@
                             <div class="flex flex-col gap-y-2 w-1/2">
                                 <div class="number input flex justify-between items-center dark:text-white">
                                     <label class="input-article-title font-DanaBold text-lg ">دسته‌بندی مقاله:</label>
-                                    <select class="article-list font-DanaMedium text-gray-700  ">
+                                    <select id="catArticle" class="article-list font-DanaMedium text-gray-700  ">
                                         <option value="-1" class="font-DanaMedium text-gray-700 ">دسته بندی مورد نظر را انتخاب کنید</option>
                                     </select>
                                     <span class="error-message text-red-500"></span>
@@ -72,7 +72,7 @@
                             <!-- course-upload-files -->
                             <div class="flex flex-col gap-y-2 ">
                     
-                                <button class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">افزودن</button>
+                                <button  class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">افزودن</button>
                             </div>
                         </div>
                     </form>
@@ -112,13 +112,7 @@
 
     
     <script src="assest/ckeditor.js"></script>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor__articles' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
+  <script src="../../assests/js/sweetalert2.all.js"></script>
    
     <script type="module" src="assest/p-article.js"></script>
 </body>
