@@ -3686,6 +3686,11 @@ video {
   background-color: rgb(236 72 153 / var(--tw-bg-opacity));
 }
 
+.bg-red-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
+}
+
 .bg-rose-400{
   --tw-bg-opacity: 1;
   background-color: rgb(251 113 133 / var(--tw-bg-opacity));
@@ -3745,11 +3750,6 @@ video {
 
 .bg-white\/30{
   background-color: rgb(255 255 255 / 0.3);
-}
-
-.bg-red-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(239 68 68 / var(--tw-bg-opacity));
 }
 
 .bg-gradient-to-b{
