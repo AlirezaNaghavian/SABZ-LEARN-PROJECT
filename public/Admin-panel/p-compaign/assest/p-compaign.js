@@ -6,7 +6,7 @@ const startCompaignForm = document.getElementById("submitCompaign");
 const setCompaign = async () => {
   try {
     const compaignData = {
-      discount: percentInp.value.trim(),
+      discount: Number(percentInp.value.trim()),
     };
     const fetchCompaignCode = await fetch(`http://localhost:4000/v1/offs/all`, {
       method: "POST",
