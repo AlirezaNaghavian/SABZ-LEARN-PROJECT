@@ -23,9 +23,6 @@ const getAllComments = async ()=>{
         <td class=" my-auto"><button type="button"  onclick=deleteComment("${comment._id}")  class="del-btn text-white bg-rose-500 p-2 rounded-lg" >حذف</button></td>
         
         </tr>
-
-
-        
         `)
 
     })
