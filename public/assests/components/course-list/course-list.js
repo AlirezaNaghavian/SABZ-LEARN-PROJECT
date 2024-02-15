@@ -7,7 +7,7 @@ const getCourseCardInfo = async () => {
   const courseFetch = await fetch(`http://localhost:4000/v1/courses`);
   const courseResponse = await courseFetch.json();
   courseResponse.slice(0, 8).forEach((course) => {
-    console.log(course);
+    console.log(course.discount);
     lastCourseWrapper.insertAdjacentHTML(
       "beforeend",
       `
