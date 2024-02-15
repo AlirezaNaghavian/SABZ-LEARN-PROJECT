@@ -22,20 +22,20 @@
                 </h3>
               </div>
               <div class="container mt-12 add-compaign-course-wrapper">
-                <form class="course-panel-form">
+                <form id="submitCompaign" class="course-panel-form">
                
                     <div class="mt-12 flex flex-col  w-full  gap-x-8">
                         <div class="mt-8 flex justify-between items-center gap-x-8">
                             <div class="flex flex-col gap-y-2 w-1/2">
                                 <label for="comaign-percent" class="font-DanaBold text-gray-700  dark:text-white">درصد تخفیف کمپین</label>
-                                <input id="comaign-percent" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا درصد تخفیف کمپین را وارد کنید...">
+                                <input id="compaign-percent" type="text" class="w-full rounded-lg bg-gray-300 dark:bg-white/40 px-4 py-2 font-DanaMedium " placeholder="لطفا درصد تخفیف کمپین را وارد کنید...">
                             </div>
                         
                         </div>
                         <!-- course-upload-files -->
                         <div class="flex flex-col w-max mt-4 mr-3 gap-y-2 ">
                 
-                            <button class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">برگزاری کمپین</button>
+                            <button  class="bg-secondary rounded-lg px-6 py-4 text-white hover:bg-secondaryDark transition-all" type="submit">برگزاری کمپین</button>
                         </div>
                     </div>
                 </form>
@@ -44,7 +44,7 @@
     </div>
 </main>
 
-
+    <script src="../../assests/js/sweetalert2.all.js"></script>
     <script type="module" src="assest/p-compaign.js"></script>
 </body>
 </html>

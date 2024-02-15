@@ -7,7 +7,7 @@ const getCourseCardInfo = async () => {
   const courseFetch = await fetch(`http://localhost:4000/v1/courses`);
   const courseResponse = await courseFetch.json();
   courseResponse.slice(0, 8).forEach((course) => {
-    console.log(course);
+    console.log(course.discount);
     lastCourseWrapper.insertAdjacentHTML(
       "beforeend",
       `
@@ -18,7 +18,7 @@ const getCourseCardInfo = async () => {
               
               <img src="http://localhost:4000/courses/covers/${course.cover}" class="w-full h-full object-cover rounded-2xl" loading="lazy" alt="">
           </a>
-          <span class="absolute ${course.price === 0 ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">100%</span>
+          <span class="absolute ${course.discount  ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">${ course.prev_offe ? `100%`: course.discount ?   `${course.discount}%` : ""}</span>
       </div>
       <!-- card-body-content -->
       <div class=" flex-grow px-6 pt-2.5 pb-3.5 ">
@@ -64,11 +64,11 @@ const getCourseCardInfo = async () => {
               <div class="flex items-start flex-col  ">
                 <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">
                    
-                    <span>${course.prev_offe === 0 ? "": course.prev_offe.toLocaleString()}</span>
+                    <span>${course.discount &&course.price !==0? course.price.toLocaleString() : course.prev_offe !== 0 ?   course.prev_offe.toLocaleString():""}</span>
                   </span>  
                   <span class="course__price font-DanaMedium text-xl text-baseColor space-x-1.5 flex gap-x-1">
                   <span>
-                  ${course.price === 0 ? "رایگان!" : course.price.toLocaleString()}
+                  ${course.discount && course.price !==0? ((course.price *course.discount)/100).toLocaleString() : course.price === 0 ? "رایگان!" : course.price.toLocaleString()}
                   </span>
                   <svg class="${course.price === 0 ? "hidden" : "w-4 h-4"}"><use xlink:href="#toman"></use></svg>
                   </span>
@@ -97,21 +97,21 @@ const getCourseSliderInfo = async ()=>{
               
               <img src="http://localhost:4000/courses/covers/${course.cover}" class="w-full h-full object-cover rounded-2xl" loading="lazy" alt="">
           </a>
-          <span class="absolute ${course.price === 0 ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">100%</span>
+          <span class="absolute ${course.discount  ?  "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">${ course.prev_offe ? `100%`: course.discount ?   `${course.discount}%` : ""}</span>
       </div>
       <!-- card-body-content -->
       <div class=" flex-grow px-6 pt-2.5 pb-3.5 ">
           <a href="#" class="badge-sec inline-flex items-center justify-center  bg-sky-500/10 dark:bg-yellow-400/10  rounded mb-2.5 ">
-              <span class="text-right  text-sky-500 dark:text-yellow-400 font-normal font-Dana leading-none text-xs px-1.5 py-1 ">${course.cat_title}</span>
+              <span class="text-right  text-sky-500 dark:text-yellow-400 font-normal font-Dana leading-none text-xs px-1.5 py-1 ">${course.categoryID.title.slice(12)}</span>
           </a>
              <h4 class="text-zinc-700 dark:text-white   font-DanaMedium leading-normal mb-2.5 line-clamp-2 h-12">
               <a href="#">
                  ${course.name}
               </a>
              </h4>
-             <p class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
+             <div class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
                 ${course.description}
-             </p> 
+             </div> 
       </div>
       <!-- card-footer -->
       <div class="px-6 pb-2">
@@ -138,16 +138,16 @@ const getCourseSliderInfo = async ()=>{
           <div class="flex items-end justify-between mt-2">
               <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
                   <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-                  <span>${course.studens}</span>
+                  <span>${course.registers}</span>
               </span>
               <div class="flex items-start flex-col  ">
                 <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">
                    
-                    <span>${course.prev_offe === 0 ? "": course.prev_offe.toLocaleString()}</span>
+                    <span>${course.discount &&course.price !==0? course.price.toLocaleString() : course.prev_offe !== 0 ?   course.prev_offe.toLocaleString():""}</span>
                   </span>  
                   <span class="course__price font-DanaMedium text-xl text-baseColor space-x-1.5 flex gap-x-1">
                   <span>
-                  ${course.price === 0 ? "رایگان!" : course.price.toLocaleString()}
+                  ${course.discount && course.price !==0? ((course.price *course.discount)/100).toLocaleString() : course.price === 0 ? "رایگان!" : course.price.toLocaleString()}
                   </span>
                   <svg class="${course.price === 0 ? "hidden" : "w-4 h-4"}"><use xlink:href="#toman"></use></svg>
                   </span>

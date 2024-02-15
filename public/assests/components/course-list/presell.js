@@ -6,6 +6,7 @@ const presellCourseDatas = async ()=>{
     const fetchPresellData = await fetch(`http://localhost:4000/v1/courses/presell`)
     const presellRes = await fetchPresellData.json();
     presellRes.forEach(presellCourse => {
+        
         presellCourseWrapper.insertAdjacentHTML("beforeend",`
         <div class="swiper-slide">
         <div class="course  flex flex-col overflow-hidden bg-white dark:bg-gray-800 shadow-light dark:shadow-none dark:border dark:border-gray-700 rounded-2xl">
@@ -15,7 +16,7 @@ const presellCourseDatas = async ()=>{
               
               <img src="http://localhost:4000/courses/covers/${presellCourse.cover}" class="w-full h-full object-cover rounded-2xl" loading="lazy" alt="">
           </a>
-          <span class="absolute ${presellCourse.price === 0 ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">100%</span>
+          <span class="absolute ${presellCourse.discount  ?  "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">${ presellCourse.prev_offe ? `100%`: presellCourse.discount ?   `${presellCourse.discount}%` : ""}</span>
       </div>
       <!-- card-body-content -->
       <div class=" flex-grow px-6 pt-2.5 pb-3.5 ">
@@ -27,9 +28,9 @@ const presellCourseDatas = async ()=>{
                  ${presellCourse.name}
               </a>
              </h4>
-             <p class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
+             <div class=" text-slate-500  dark:text-slate-400 line-clamp-2 h-9 text-sm font-light font-Dana leading-tight">
                 ${presellCourse.description}
-             </p> 
+             </div> 
       </div>
       <!-- card-footer -->
       <div class="px-6 pb-2">
@@ -56,16 +57,17 @@ const presellCourseDatas = async ()=>{
           <div class="flex items-end justify-between mt-2">
               <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
                   <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-                  <span>${presellCourse.studens}</span>
+                  <span>${presellCourse.registers}</span>
               </span>
               <div class="flex items-start flex-col  ">
                 <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">
                    
-                    <span>${presellCourse.prev_offe === 0 ? "": presellCourse.prev_offe.toLocaleString()}</span>
+                    <span>
+                    ${presellCourse.discount &&presellCourse.price !==0? presellCourse.price.toLocaleString() : presellCourse.prev_offe !== 0 ?   presellCourse.prev_offe.toLocaleString():""}  </span>
                   </span>  
                   <span class="course__price font-DanaMedium text-xl text-baseColor space-x-1.5 flex gap-x-1">
                   <span>
-                  ${presellCourse.price === 0 ? "رایگان!" : presellCourse.price.toLocaleString()}
+                  ${presellCourse.discount && presellCourse.price !==0? ((presellCourse.price *presellCourse.discount)/100).toLocaleString() : presellCourse.price === 0 ? "رایگان!" : presellCourse.price.toLocaleString()}
                   </span>
                   <svg class="${presellCourse.price === 0 ? "hidden" : "w-4 h-4"}"><use xlink:href="#toman"></use></svg>
                   </span>

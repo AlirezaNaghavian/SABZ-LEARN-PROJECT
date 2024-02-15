@@ -11,7 +11,7 @@ const getPopularCourseDatas = async ()=>{
                 
                 <img src="http://localhost:4000/courses/covers/${popCourse.cover}" class="w-full h-full object-cover rounded-2xl" loading="lazy" alt="">
             </a>
-            <span class="absolute ${popCourse.price === 0 ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">100%</span>
+            <span class="absolute ${popCourse.discount  ? "flex" : "hidden"} right-2.5 top-2.5 flex justify-center items-center w-12 h-6 bg-baseColor text-white rounded-xl font-DanaBold text-sm">${ popCourse.prev_offe ? `100%`: popCourse.discount ?   `${popCourse.discount}%` : ""}</span>
         </div>
         <!-- card-body-content -->
         <div class=" flex-grow px-6 pt-2.5 pb-3.5 ">
@@ -49,16 +49,16 @@ const getPopularCourseDatas = async ()=>{
             <div class="flex items-end justify-between mt-2">
                 <span class="flex items-center gap-x-1.5 text-zinc-700 dark:text-white">
                     <svg class="w-5 h-5"><use xlink:href="#solid-users"></use></svg>
-                    <span>${popCourse.studens}</span>
+                    <span>${popCourse.registers}</span>
                 </span>
                 <div class="flex items-start flex-col  ">
                   <span class="price-number course__offer-price offer course-price inline-block relative font-danaLight text-zinc-700 dark:text-slate-400 text-sm -mb-1.5 ">
                      
-                      <span>${popCourse.prev_offe === 0 ? "": popCourse.prev_offe.toLocaleString()}</span>
+                      <span>${popCourse.discount &&popCourse.price !==0? popCourse.price.toLocaleString() : popCourse.prev_offe !== 0 ?   popCourse.prev_offe.toLocaleString():""}</span>
                     </span>  
                     <span class="course__price font-DanaMedium text-xl text-baseColor space-x-1.5 flex gap-x-1">
                     <span>
-                    ${popCourse.price === 0 ? "رایگان!" : popCourse.price.toLocaleString()}
+                    ${popCourse.discount && popCourse.price !==0? ((popCourse.price *popCourse.discount)/100).toLocaleString() : popCourse.price === 0 ? "رایگان!" : popCourse.price.toLocaleString()}                    
                     </span>
                     <svg class="${popCourse.price === 0 ? "hidden" : "w-4 h-4"}"><use xlink:href="#toman"></use></svg>
                     </span>
