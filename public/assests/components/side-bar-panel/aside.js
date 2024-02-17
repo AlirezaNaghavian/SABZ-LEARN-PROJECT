@@ -30,7 +30,7 @@ aside_template.innerHTML += `
 <a href="../p-tickets/p-tickets.html?id=tickets"><button id="tickets" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">تیکت ها</button></a>
 <a href="../p-compaign/p-compaign.html?id=compaigns"><button id="compaigns" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">برگزاری کمپین</button></a>
 <a href="../edit-admin-info/edit-admin.html?id=edit"><button id="edit" class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">ویرایش اطلاعات</button></a>
-<a href="#"><button class="w-full   py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">خروج</button></a>
+<a href="#"><button class="w-full logoutAdmin  py-4  text-right pr-2 font-DanaBold transition-all hover:text-white">خروج</button></a>
 </div>
 
 `;
@@ -42,6 +42,11 @@ class Aside extends HTMLElement {
     const getUrlParam = new URLSearchParams(location.search);
     const getParam = getUrlParam.get("id");
     this.targetItem = this.shadowRoot.querySelector(`#${getParam}`)
+    this.logout = this.shadowRoot.querySelector(".logoutAdmin");
+    this.logout.addEventListener("click",()=>{
+      localStorage.removeItem("user")
+      location.href = "../../index.html"
+    })
     // add active menu class
     const addActiveAside = () => {
       this.targetItem.classList.add("active-menu")
